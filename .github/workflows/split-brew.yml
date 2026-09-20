@@ -1,0 +1,50 @@
+name: Split brew into src
+
+# Run this once, by hand, from the Actions tab. It breaks the combined
+# wilds-of-osse.json into fragments under src/ so that future edits touch
+# only one faction file. It refuses to run if src/ already has fragments.
+# Once the split is done, this workflow can be deleted.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  split:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Split
+        run: python tools/split.py
+
+      - name: Verify the rebuild matches
+        run: |
+          cp wilds-of-osse.json /tmp/before.json
+          python tools/build.py
+          python - <<'EOF'
+          import json
+          before = json.load(open('/tmp/before.json'))
+          after = json.load(open('wilds-of-osse.json'))
+          for key in set(before) | set(after):
+              if key == '_meta':
+                  continue
+              b = sorted((e.get('name','') for e in before.get(key, [])))
+              a = sorted((e.get('name','') for e in after.get(key, [])))
+              assert b == a, f"{key} changed: missing {set(b)-set(a)}, added {set(a)-set(b)}"
+          print('rebuild matches, nothing lost')
+          EOF
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src wilds-of-osse.json
+          git commit -m "Split brew into src/ fragments [skip ci]"
+          git push
