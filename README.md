@@ -16,7 +16,7 @@ https://raw.githubusercontent.com/AlcubierreWarp/Wilds-of-Osse/main/wilds-of-oss
 
 It has to be the `raw.githubusercontent.com` link. The repository page URL with `/blob/` in it will not work. To load from a download instead, grab the file and use **Upload File** in the same dialog.
 
-Either way, 5e.tools keeps its own copy in browser storage, and that copy does not update on its own. After a change here, remove the old brew and load it again.
+Either way, 5e.tools keeps its own copy in browser storage, and that copy does not update on its own. After a change here, use the refresh button in the Homebrew Manager to load any changes to the file.
 
 ---
 
