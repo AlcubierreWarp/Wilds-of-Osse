@@ -4,6 +4,10 @@
 Each fragment is a JSON object whose keys are 5eTools content arrays
 ("monster", "item", "trap", ...). src/_meta.json holds the "_meta" block.
 Fragments are merged in alphabetical order of filename.
+
+Before the one-time split has been run there is no src/ directory. That is a
+valid state, not an error: the combined file is still the source of truth, so
+this script reports the skip and exits cleanly.
 """
 import json
 import pathlib
@@ -20,6 +24,11 @@ def fail(msg):
     sys.exit(1)
 
 
+def skip(msg):
+    print(f"nothing to build: {msg}")
+    sys.exit(0)
+
+
 def load(path):
     try:
         return json.loads(path.read_text(encoding="utf-8"))
@@ -29,11 +38,18 @@ def load(path):
 
 def main():
     if not SRC.is_dir():
-        fail("src/ does not exist. Run the 'Split brew into src' workflow first.")
+        skip("src/ does not exist yet. Run the 'Split brew into src' workflow "
+             "to start building from fragments. Until then wilds-of-osse.json "
+             "is maintained directly and is left untouched.")
+
+    fragments = sorted(p for p in SRC.glob("*.json") if p.name != "_meta.json")
+    if not fragments:
+        skip("src/ contains no fragments. wilds-of-osse.json left untouched.")
 
     meta_path = SRC / "_meta.json"
     if not meta_path.exists():
-        fail("src/_meta.json is missing.")
+        fail("src/_meta.json is missing, but src/ has fragments. "
+             "The split is incomplete; restore _meta.json before building.")
 
     meta_doc = load(meta_path)
     meta = meta_doc.get("_meta", meta_doc)
@@ -46,10 +62,6 @@ def main():
     out = {"_meta": meta}
     seen = {}
     counts = {}
-
-    fragments = sorted(p for p in SRC.glob("*.json") if p.name != "_meta.json")
-    if not fragments:
-        fail("no fragments found in src/.")
 
     for path in fragments:
         doc = load(path)
