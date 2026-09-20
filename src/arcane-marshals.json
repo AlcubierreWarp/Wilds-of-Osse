@@ -1,0 +1,623 @@
+{
+	"monster": [
+		{
+			"name": "Marshal Constable-Adept",
+			"source": "WildsOfOsse",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"any race"
+				]
+			},
+			"alignment": [
+				"L",
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"chain shirt",
+						"shield"
+					]
+				}
+			],
+			"hp": {
+				"average": 32,
+				"formula": "5d8 + 10"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 13,
+			"dex": 13,
+			"con": 14,
+			"int": 14,
+			"wis": 13,
+			"cha": 11,
+			"passive": 13,
+			"cr": "1",
+			"group": [
+				"Arcane Marshals"
+			],
+			"skill": {
+				"investigation": "+4",
+				"perception": "+3"
+			},
+			"languages": [
+				"Common"
+			],
+			"trait": [
+				{
+					"name": "Warded Kit",
+					"entries": [
+						"The constable-adept has advantage on saving throws against spells and other magical effects while it is wearing its marshal's sigil."
+					]
+				}
+			],
+			"spellcasting": [
+				{
+					"name": "Rune Training",
+					"type": "spellcasting",
+					"ability": "int",
+					"headerEntries": [
+						"The constable-adept carries a set of trained runes. Its spellcasting ability is Intelligence (spell save {@dc 12}, {@hit 4} to hit with spell attacks)."
+					],
+					"will": [
+						"{@spell light}",
+						"{@spell mage hand}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell shield}",
+							"{@spell detect magic}"
+						]
+					}
+				}
+			],
+			"action": [
+				{
+					"name": "Baton",
+					"entries": [
+						"{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d6 + 1}) bludgeoning damage."
+					]
+				},
+				{
+					"name": "Binding Rune (2/Day)",
+					"entries": [
+						"The constable-adept throws a rune-scribed cord at one creature it can see within 30 feet. The target must succeed on a {@dc 12} Dexterity saving throw or be {@condition restrained} for 1 minute. The target can use its action to make a {@dc 12} Strength check, freeing itself on a success."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"entries": [
+					"The street level of the Arcane Marshals. Trained on a handful of runes, issued a baton, and expected to write everything down."
+				]
+			}
+		},
+		{
+			"name": "Marshal Sergeant-Adept",
+			"source": "WildsOfOsse",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"any race"
+				]
+			},
+			"alignment": [
+				"L",
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"chain mail",
+						"shield"
+					]
+				}
+			],
+			"hp": {
+				"average": 60,
+				"formula": "8d8 + 24"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 14,
+			"dex": 12,
+			"con": 16,
+			"int": 16,
+			"wis": 14,
+			"cha": 12,
+			"passive": 14,
+			"cr": "3",
+			"group": [
+				"Arcane Marshals"
+			],
+			"save": {
+				"con": "+5",
+				"int": "+5"
+			},
+			"skill": {
+				"arcana": "+5",
+				"investigation": "+5",
+				"perception": "+4"
+			},
+			"languages": [
+				"Common",
+				"one other language"
+			],
+			"trait": [
+				{
+					"name": "Warded Kit",
+					"entries": [
+						"The sergeant-adept has advantage on saving throws against spells and other magical effects."
+					]
+				},
+				{
+					"name": "Squad Discipline",
+					"entries": [
+						"Allied Marshals within 30 feet that can see the sergeant-adept add 1 to their AC."
+					]
+				}
+			],
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"ability": "int",
+					"headerEntries": [
+						"The sergeant-adept is a 5th-level spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 13}, {@hit 5} to hit with spell attacks). It has the following spells prepared:"
+					],
+					"spells": {
+						"0": {
+							"spells": [
+								"{@spell light}",
+								"{@spell mage hand}",
+								"{@spell message}"
+							]
+						},
+						"1": {
+							"slots": 4,
+							"spells": [
+								"{@spell alarm}",
+								"{@spell detect magic}",
+								"{@spell shield}"
+							]
+						},
+						"2": {
+							"slots": 3,
+							"spells": [
+								"{@spell hold person}",
+								"{@spell see invisibility}"
+							]
+						},
+						"3": {
+							"slots": 2,
+							"spells": [
+								"{@spell counterspell}",
+								"{@spell dispel magic}"
+							]
+						}
+					}
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The sergeant-adept makes two attacks with its baton, or casts a spell and makes one attack."
+					]
+				},
+				{
+					"name": "Rune-Etched Baton",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) bludgeoning damage plus 3 ({@damage 1d6}) force damage."
+					]
+				},
+				{
+					"name": "Binding Rune (3/Day)",
+					"entries": [
+						"One creature the sergeant-adept can see within 30 feet must succeed on a {@dc 13} Dexterity saving throw or be {@condition restrained} for 1 minute. The target can use its action to make a {@dc 13} Strength check, freeing itself on a success."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Ward Ally",
+					"entries": [
+						"When a creature the sergeant-adept can see within 30 feet is hit by an attack, the sergeant-adept adds 3 to that creature's AC against the attack, possibly causing it to miss."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"entries": [
+					"Leads a hand of constables and carries the warrants. The rank where the job stops being paperwork and starts being decisions."
+				]
+			}
+		},
+		{
+			"name": "Marshal Lieutenant",
+			"source": "WildsOfOsse",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"any race"
+				]
+			},
+			"alignment": [
+				"L",
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 18,
+					"from": [
+						"plate armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 105,
+				"formula": "14d8 + 42"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 15,
+			"dex": 12,
+			"con": 17,
+			"int": 18,
+			"wis": 15,
+			"cha": 14,
+			"passive": 15,
+			"cr": "5",
+			"group": [
+				"Arcane Marshals"
+			],
+			"save": {
+				"con": "+6",
+				"int": "+7",
+				"wis": "+5"
+			},
+			"skill": {
+				"arcana": "+7",
+				"insight": "+5",
+				"investigation": "+7",
+				"perception": "+5"
+			},
+			"languages": [
+				"Common",
+				"two other languages"
+			],
+			"trait": [
+				{
+					"name": "Warded Kit",
+					"entries": [
+						"The lieutenant has advantage on saving throws against spells and other magical effects."
+					]
+				},
+				{
+					"name": "Reads the Scene",
+					"entries": [
+						"The lieutenant has advantage on Intelligence ({@skill Investigation}) checks made to reconstruct what happened in a place within the last 24 hours."
+					]
+				},
+				{
+					"name": "Hold the Line",
+					"entries": [
+						"Allied Marshals within 30 feet that can see the lieutenant add 1 to their AC and to their saving throws."
+					]
+				}
+			],
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"ability": "int",
+					"headerEntries": [
+						"The lieutenant is a 8th-level spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 15}, {@hit 7} to hit with spell attacks). It has the following spells prepared:"
+					],
+					"spells": {
+						"0": {
+							"spells": [
+								"{@spell light}",
+								"{@spell mage hand}",
+								"{@spell message}",
+								"{@spell prestidigitation}"
+							]
+						},
+						"1": {
+							"slots": 4,
+							"spells": [
+								"{@spell alarm}",
+								"{@spell detect magic}",
+								"{@spell shield}",
+								"{@spell identify}"
+							]
+						},
+						"2": {
+							"slots": 3,
+							"spells": [
+								"{@spell hold person}",
+								"{@spell see invisibility}",
+								"{@spell zone of truth}"
+							]
+						},
+						"3": {
+							"slots": 3,
+							"spells": [
+								"{@spell counterspell}",
+								"{@spell dispel magic}",
+								"{@spell magic circle}"
+							]
+						},
+						"4": {
+							"slots": 2,
+							"spells": [
+								"{@spell banishment}",
+								"{@spell arcane eye}"
+							]
+						}
+					}
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The lieutenant makes two attacks with its baton, or casts a spell and makes one attack."
+					]
+				},
+				{
+					"name": "Rune-Etched Baton",
+					"entries": [
+						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d6 + 2}) bludgeoning damage plus 7 ({@damage 2d6}) force damage."
+					]
+				},
+				{
+					"name": "Writ of Restraint (Recharge 5-6)",
+					"entries": [
+						"The lieutenant names one creature it can see within 60 feet and speaks the terms of its warrant. The target must succeed on a {@dc 15} Wisdom saving throw or be {@condition restrained} by bands of light for 1 minute. The target repeats the save at the end of each of its turns, ending the effect on a success. While restrained this way the target's spellcasting requires a successful {@dc 15} Constitution check."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Counter",
+					"entries": [
+						"When a creature the lieutenant can see within 60 feet casts a spell of 3rd level or lower, the lieutenant can expend a spell slot of 3rd level or higher to cast {@spell counterspell} in response."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"entries": [
+					"The rank that runs an investigation end to end and signs for it. Fights carefully, arrests by preference, and does not chase."
+				]
+			}
+		},
+		{
+			"name": "Marshal-Captain Elowen Rhys",
+			"source": "WildsOfOsse",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"L",
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 19,
+					"from": [
+						"plate armor",
+						"warded sigil"
+					]
+				}
+			],
+			"hp": {
+				"average": 153,
+				"formula": "18d8 + 72"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 16,
+			"dex": 12,
+			"con": 18,
+			"int": 19,
+			"wis": 17,
+			"cha": 15,
+			"passive": 17,
+			"cr": "9",
+			"group": [
+				"Arcane Marshals"
+			],
+			"save": {
+				"con": "+8",
+				"int": "+8",
+				"wis": "+7"
+			},
+			"skill": {
+				"arcana": "+8",
+				"insight": "+11",
+				"investigation": "+12",
+				"perception": "+7",
+				"persuasion": "+6"
+			},
+			"languages": [
+				"Common",
+				"three other languages"
+			],
+			"resist": [
+				"force"
+			],
+			"trait": [
+				{
+					"name": "Impartial Spine",
+					"entries": [
+						"Elowen has advantage on saving throws against being {@condition charmed} or {@condition frightened}, and against any magic that would compel him to speak or act falsely."
+					]
+				},
+				{
+					"name": "Warded Office",
+					"entries": [
+						"Elowen has advantage on saving throws against spells and other magical effects."
+					]
+				},
+				{
+					"name": "States the Facts",
+					"entries": [
+						"Elowen has advantage on Wisdom ({@skill Insight}) checks, and he automatically knows when a creature he can hear tells him a deliberate lie unless that creature succeeds on a {@dc 16} Charisma ({@skill Deception}) check."
+					]
+				},
+				{
+					"name": "Presides",
+					"entries": [
+						"Allied Marshals within 60 feet that can see Elowen add 2 to their AC and to their saving throws."
+					]
+				}
+			],
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"ability": "int",
+					"headerEntries": [
+						"Elowen is a 12th-level spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 16}, {@hit 8} to hit with spell attacks). It has the following spells prepared:"
+					],
+					"spells": {
+						"0": {
+							"spells": [
+								"{@spell light}",
+								"{@spell mage hand}",
+								"{@spell message}",
+								"{@spell prestidigitation}"
+							]
+						},
+						"1": {
+							"slots": 4,
+							"spells": [
+								"{@spell alarm}",
+								"{@spell detect magic}",
+								"{@spell shield}",
+								"{@spell comprehend languages}"
+							]
+						},
+						"2": {
+							"slots": 3,
+							"spells": [
+								"{@spell hold person}",
+								"{@spell see invisibility}",
+								"{@spell zone of truth}"
+							]
+						},
+						"3": {
+							"slots": 3,
+							"spells": [
+								"{@spell counterspell}",
+								"{@spell dispel magic}",
+								"{@spell magic circle}"
+							]
+						},
+						"4": {
+							"slots": 3,
+							"spells": [
+								"{@spell banishment}",
+								"{@spell arcane eye}",
+								"{@spell divination}"
+							]
+						},
+						"5": {
+							"slots": 2,
+							"spells": [
+								"{@spell hold monster}",
+								"{@spell scrying}"
+							]
+						},
+						"6": {
+							"slots": 1,
+							"spells": [
+								"{@spell globe of invulnerability}"
+							]
+						}
+					}
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Elowen makes three attacks with his baton, or casts a spell and makes one attack."
+					]
+				},
+				{
+					"name": "Captain's Baton",
+					"entries": [
+						"{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}8 ({@damage 1d8 + 4}) bludgeoning damage plus 10 ({@damage 3d6}) force damage."
+					]
+				},
+				{
+					"name": "Writ of Restraint (Recharge 5-6)",
+					"entries": [
+						"Elowen names one creature he can see within 60 feet. The target must succeed on a {@dc 16} Wisdom saving throw or be {@condition restrained} by bands of light for 1 minute. The target repeats the save at the end of each of its turns, ending the effect on a success. While restrained this way its spellcasting requires a successful {@dc 16} Constitution check."
+					]
+				},
+				{
+					"name": "Clear the Ring (1/Day)",
+					"entries": [
+						"Elowen strikes his baton on the ground. Every creature of his choice within 30 feet must make a {@dc 16} Strength saving throw. On a failure a creature takes 21 ({@damage 6d6}) force damage and is pushed 20 feet away and knocked {@condition prone}. On a success it takes half damage and is not moved. Ongoing spells of 3rd level or lower in the area end."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Counter",
+					"entries": [
+						"When a creature Elowen can see within 60 feet casts a spell of 4th level or lower, he can expend a spell slot of 4th level or higher to cast {@spell counterspell} in response."
+					]
+				},
+				{
+					"name": "Interpose Ward",
+					"entries": [
+						"When a creature Elowen can see within 30 feet is hit by an attack, he adds 5 to that creature's AC against the attack, possibly causing it to miss."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"entries": [
+					"Captain of the Arcane Marshals, appointed for life by the vassal houses, which is the whole of his power and the whole of his cage.",
+					"Flat, procedural, unhurried. He states facts and then waits. Under pressure he gets colder and more precise, and stops explaining himself entirely. He does not raise his voice and does not repeat himself."
+				]
+			}
+		}
+	]
+}

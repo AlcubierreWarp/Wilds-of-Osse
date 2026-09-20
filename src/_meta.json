@@ -1,0 +1,19 @@
+{
+	"_meta": {
+		"sources": [
+			{
+				"json": "WildsOfOsse",
+				"abbreviation": "WoO",
+				"full": "Wilds of Osse",
+				"authors": [
+					"Thomas Huet"
+				],
+				"version": "2.0.0",
+				"dateAdded": 1789869156,
+				"dateLastModified": 1789871131
+			}
+		],
+		"dateAdded": 1789869156,
+		"dateLastModified": 1789871131
+	}
+}

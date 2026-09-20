@@ -1,0 +1,646 @@
+{
+	"monster": [
+		{
+			"name": "Alma Marrow",
+			"source": "WildsOfOsse",
+			"size": [
+				"S"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"gnome"
+				]
+			},
+			"alignment": [
+				"N",
+				"G"
+			],
+			"ac": [
+				{
+					"ac": 10
+				}
+			],
+			"hp": {
+				"average": 7,
+				"formula": "2d6"
+			},
+			"speed": {
+				"walk": 25
+			},
+			"str": 8,
+			"dex": 10,
+			"con": 10,
+			"int": 12,
+			"wis": 14,
+			"cha": 12,
+			"skill": {
+				"insight": "+4",
+				"perception": "+4",
+				"sleight of hand": "+2"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 14,
+			"languages": [
+				"Common",
+				"Gnomish"
+			],
+			"cr": "0",
+			"trait": [
+				{
+					"name": "Gnome Cunning",
+					"entries": [
+						"Alma has advantage on Intelligence, Wisdom, and Charisma saving throws against magic."
+					]
+				},
+				{
+					"name": "She Has Been Warned",
+					"entries": [
+						"Alma does not cooperate with a rescue on sight. On the first round of contact she resists: she pulls her son away, refuses to move, or raises her voice. This is cleared instantly by Pell's proof-word, or by {@spell calm emotions}, {@spell charm person}, or {@spell sanctuary} cast on her, or by a successful {@dc 14} Charisma ({@skill Persuasion}) check that costs an action. Until it clears, moving her requires a grapple, and grappling her advances the Alarm Clock one tick."
+					]
+				},
+				{
+					"name": "A Month of Counting",
+					"entries": [
+						"Alma knows the crew rotation, the shift change, which bravo unbars the cellar hatch, and that another family was held in the back room before hers."
+					]
+				},
+				{
+					"name": "Apron Pockets",
+					"entries": [
+						"Alma carries four torn pages out of Nessa Ruhl's ledger. She hands them over once she trusts whoever has her, and not a moment earlier."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Improvised Weapon (Laundry Iron, Kettle, Chair)",
+					"entries": [
+						"{@atk mw} {@hit 1} to hit, reach 5 ft., one target. {@h}2 ({@damage 1d4}) bludgeoning damage. She will use it, but only between a Pyreborn and her son."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"languageTags": [
+				"C",
+				"G"
+			],
+			"fluff": {
+				"entries": [
+					"Pell Marrow's wife, a gnome laundress, held at the Drover's Rest with their nine-year-old son Denn.",
+					"Under fire she does not flee. She covers Denn with her body and stays put, which means the party is fighting around a prone civilian and a child. That is the intended pressure."
+				]
+			}
+		},
+		{
+			"name": "Denn Marrow",
+			"source": "WildsOfOsse",
+			"size": [
+				"S"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"gnome"
+				]
+			},
+			"alignment": [
+				"N",
+				"G"
+			],
+			"ac": [
+				{
+					"ac": 10
+				}
+			],
+			"hp": {
+				"average": 4,
+				"formula": "1d6"
+			},
+			"speed": {
+				"walk": 20
+			},
+			"str": 6,
+			"dex": 10,
+			"con": 8,
+			"int": 10,
+			"wis": 10,
+			"cha": 12,
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 10,
+			"languages": [
+				"Common",
+				"Gnomish"
+			],
+			"cr": "0",
+			"trait": [
+				{
+					"name": "Chest-Sick",
+					"entries": [
+						"Nine years old and a month in a root cellar. Denn has disadvantage on ability checks from fever, and he can't move more than 60 feet without stopping to catch his breath. Carrying him is the practical answer, and it costs a rescuer a free hand."
+					]
+				},
+				{
+					"name": "The Cough",
+					"entries": [
+						"Audible through the floorboards at up to 30 feet in a quiet house. It is how the party finds the back room, and later the cellar hatch."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"languageTags": [
+				"C",
+				"G"
+			],
+			"fluff": {
+				"entries": [
+					"He is a clock, not a combatant. Every round he is still in the building is a round the scene is not over."
+				]
+			}
+		},
+		{
+			"name": "Poor-Quarter Rioter",
+			"source": "WildsOfOsse",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"any race"
+				]
+			},
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 11
+				}
+			],
+			"hp": {
+				"average": 9,
+				"formula": "2d8"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 13,
+			"dex": 11,
+			"con": 11,
+			"int": 10,
+			"wis": 10,
+			"cha": 10,
+			"passive": 10,
+			"cr": "1/8",
+			"skill": {
+				"intimidation": "+2"
+			},
+			"languages": [
+				"Common"
+			],
+			"trait": [
+				{
+					"name": "Mob Courage",
+					"entries": [
+						"The rioter has advantage on saving throws against being {@condition frightened} while at least three other rioters are within 30 feet of it. If the number of rioters within 30 feet drops below three, the rioter must succeed on a {@dc 10} Wisdom saving throw at the end of its turn or flee."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Improvised Weapon",
+					"entries": [
+						"{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d6 + 1}) bludgeoning damage."
+					]
+				},
+				{
+					"name": "Thrown Stone",
+					"entries": [
+						"{@atk rw} {@hit 2} to hit, range 20/60 ft., one target. {@h}2 ({@damage 1d4}) bludgeoning damage."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"entries": [
+					"Not a soldier and not a criminal. Someone who has had enough, in a crowd that has had enough, holding whatever was to hand.",
+					"Rioters break as a group. Give the crowd one reason to disperse and the fight can end without a body."
+				]
+			}
+		},
+		{
+			"name": "Marquis Corvane Aerrowyn",
+			"source": "WildsOfOsse",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 18,
+					"from": [
+						"half plate",
+						"shield"
+					]
+				}
+			],
+			"hp": {
+				"average": 138,
+				"formula": "16d8 + 64"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 18,
+			"dex": 13,
+			"con": 18,
+			"int": 16,
+			"wis": 15,
+			"cha": 17,
+			"passive": 16,
+			"cr": "7",
+			"save": {
+				"str": "+8",
+				"con": "+8",
+				"wis": "+6"
+			},
+			"skill": {
+				"athletics": "+8",
+				"deception": "+7",
+				"insight": "+6",
+				"intimidation": "+10",
+				"perception": "+6",
+				"persuasion": "+7"
+			},
+			"languages": [
+				"Common",
+				"two other languages"
+			],
+			"trait": [
+				{
+					"name": "Frontier Veteran",
+					"entries": [
+						"Corvane has advantage on Initiative rolls and on saving throws against being {@condition frightened}. He cannot be surprised while conscious."
+					]
+				},
+				{
+					"name": "Political Shark",
+					"entries": [
+						"Corvane has advantage on Charisma checks made against a creature whose weakness, debts, or family he knows, and he usually knows."
+					]
+				},
+				{
+					"name": "Brute",
+					"entries": [
+						"A melee weapon deals one extra die of its damage when Corvane hits with it (included below)."
+					]
+				},
+				{
+					"name": "Nothing Left to Lose but One Thing",
+					"entries": [
+						"While a creature Corvane regards as his heir is {@condition incapacitated} or in danger and within his sight, Corvane makes all attack rolls with advantage and has resistance to all damage."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Corvane makes three attacks with his warhammer."
+					]
+				},
+				{
+					"name": "Crested Warhammer",
+					"entries": [
+						"{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}13 ({@damage 2d8 + 4}) bludgeoning damage, and the target must succeed on a {@dc 16} Strength saving throw or be pushed 5 feet and have disadvantage on its next attack roll."
+					]
+				},
+				{
+					"name": "Shield Bash",
+					"entries": [
+						"{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}8 ({@damage 1d6 + 4}) bludgeoning damage, and the target must succeed on a {@dc 16} Strength saving throw or be knocked {@condition prone}."
+					]
+				},
+				{
+					"name": "A Word to the Wise (Recharge 5-6)",
+					"entries": [
+						"Corvane speaks, low and level, to one creature he can see within 60 feet that can understand him. The target must succeed on a {@dc 15} Wisdom saving throw or be {@condition frightened} of him for 1 minute, repeating the save at the end of each of its turns. A creature that has seen Corvane kill someone makes this save with disadvantage."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Send Them",
+					"entries": [
+						"One ally within 60 feet that can see or hear Corvane uses its reaction to move up to its speed and make one weapon attack."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Old Reflex",
+					"entries": [
+						"When Corvane is hit by a melee attack, he can make one attack with his warhammer against the attacker."
+					]
+				},
+				{
+					"name": "Nothing Touches the Boy",
+					"entries": [
+						"When an ally within 10 feet of Corvane would take damage, Corvane can take that damage instead."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"entries": [
+					"Won his family into nobility a generation ago on the frontier, and has spent the years since learning that words work faster than an axe.",
+					"Gravelly, deep, deliberate. Goes from serious to yelling in about three seconds. Reaches for violence last and is entirely willing to reach for it.",
+					"His fear is dying without an heir. Threaten his son and the politician stops being in the room."
+				]
+			}
+		},
+		{
+			"name": "Lord Cassian Aerrowyn",
+			"source": "WildsOfOsse",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"rune-braced leathers"
+					]
+				}
+			],
+			"hp": {
+				"average": 97,
+				"formula": "15d8 + 30"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 16,
+			"dex": 18,
+			"con": 14,
+			"int": 12,
+			"wis": 12,
+			"cha": 17,
+			"passive": 11,
+			"cr": "5",
+			"save": {
+				"dex": "+7",
+				"cha": "+6"
+			},
+			"skill": {
+				"acrobatics": "+7",
+				"athletics": "+6",
+				"intimidation": "+6",
+				"performance": "+6"
+			},
+			"languages": [
+				"Common"
+			],
+			"trait": [
+				{
+					"name": "Crowd Favourite",
+					"entries": [
+						"While at least five creatures who are not hostile to him can see him, Cassian has advantage on Charisma checks and gains 5 temporary hit points at the start of each of his turns."
+					]
+				},
+				{
+					"name": "Runecraft Brawler",
+					"entries": [
+						"Cassian's unarmed strikes are magical and deal fire damage as shown below. He adds his Charisma modifier to their damage rolls."
+					]
+				},
+				{
+					"name": "Will Not Back Down",
+					"entries": [
+						"When Cassian is reduced to half his hit points or fewer, he adds 2 to his attack rolls and ignores the {@condition frightened} condition until the end of the fight."
+					]
+				},
+				{
+					"name": "Showman's Footwork",
+					"entries": [
+						"Opportunity attacks against Cassian are made with disadvantage."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Cassian makes three unarmed strikes."
+					]
+				},
+				{
+					"name": "Rune-Burning Fist",
+					"entries": [
+						"{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d6 + 4}) bludgeoning damage plus 7 ({@damage 2d6}) fire damage."
+					]
+				},
+				{
+					"name": "Ignition (Recharge 5-6)",
+					"entries": [
+						"Cassian slams both fists together and releases the stored charge in a 15-foot cone. Each creature in the area must make a {@dc 15} Dexterity saving throw, taking 21 ({@damage 6d6}) fire damage on a failed save, or half as much on a successful one."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Step Up",
+					"entries": [
+						"Cassian moves up to half his speed toward a creature that damaged him since the end of his last turn, without provoking opportunity attacks."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Is That All You've Got",
+					"entries": [
+						"When Cassian takes damage from an attack he can see, he reduces the damage by 5 ({@dice 1d10}) and his next attack roll this round is made with advantage."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"entries": [
+					"Nineteen, gifted, and completely certain he belongs at the top. A mageraft brawler the old houses cannot stand and the crowd cannot get enough of.",
+					"He fights forward and he does not disengage. Backed into a corner he pushes harder, because the alternative is finding out whether the hype is true."
+				]
+			}
+		},
+		{
+			"name": "Baroness Eclair Exquisite",
+			"source": "WildsOfOsse",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"catfolk"
+				]
+			},
+			"alignment": [
+				"L",
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"studded leather",
+						"duelist's guard"
+					]
+				}
+			],
+			"hp": {
+				"average": 90,
+				"formula": "12d8 + 36"
+			},
+			"speed": {
+				"walk": 40,
+				"climb": 20
+			},
+			"str": 12,
+			"dex": 20,
+			"con": 16,
+			"int": 13,
+			"wis": 14,
+			"cha": 16,
+			"passive": 15,
+			"cr": "5",
+			"save": {
+				"dex": "+8",
+				"cha": "+6"
+			},
+			"skill": {
+				"acrobatics": "+11",
+				"athletics": "+4",
+				"insight": "+5",
+				"perception": "+5",
+				"persuasion": "+6"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"languages": [
+				"Common",
+				"two other languages"
+			],
+			"trait": [
+				{
+					"name": "Feline Agility",
+					"entries": [
+						"When Eclair moves on her turn in combat, she can double her speed until the end of the turn. She cannot use this trait again until she moves 0 feet on one of her turns."
+					]
+				},
+				{
+					"name": "Duelist's Discipline",
+					"entries": [
+						"Eclair adds 3 to her AC against the first attack made against her each round (included above) while she is wielding a finesse weapon and no shield."
+					]
+				},
+				{
+					"name": "Earned It",
+					"entries": [
+						"Eclair has advantage on saving throws against being {@condition charmed} or {@condition frightened}, and on ability checks made to resist being talked out of a course of action."
+					]
+				},
+				{
+					"name": "Sure-Footed",
+					"entries": [
+						"Eclair does not take falling damage from a fall of 30 feet or less, and difficult terrain costs her no extra movement."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Eclair makes three attacks with her rapier, or two with her rapier and one with her claws."
+					]
+				},
+				{
+					"name": "Duelling Rapier",
+					"entries": [
+						"{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}9 ({@damage 1d8 + 5}) piercing damage."
+					]
+				},
+				{
+					"name": "Claws",
+					"entries": [
+						"{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}8 ({@damage 1d6 + 5}) slashing damage."
+					]
+				},
+				{
+					"name": "Exhibition Flourish (Recharge 5-6)",
+					"entries": [
+						"Eclair makes a single rapier attack with advantage. On a hit it deals an extra 14 ({@damage 4d6}) piercing damage and the target must succeed on a {@dc 16} Constitution saving throw or be {@condition stunned} until the end of Eclair's next turn."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Reposition",
+					"entries": [
+						"Eclair takes the {@action Dash} or {@action Disengage} action."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Riposte",
+					"entries": [
+						"When a creature misses Eclair with a melee attack, she can make one rapier attack against it."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"entries": [
+					"A competitor from across the sea, in the Royal Tournament on her own merits and tired of being treated as a novelty.",
+					"Clipped and competitive. Allergic to being fussed over. She fights clean, wins on points, and takes the ring seriously even when nobody else does."
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,77 @@
+{
+	"item": [
+		{
+			"name": "Sun and Moon Signet Ring",
+			"source": "WildsOfOsse",
+			"type": "RG",
+			"rarity": "none",
+			"weight": 0,
+			"entries": [
+				"A heavy signet ring bearing a crescent moon set inside a sun. The mark is an old warrior-clan device rather than a granted heraldic arms, which means it predates the family's nobility and is not registered anywhere a herald would look.",
+				"Pressed into wax, the seal is recognised on sight by anyone who deals with the family's business, and by a number of people who would rather not admit they recognise it.",
+				"Wearing it openly in the wrong quarter is a statement. Wearing it openly in the right quarter is a threat."
+			]
+		},
+		{
+			"name": "Split Ring, Sun Half",
+			"source": "WildsOfOsse",
+			"type": "RG",
+			"rarity": "none",
+			"weight": 0,
+			"entries": [
+				"One half of a signet ring that was cut down the middle and worn by two people. This half carries the sun, with the cut edge crossing where the crescent would sit.",
+				"Alone it seals nothing. Pressed into wax beside its other half, the two halves make one complete mark and the seam is visible in the impression.",
+				"A ring cut in half is not a gift. It is a promise that somebody intended to keep."
+			]
+		},
+		{
+			"name": "Split Ring, Moon Half",
+			"source": "WildsOfOsse",
+			"type": "RG",
+			"rarity": "none",
+			"weight": 0,
+			"entries": [
+				"One half of a signet ring that was cut down the middle and worn by two people. This half carries the crescent, with the cut edge running through the sun's rays.",
+				"Alone it seals nothing. Pressed into wax beside its other half, the two halves make one complete mark and the seam is visible in the impression.",
+				"Whoever holds this half was meant to be found by whoever holds the other."
+			]
+		},
+		{
+			"name": "Father Barichello's Rosary",
+			"source": "WildsOfOsse",
+			"type": "OTH",
+			"rarity": "none",
+			"weight": 0,
+			"entries": [
+				"A worn string of wooden beads with a small crucifix, from a faith nobody on this continent has heard of. The beads are smooth at the places a thumb has rested for decades.",
+				"It holds no magic. It is a focus for a man who does not need one, and a proof of identity to the handful of people who would know it on sight.",
+				"A creature that carries it and shares Barichello's faith can use it as a holy symbol and as a spellcasting focus."
+			]
+		},
+		{
+			"name": "Father Barichello's Bible",
+			"source": "WildsOfOsse",
+			"type": "OTH",
+			"rarity": "none",
+			"weight": 3,
+			"entries": [
+				"A thick, water-marked volume in a language spoken nowhere in Osse, bound in cracked leather and annotated in three different hands across the margins. The annotations argue with each other.",
+				"The book is not magical, but it is the only copy of its scripture on the continent, and its owner's notes record a lifetime of reading texts other men of his faith would have burned.",
+				"A creature that spends 1 hour studying it alongside a religious, philosophical, or blasphemous text has advantage on the next Intelligence ({@skill Religion}) check it makes concerning that text."
+			]
+		},
+		{
+			"name": "Blank Rune Tablet",
+			"source": "WildsOfOsse",
+			"type": "OTH",
+			"rarity": "none",
+			"weight": 0.5,
+			"value": 2500,
+			"entries": [
+				"A palm-sized slate of fired clay banded in soft iron, prepared to hold a rune and holding none. Rune shops sell them by the crate and guilds account for them carefully, because a blank tablet in the wrong hands is the first half of a forgery.",
+				"A creature proficient with rune-cutting tools can inscribe a prepared rune onto a blank tablet over 1 hour of uninterrupted work. A tablet holds one rune and is consumed when that rune discharges.",
+				"An uninscribed tablet is worth 25 gp. An inscribed one is worth whatever the buyer is afraid of."
+			]
+		}
+	]
+}

@@ -1,0 +1,495 @@
+{
+	"monster": [
+		{
+			"name": "Unbowed Agitator",
+			"source": "WildsOfOsse",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"any race"
+				]
+			},
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 12,
+					"from": [
+						"leather armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 22,
+				"formula": "4d8 + 4"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 14,
+			"con": 12,
+			"int": 12,
+			"wis": 11,
+			"cha": 14,
+			"passive": 10,
+			"cr": "1/2",
+			"group": [
+				"The Unbowed"
+			],
+			"skill": {
+				"deception": "+4",
+				"performance": "+4",
+				"persuasion": "+4"
+			},
+			"languages": [
+				"Common"
+			],
+			"trait": [
+				{
+					"name": "Voice in the Crowd",
+					"entries": [
+						"The agitator has advantage on Charisma checks made to sway a crowd of five or more creatures."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Dagger",
+					"entries": [
+						"{@atk mw,rw} {@hit 4} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage."
+					]
+				},
+				{
+					"name": "Work the Crowd",
+					"entries": [
+						"The agitator calls out to bystanders within 60 feet. Each creature of the agitator's choice in that area that can hear it must succeed on a {@dc 12} Wisdom saving throw or move up to its speed toward a place, person, or door the agitator names."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Slip the Line",
+					"entries": [
+						"The agitator takes the {@action Disengage} or {@action Hide} action."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"entries": [
+					"Carries the message into rooms and markets. Never armed with anything that would be hard to explain."
+				]
+			}
+		},
+		{
+			"name": "Unbowed Organizer",
+			"source": "WildsOfOsse",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"any race"
+				]
+			},
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"studded leather"
+					]
+				}
+			],
+			"hp": {
+				"average": 45,
+				"formula": "7d8 + 14"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 12,
+			"dex": 16,
+			"con": 14,
+			"int": 14,
+			"wis": 13,
+			"cha": 15,
+			"passive": 11,
+			"cr": "2",
+			"group": [
+				"The Unbowed"
+			],
+			"save": {
+				"dex": "+5"
+			},
+			"skill": {
+				"deception": "+4",
+				"investigation": "+4",
+				"sleight of hand": "+5",
+				"stealth": "+5"
+			},
+			"languages": [
+				"Common",
+				"Thieves' cant"
+			],
+			"trait": [
+				{
+					"name": "Cell Discipline",
+					"entries": [
+						"The organizer knows only what it needs to. It has advantage on Charisma ({@skill Deception}) checks made to conceal the structure or membership of its cell, and magic that would compel it to name a superior reveals only a cover identity."
+					]
+				},
+				{
+					"name": "Sapper's Eye",
+					"entries": [
+						"The organizer has advantage on Intelligence ({@skill Investigation}) checks to find the weak point of a structure, and it deals double damage to objects and structures."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The organizer makes two attacks."
+					]
+				},
+				{
+					"name": "Short Sword",
+					"entries": [
+						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d6 + 3}) piercing damage."
+					]
+				},
+				{
+					"name": "Alchemical Charge (2/Day)",
+					"entries": [
+						"The organizer sets or throws a charge at a point within 30 feet. It detonates immediately, or at the start of a later round the organizer chooses. Each creature within 10 feet of the point must make a {@dc 13} Dexterity saving throw, taking 14 ({@damage 4d6}) fire damage on a failed save, or half as much on a successful one. An unattended object or structure in the area takes double damage."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"entries": [
+					"Builds the cell, keeps the lists in its head, and brings down what needs bringing down without a crowd watching."
+				]
+			}
+		},
+		{
+			"name": "Unbowed Supervisor",
+			"source": "WildsOfOsse",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"any race"
+				]
+			},
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"studded leather"
+					]
+				}
+			],
+			"hp": {
+				"average": 76,
+				"formula": "12d8 + 24"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 12,
+			"dex": 17,
+			"con": 14,
+			"int": 16,
+			"wis": 14,
+			"cha": 16,
+			"passive": 14,
+			"cr": "4",
+			"group": [
+				"The Unbowed"
+			],
+			"save": {
+				"dex": "+6",
+				"int": "+5",
+				"wis": "+4"
+			},
+			"skill": {
+				"deception": "+8",
+				"insight": "+4",
+				"perception": "+4",
+				"stealth": "+6"
+			},
+			"languages": [
+				"Common",
+				"Thieves' cant",
+				"one other language"
+			],
+			"trait": [
+				{
+					"name": "Cell Discipline",
+					"entries": [
+						"The supervisor has advantage on Charisma ({@skill Deception}) checks made to conceal the structure or membership of its cell, and magic that would compel it to name a superior reveals only a cover identity."
+					]
+				},
+				{
+					"name": "Evasion",
+					"entries": [
+						"If the supervisor is subjected to an effect that allows a Dexterity save for half damage, it instead takes no damage on a success and half damage on a failure."
+					]
+				},
+				{
+					"name": "Contingency Planned",
+					"entries": [
+						"The supervisor has advantage on Initiative rolls, and it cannot be surprised while conscious in a location it chose."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The supervisor makes two attacks."
+					]
+				},
+				{
+					"name": "Rapier",
+					"entries": [
+						"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}8 ({@damage 1d8 + 4}) piercing damage, plus 10 ({@damage 3d6}) damage if the supervisor has advantage on the attack roll or an ally is within 5 feet of the target."
+					]
+				},
+				{
+					"name": "Hand Crossbow",
+					"entries": [
+						"{@atk rw} {@hit 6} to hit, range 30/120 ft., one target. {@h}7 ({@damage 1d6 + 4}) piercing damage."
+					]
+				},
+				{
+					"name": "Give the Word",
+					"entries": [
+						"Up to three allies within 60 feet that can see or hear the supervisor each use their reaction to move up to their speed, make one weapon attack, or take the {@action Hide} action."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Vanish",
+					"entries": [
+						"The supervisor takes the {@action Disengage} or {@action Hide} action. It can {@action Hide} even when only lightly obscured by a crowd."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Not Tonight",
+					"entries": [
+						"When the supervisor is hit by an attack it can see, it halves the damage and moves up to half its speed without provoking opportunity attacks."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"entries": [
+					"Runs a city cell and answers to one person nobody in the cell has met. Fights only long enough to leave with the cell intact."
+				]
+			}
+		},
+		{
+			"name": "Ilna Vesk",
+			"source": "WildsOfOsse",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"L",
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"studded leather"
+					]
+				}
+			],
+			"hp": {
+				"average": 97,
+				"formula": "15d8 + 30"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 10,
+			"dex": 17,
+			"con": 14,
+			"int": 15,
+			"wis": 15,
+			"cha": 18,
+			"passive": 15,
+			"cr": "6",
+			"group": [
+				"The Unbowed"
+			],
+			"save": {
+				"dex": "+6",
+				"cha": "+7"
+			},
+			"skill": {
+				"deception": "+10",
+				"insight": "+5",
+				"perception": "+5",
+				"performance": "+10",
+				"sleight of hand": "+6",
+				"stealth": "+6"
+			},
+			"languages": [
+				"Common",
+				"Thieves' cant",
+				"two other languages"
+			],
+			"trait": [
+				{
+					"name": "Two Registers",
+					"entries": [
+						"Ilna can switch between her stage manner and her working manner as a free action. While in her stage manner she has advantage on Charisma checks made in front of an audience. While in her working manner she has advantage on Dexterity ({@skill Stealth}) checks and on checks made to pass unnoticed."
+					]
+				},
+				{
+					"name": "Discipline over Mob",
+					"entries": [
+						"Allies within 30 feet that can hear Ilna have advantage on saving throws against being {@condition charmed} or {@condition frightened}."
+					]
+				},
+				{
+					"name": "Nothing Written Down",
+					"entries": [
+						"Ilna keeps no records. Divination and mind-reading magic used against her reveals only what she has rehearsed, unless the caster succeeds on a {@dc 15} Charisma check contested by her {@skill Deception}."
+					]
+				}
+			],
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"ability": "cha",
+					"headerEntries": [
+						"Ilna is a 7th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 15}, {@hit 7} to hit with spell attacks). It has the following spells prepared:"
+					],
+					"spells": {
+						"0": {
+							"spells": [
+								"{@spell friends}",
+								"{@spell mage hand}",
+								"{@spell minor illusion}",
+								"{@spell vicious mockery}"
+							]
+						},
+						"1": {
+							"slots": 4,
+							"spells": [
+								"{@spell charm person}",
+								"{@spell disguise self}",
+								"{@spell silent image}"
+							]
+						},
+						"2": {
+							"slots": 3,
+							"spells": [
+								"{@spell detect thoughts}",
+								"{@spell invisibility}",
+								"{@spell suggestion}"
+							]
+						},
+						"3": {
+							"slots": 3,
+							"spells": [
+								"{@spell hypnotic pattern}",
+								"{@spell nondetection}",
+								"{@spell tongues}"
+							]
+						},
+						"4": {
+							"slots": 1,
+							"spells": [
+								"{@spell dimension door}"
+							]
+						}
+					}
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Ilna makes two attacks with her dagger, or casts a cantrip and makes one attack."
+					]
+				},
+				{
+					"name": "Dagger",
+					"entries": [
+						"{@atk mw,rw} {@hit 6} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}6 ({@damage 1d4 + 4}) piercing damage."
+					]
+				},
+				{
+					"name": "Captivating Performance (Recharge 5-6)",
+					"entries": [
+						"Ilna sings, and every creature of her choice within 60 feet that can hear her must succeed on a {@dc 15} Wisdom saving throw or be {@condition charmed} for 1 minute. A charmed creature is {@condition incapacitated} and has a speed of 0 while it listens. The effect ends for a creature if it takes damage or if someone else uses an action to shake it free."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Misdirect",
+					"entries": [
+						"Ilna takes the {@action Hide} action, or causes one creature she can see within 30 feet to look somewhere she chooses."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Cutting Word",
+					"entries": [
+						"When a creature Ilna can see within 60 feet makes an attack roll, ability check, or damage roll, Ilna subtracts 6 ({@dice 1d10 + 1}) from the roll."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"entries": [
+					"A performer who runs a city cell out of the room she is performing in. Onstage she is warm, loud, and impossible to look away from. Off it she is quiet and wastes nothing.",
+					"She fights to leave, not to win, and she will spend a subordinate's life to do it without changing expression."
+				]
+			}
+		}
+	]
+}

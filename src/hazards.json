@@ -1,0 +1,37 @@
+{
+	"trap": [
+		{
+			"name": "Sabotaged Shield Rune",
+			"source": "WildsOfOsse",
+			"trapHazType": "MAG",
+			"entries": [
+				"A shield rune is a defensive working etched into a tablet, a bracer, or a weapon haft, and it is common enough in Varenthal that nobody looks twice at one. A sabotaged rune has had a single stroke altered so that the ward inverts on discharge, turning the protection inward and outward at once. The alteration is deliberate, small, and very hard to see.",
+				{
+					"type": "entries",
+					"name": "Trigger",
+					"entries": [
+						"The rune discharges when its bearer would take damage, which is what it is supposed to do. Nothing happens until then."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Effect",
+					"entries": [
+						"Instead of absorbing the blow, the rune releases it. The bearer takes 21 ({@dice 6d6}) force damage and must succeed on a {@dc 15} Constitution saving throw or be knocked {@condition prone} and {@condition stunned} until the end of its next turn.",
+						"Each other creature within 10 feet of the bearer must make a {@dc 15} Dexterity saving throw, taking 10 ({@dice 3d6}) force damage on a failed save, or half as much on a successful one.",
+						"The rune is destroyed, and any other rune worn by the bearer has a 50 percent chance of being destroyed with it."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Countermeasures",
+					"entries": [
+						"A creature that inspects the rune can spot the altered stroke with a successful {@dc 18} Intelligence ({@skill Arcana}) check, or {@dc 15} if the creature is proficient with the tools used to cut runes. {@spell Detect magic} shows an abjuration and nothing wrong with it. {@spell Identify} reveals the sabotage automatically.",
+						"A creature with rune-cutting tools can neutralise a spotted sabotage over 10 minutes with a successful {@dc 15} check using those tools. On a failed check by 5 or more, the rune discharges as above."
+					]
+				},
+				"A sabotaged rune is worth 3,200 XP if the party disarms one before it fires, or if they survive the one that does."
+			]
+		}
+	]
+}

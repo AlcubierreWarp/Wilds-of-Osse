@@ -1,0 +1,835 @@
+{
+	"monster": [
+		{
+			"name": "Nessa Ruhl",
+			"source": "WildsOfOsse",
+			"group": [
+				"Pyreborn"
+			],
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"studded leather"
+					]
+				}
+			],
+			"hp": {
+				"average": 58,
+				"formula": "9d8 + 18"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 12,
+			"dex": 16,
+			"con": 14,
+			"int": 12,
+			"wis": 14,
+			"cha": 13,
+			"save": {
+				"dex": "+5",
+				"wis": "+4"
+			},
+			"skill": {
+				"deception": "+3",
+				"insight": "+4",
+				"perception": "+4",
+				"sleight of hand": "+5",
+				"stealth": "+5"
+			},
+			"passive": 14,
+			"languages": [
+				"Common"
+			],
+			"cr": "3",
+			"trait": [
+				{
+					"name": "Keeper of the House",
+					"entries": [
+						"Nessa has advantage on Initiative rolls. She can't be surprised while the signal lantern is lit and she can see it."
+					]
+				},
+				{
+					"name": "Opportunist",
+					"entries": [
+						"Once per turn, Nessa deals an extra 7 ({@damage 2d6}) damage when she hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 feet of an ally of hers that isn't {@condition incapacitated}."
+					]
+				},
+				{
+					"name": "The Arrangement",
+					"entries": [
+						"While Nessa is within 5 feet of a hostage, has a hand on that hostage, and isn't {@condition incapacitated}, any creature that attacks her or targets her with a spell must first succeed on a {@dc 13} Wisdom saving throw or lose that action. This is leverage rather than magic. The effect ends if a hostage is freed or moved beyond her reach, or if she is {@condition grappled}, {@condition restrained}, or {@condition prone}."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Nessa makes two attacks, in any combination."
+					]
+				},
+				{
+					"name": "Shortsword",
+					"entries": [
+						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d6 + 3}) piercing damage."
+					]
+				},
+				{
+					"name": "Hand Crossbow",
+					"entries": [
+						"{@atk rw} {@hit 5} to hit, range 30/120 ft., one target. {@h}6 ({@damage 1d6 + 3}) piercing damage."
+					]
+				},
+				{
+					"name": "Signal (1/Encounter)",
+					"entries": [
+						"Nessa reaches the gable lantern or blows the whistle on her belt. The stable crew (three {@creature Pyreborn Bravo|WildsOfOsse|bravos}) arrives at the start of the third round after this. This action is prevented by a {@spell silence} effect, by dropping or restraining her first, or if the party has already taken the lantern."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Bark Orders",
+					"entries": [
+						"One allied Pyreborn within 30 feet of Nessa that can hear her uses its reaction to make one weapon attack."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Parry",
+					"entries": [
+						"Nessa adds 2 to her AC against one melee attack that would hit her. To do so, she must see the attacker and be wielding a melee weapon."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"traitTags": [
+				"Ambusher"
+			],
+			"senseTags": [],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C"
+			],
+			"miscTags": [
+				"MW",
+				"RW"
+			],
+			"fluff": {
+				"entries": [
+					"Crew boss at the Drover's Rest. She keeps a kettle on, keeps a ledger of the days, and calls her hostages \"missus\" without a trace of irony. She never raises her voice and never threatens twice.",
+					"Round one is the hostage or the signal, never damage. She fights to make leaving expensive rather than to win. At half hit points, or once the hostages are clear of her, she offers terms and means them. She is an employee, not a believer, and she is worth far more captured than killed."
+				]
+			}
+		},
+		{
+			"name": "Pyreborn Bravo",
+			"source": "WildsOfOsse",
+			"group": [
+				"Pyreborn"
+			],
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"any race"
+				]
+			},
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"studded leather"
+					]
+				}
+			],
+			"hp": {
+				"average": 22,
+				"formula": "4d8 + 4"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 14,
+			"dex": 14,
+			"con": 12,
+			"int": 10,
+			"wis": 11,
+			"cha": 10,
+			"skill": {
+				"intimidation": "+2",
+				"perception": "+2"
+			},
+			"passive": 12,
+			"languages": [
+				"Common"
+			],
+			"cr": "1/2",
+			"trait": [
+				{
+					"name": "Quarter Tough",
+					"entries": [
+						"The bravo has advantage on attack rolls against a creature if at least one other Pyreborn is within 5 feet of the creature and that Pyreborn isn't {@condition incapacitated}."
+					]
+				},
+				{
+					"name": "Raise the Cry",
+					"entries": [
+						"The first time the bravo takes damage or clearly sees an intruder, if it can shout and isn't in an area of magical silence, the Alarm Clock advances one tick. Dropping a sentry silently is worth a full tick."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Cudgel",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) bludgeoning damage. If the target has no allies within 5 feet of it, it has disadvantage on its next ability check."
+					]
+				},
+				{
+					"name": "Light Crossbow",
+					"entries": [
+						"{@atk rw} {@hit 4} to hit, range 80/320 ft., one target. {@h}6 ({@damage 1d8 + 2}) piercing damage."
+					]
+				},
+				{
+					"name": "Firepot (Hatch Guard Only, 2 Uses)",
+					"entries": [
+						"The bravo hurls a clay firepot at a point it can see within 20 feet (60 feet at long range). Each creature within 10 feet of that point must make a {@dc 12} Dexterity saving throw, taking 7 ({@damage 2d6}) fire damage on a failed save, or half as much damage on a successful one. Flammable objects in the area that aren't being worn or carried catch fire."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"languageTags": [
+				"C"
+			],
+			"miscTags": [
+				"MW",
+				"RW",
+				"THW"
+			],
+			"fluff": {
+				"entries": [
+					"Quarter toughs on the Pyreborn payroll. They burn buildings, they collect, and they sit on the people the gang needs kept.",
+					"Morale: they work here. Two of six break and run once three of them are down, or once their crew boss is taken. Do not play them to the last hit point."
+				]
+			}
+		},
+		{
+			"name": "Yard Dog",
+			"source": "WildsOfOsse",
+			"group": [
+				"Pyreborn"
+			],
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "beast"
+			},
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"ac": 12
+				}
+			],
+			"hp": {
+				"average": 9,
+				"formula": "2d8"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 14,
+			"dex": 14,
+			"con": 11,
+			"int": 3,
+			"wis": 12,
+			"cha": 7,
+			"skill": {
+				"perception": "+3"
+			},
+			"passive": 13,
+			"cr": "1/8",
+			"trait": [
+				{
+					"name": "Keen Hearing and Smell",
+					"entries": [
+						"The dog has advantage on Wisdom ({@skill Perception}) checks that rely on hearing or smell."
+					]
+				},
+				{
+					"name": "Chained and Hungry",
+					"entries": [
+						"Scarred, badly fed, and the single most likely thing to catch the party. Settling the dog without killing it removes one tick from the Alarm Clock. Killing it costs one."
+					]
+				},
+				{
+					"name": "What It Knows",
+					"entries": [
+						"Under {@spell speak with animals}, or on a successful {@dc 12} Wisdom ({@skill Animal Handling}) check, the dog conveys how many people are in the house, that one of them feeds it and the rest kick it, and that the small one cries under the floor."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Bite",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) piercing damage. If the target is a creature, it must succeed on a {@dc 11} Strength saving throw or be knocked {@condition prone}."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"fluff": {
+				"entries": [
+					"It barks before it bites. The bark is the problem."
+				]
+			}
+		},
+		{
+			"name": "Pyreborn Initiate",
+			"source": "WildsOfOsse",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"any race"
+				]
+			},
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 12,
+					"from": [
+						"leather armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 11,
+				"formula": "2d8 + 2"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 12,
+			"dex": 13,
+			"con": 12,
+			"int": 10,
+			"wis": 9,
+			"cha": 10,
+			"passive": 9,
+			"cr": "1/8",
+			"group": [
+				"Pyreborn"
+			],
+			"skill": {
+				"intimidation": "+2"
+			},
+			"languages": [
+				"Common"
+			],
+			"trait": [
+				{
+					"name": "Running with the Crest",
+					"entries": [
+						"The initiate has advantage on saving throws against being {@condition frightened} while at least two other Pyreborn it can see are within 30 feet of it."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Club",
+					"entries": [
+						"{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}3 ({@damage 1d6}) bludgeoning damage."
+					]
+				},
+				{
+					"name": "Sling",
+					"entries": [
+						"{@atk rw} {@hit 3} to hit, range 30/120 ft., one target. {@h}3 ({@damage 1d4 + 1}) bludgeoning damage."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"entries": [
+					"Newest on the crest. Runs messages, holds corners, and throws the first stone so someone else does not have to."
+				]
+			}
+		},
+		{
+			"name": "Pyreborn Thug",
+			"source": "WildsOfOsse",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"any race"
+				]
+			},
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 13,
+					"from": [
+						"studded leather"
+					]
+				}
+			],
+			"hp": {
+				"average": 32,
+				"formula": "5d8 + 10"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 15,
+			"dex": 12,
+			"con": 14,
+			"int": 10,
+			"wis": 10,
+			"cha": 11,
+			"passive": 10,
+			"cr": "1",
+			"group": [
+				"Pyreborn"
+			],
+			"skill": {
+				"athletics": "+4",
+				"intimidation": "+2"
+			},
+			"languages": [
+				"Common"
+			],
+			"trait": [
+				{
+					"name": "Pack Bully",
+					"entries": [
+						"The thug has advantage on attack rolls against a creature if at least one ally of the thug is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The thug makes two melee attacks."
+					]
+				},
+				{
+					"name": "Cudgel",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) bludgeoning damage."
+					]
+				},
+				{
+					"name": "Heavy Crossbow",
+					"entries": [
+						"{@atk rw} {@hit 3} to hit, range 100/400 ft., one target. {@h}6 ({@damage 1d10 + 1}) piercing damage."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"entries": [
+					"The standing body of the gang. Collects, evicts, and stands behind whoever is doing the talking."
+				]
+			}
+		},
+		{
+			"name": "Pyreborn Enforcer",
+			"source": "WildsOfOsse",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"any race"
+				]
+			},
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"studded leather",
+						"shield"
+					]
+				}
+			],
+			"hp": {
+				"average": 52,
+				"formula": "8d8 + 16"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 16,
+			"dex": 13,
+			"con": 15,
+			"int": 10,
+			"wis": 11,
+			"cha": 12,
+			"passive": 10,
+			"cr": "2",
+			"group": [
+				"Pyreborn"
+			],
+			"save": {
+				"str": "+5",
+				"con": "+4"
+			},
+			"skill": {
+				"athletics": "+5",
+				"intimidation": "+3"
+			},
+			"languages": [
+				"Common"
+			],
+			"trait": [
+				{
+					"name": "Pack Bully",
+					"entries": [
+						"The enforcer has advantage on attack rolls against a creature if at least one ally of the enforcer is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+					]
+				},
+				{
+					"name": "Hard to Move",
+					"entries": [
+						"The enforcer has advantage on saving throws and ability checks made to avoid being {@condition grappled}, {@condition restrained}, or knocked {@condition prone}."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The enforcer makes two melee attacks."
+					]
+				},
+				{
+					"name": "Iron-Shod Maul",
+					"entries": [
+						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 3}) bludgeoning damage, and if the target is Large or smaller it must succeed on a {@dc 13} Strength saving throw or be pushed 10 feet away."
+					]
+				},
+				{
+					"name": "Firepot (2/Day)",
+					"entries": [
+						"The enforcer hurls a clay firepot at a point it can see within 20 feet (60 feet at long range). Each creature within 10 feet of that point must make a {@dc 13} Dexterity saving throw, taking 10 ({@damage 3d6}) fire damage on a failed save, or half as much on a successful one. Flammable objects in the area that aren't being worn or carried catch fire."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Step In",
+					"entries": [
+						"When a creature the enforcer can see attacks a Pyreborn within 5 feet of the enforcer, the enforcer can make that attack target the enforcer instead."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"entries": [
+					"The gang's answer to a door that will not open and a debtor who will not pay."
+				]
+			}
+		},
+		{
+			"name": "Pyreborn Lieutenant",
+			"source": "WildsOfOsse",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"any race"
+				]
+			},
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 16,
+					"from": [
+						"breastplate"
+					]
+				}
+			],
+			"hp": {
+				"average": 78,
+				"formula": "12d8 + 24"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 16,
+			"dex": 14,
+			"con": 15,
+			"int": 12,
+			"wis": 12,
+			"cha": 14,
+			"passive": 13,
+			"cr": "4",
+			"group": [
+				"Pyreborn"
+			],
+			"save": {
+				"str": "+5",
+				"dex": "+4",
+				"wis": "+3"
+			},
+			"skill": {
+				"deception": "+4",
+				"intimidation": "+4",
+				"perception": "+3"
+			},
+			"languages": [
+				"Common",
+				"Thieves' cant"
+			],
+			"trait": [
+				{
+					"name": "Crest Discipline",
+					"entries": [
+						"Allied Pyreborn within 30 feet of the lieutenant that can see or hear it have advantage on saving throws against being {@condition frightened} and add 2 to their damage rolls with weapon attacks."
+					]
+				},
+				{
+					"name": "Read the Room",
+					"entries": [
+						"The lieutenant has advantage on Wisdom ({@skill Insight}) checks and on Initiative rolls."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The lieutenant makes two melee attacks, or two attacks with its hand crossbow."
+					]
+				},
+				{
+					"name": "Crest-Marked Axe",
+					"entries": [
+						"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}8 ({@damage 1d8 + 4}) slashing damage, plus 7 ({@damage 2d6}) damage if the lieutenant has advantage on the attack roll."
+					]
+				},
+				{
+					"name": "Hand Crossbow",
+					"entries": [
+						"{@atk rw} {@hit 5} to hit, range 30/120 ft., one target. {@h}6 ({@damage 1d6 + 3}) piercing damage."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Send Them In",
+					"entries": [
+						"One allied Pyreborn within 30 feet that can hear the lieutenant uses its reaction to move up to its speed or make one weapon attack."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Someone Else's Turn",
+					"entries": [
+						"When the lieutenant is hit by an attack and an allied Pyreborn is within 5 feet of it, the lieutenant can swap places with that ally. The ally becomes the target of the attack and takes the damage."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"entries": [
+					"Runs a district for the gang. Answers upward to someone whose name is never said on the street."
+				]
+			}
+		},
+		{
+			"name": "Bram Kell",
+			"source": "WildsOfOsse",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"splint"
+					]
+				}
+			],
+			"hp": {
+				"average": 105,
+				"formula": "14d8 + 42"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 18,
+			"dex": 13,
+			"con": 17,
+			"int": 11,
+			"wis": 12,
+			"cha": 15,
+			"passive": 14,
+			"cr": "5",
+			"group": [
+				"Pyreborn"
+			],
+			"save": {
+				"str": "+7",
+				"con": "+6"
+			},
+			"skill": {
+				"athletics": "+7",
+				"intimidation": "+5",
+				"perception": "+4"
+			},
+			"languages": [
+				"Common",
+				"Thieves' cant"
+			],
+			"trait": [
+				{
+					"name": "Wears the Crest Openly",
+					"entries": [
+						"Bram carries a crescent moon inside a sun on both armour and weapon. Allied Pyreborn within 30 feet of him that can see him have advantage on saving throws against being {@condition frightened}, and they add 2 to their damage rolls with weapon attacks."
+					]
+				},
+				{
+					"name": "Play to the Crowd",
+					"entries": [
+						"At the start of each of Bram's turns, if at least three creatures that are not his allies can see him, he gains 5 temporary hit points."
+					]
+				},
+				{
+					"name": "Brute",
+					"entries": [
+						"A melee weapon deals one extra die of its damage when Bram hits with it (included below)."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Bram makes two attacks with his crested axe, or three if he has taken damage since the end of his last turn."
+					]
+				},
+				{
+					"name": "Crested Axe",
+					"entries": [
+						"{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}13 ({@damage 2d8 + 4}) slashing damage."
+					]
+				},
+				{
+					"name": "Boot",
+					"entries": [
+						"{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d6 + 4}) bludgeoning damage, and the target must succeed on a {@dc 15} Strength saving throw or be knocked {@condition prone}."
+					]
+				},
+				{
+					"name": "Make an Example (Recharge 5-6)",
+					"entries": [
+						"Bram roars a challenge at one creature he can see within 30 feet. The target must make a {@dc 13} Wisdom saving throw. On a failure it is {@condition frightened} of Bram for 1 minute and must use its action on its turn to move toward him if it can. It repeats the save at the end of each of its turns, ending the effect on a success."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Drive Them Forward",
+					"entries": [
+						"Two allied Pyreborn within 30 feet that can hear Bram each use their reaction to move up to their speed or make one weapon attack."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Hold the Corner",
+					"entries": [
+						"When an ally within 5 feet of Bram is hit by an attack, Bram can reduce the damage by 5 ({@dice 1d10})."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"entries": [
+					"Holds a quarter for the Pyreborn by being the loudest and hardest thing in it. He wears his employer's crest without knowing what it means.",
+					"He is not subtle and does not want to be. Taken away from his crew he is a far smaller problem, which is the fight worth setting up."
+				]
+			}
+		}
+	]
+}
