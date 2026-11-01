@@ -30,6 +30,7 @@ src/
   unbowed.json              The Unbowed
   arcane-marshals.json      Arcane Marshals
   oss-kai.json              Oss'kai mage and healer lineages
+  gala.json                 The Queen's Consort (Aerrowyn gala killers)
   misc.json                 ungrouped creatures
   items.json                items
   hazards.json              traps and hazards
@@ -57,7 +58,7 @@ The split has already been run and will refuse to run again. `split-brew.yml` is
 
 Source name **Wilds of Ossë**, abbreviation **WoO**. Everything is filterable under that source and stays separate from official content.
 
-### Creatures (32)
+### Creatures (36)
 
 **Pyreborn** (`src/pyreborn.json`) — arson-and-extortion gang in Althon's Gate, plus the Drover's Rest safehouse cast.
 
@@ -105,6 +106,14 @@ Source name **Wilds of Ossë**, abbreviation **WoO**. Everything is filterable u
 | Oss'kai Mage-Adept | 13 |
 | Oss'kai Healer-Adept | 13 |
 
+**The Queen's Consort** (`src/gala.json`): the killers at the Aerrowyn gala, Sessions 11 and 12. Rune tablets, Widow's Kiss, Cassian's wards and the dais cage are written into these blocks.
+
+| Creature | CR |
+|---|---|
+| Consort Marksman | 2 |
+| Consort Knife | 4 |
+| Consort Hand | 6 |
+
 **Ungrouped** (`src/misc.json`) — nobility, tournament competitors, civilians.
 
 | Creature | CR |
@@ -113,6 +122,7 @@ Source name **Wilds of Ossë**, abbreviation **WoO**. Everything is filterable u
 | Denn Marrow | 0 |
 | Poor-Quarter Rioter | 1/8 |
 | Lord Cassian Aerrowyn | 5 |
+| Tournament Champion (generic, any house) | 5 |
 | Baroness Eclair Exquisite | 5 |
 | Marquis Corvane Aerrowyn | 7 |
 

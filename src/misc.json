@@ -641,6 +641,129 @@
 					"Clipped and competitive. Allergic to being fussed over. She fights clean, wins on points, and takes the ring seriously even when nobody else does."
 				]
 			}
+		},
+		{
+			"name": "Tournament Champion",
+			"source": "WildsOfOsse",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"rune-braced dress coat"
+					]
+				}
+			],
+			"hp": {
+				"average": 78,
+				"formula": "12d8 + 24"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 12,
+			"dex": 14,
+			"con": 14,
+			"int": 14,
+			"wis": 12,
+			"cha": 16,
+			"passive": 11,
+			"cr": "5",
+			"save": {
+				"con": "+5",
+				"cha": "+6"
+			},
+			"skill": {
+				"arcana": "+5",
+				"athletics": "+4",
+				"performance": "+6"
+			},
+			"languages": [
+				"Common",
+				"one other language"
+			],
+			"trait": [
+				{
+					"name": "House Style",
+					"entries": [
+						"Give the champion one signature from the actions and reactions marked with a house name, or invent one at the table."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The champion makes two Rune Bolt or Duelling Blade attacks."
+					]
+				},
+				{
+					"name": "Rune Bolt",
+					"entries": [
+						"{@atk rs} {@hit 6} to hit, range 120 ft., one target. {@h}12 ({@damage 2d8 + 3}) force damage."
+					]
+				},
+				{
+					"name": "Duelling Blade",
+					"entries": [
+						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d8 + 3}) piercing damage."
+					]
+				},
+				{
+					"name": "Moravel: Garrison Volley (Recharge 5-6)",
+					"entries": [
+						"Five darts of force, each hitting a creature of the champion's choice within 120 feet for 3 ({@damage 1d4 + 1}) force damage."
+					]
+				},
+				{
+					"name": "Vayne: Cleansing Flare (Recharge 5-6)",
+					"entries": [
+						"Green-gold light in a 20-foot radius. Chosen enemies make a {@dc 14} Constitution saving throw, taking 18 ({@damage 4d8}) radiant damage, or half on a success. Chosen allies stop being {@condition poisoned} (which ends Widow's Kiss) and regain 9 ({@dice 2d8}) hit points. Anyone who has seen Oss'kai lineage magic recognises the light."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Aldric: Mirror Mantle (1/Day)",
+					"entries": [
+						"Three illusory duplicates appear around the champion, as {@spell mirror image}."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Shield (2/Day)",
+					"entries": [
+						"When hit by an attack, the champion gains +5 AC until the start of its next turn, including against that attack."
+					]
+				},
+				{
+					"name": "Halvenne: Riposte",
+					"entries": [
+						"When a creature misses the champion with a melee attack, the champion makes one Duelling Blade attack against it."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"entries": [
+					"One block for every house's Royal Tournament champion at the Aerrowyn gala: young, gifted, and dressed for dinner. In gala dress, subtract 2 from AC.",
+					"For Cassian and Eclair, use their own blocks."
+				]
+			}
 		}
 	]
 }
