@@ -8,13 +8,13 @@
 				"authors": [
 					"Thomas Huet"
 				],
-				"version": "2.0.0",
+				"version": "2.1.0",
 				"dateAdded": 1789869156,
-				"dateLastModified": 1789921941
+				"dateLastModified": 1793546020
 			}
 		],
 		"dateAdded": 1789869156,
-		"dateLastModified": 1789921941
+		"dateLastModified": 1793546020
 	},
 	"monster": [
 		{
@@ -633,6 +633,394 @@
 				"entries": [
 					"Captain of the Arcane Marshals, appointed for life by the vassal houses, which is the whole of his power and the whole of his cage.",
 					"Flat, procedural, unhurried. He states facts and then waits. Under pressure he gets colder and more precise, and stops explaining himself entirely. He does not raise his voice and does not repeat himself."
+				]
+			}
+		},
+		{
+			"name": "Consort Knife",
+			"source": "WildsOfOsse",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"any race"
+				]
+			},
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 16,
+					"from": [
+						"studded leather under musician's livery"
+					]
+				}
+			],
+			"hp": {
+				"average": 52,
+				"formula": "8d8 + 16"
+			},
+			"speed": {
+				"walk": 35
+			},
+			"str": 11,
+			"dex": 18,
+			"con": 14,
+			"int": 12,
+			"wis": 13,
+			"cha": 12,
+			"passive": 11,
+			"cr": "4",
+			"group": [
+				"The Queen's Consort"
+			],
+			"save": {
+				"dex": "+6",
+				"int": "+3"
+			},
+			"skill": {
+				"acrobatics": "+6",
+				"performance": "+3",
+				"sleight of hand": "+6",
+				"stealth": "+8"
+			},
+			"languages": [
+				"Common",
+				"Thieves' cant"
+			],
+			"trait": [
+				{
+					"name": "Marked",
+					"entries": [
+						"Each Knife has one mark. It ignores everyone else unless they {@condition grappled||grapple} it, block its path, or stand over its fallen mark. Against its mark it scores a critical hit on a 19 or 20."
+					]
+				},
+				{
+					"name": "Assassinate",
+					"entries": [
+						"On its first turn the Knife has advantage against any creature that has not acted, and any hit against a {@condition surprised} creature is a critical hit."
+					]
+				},
+				{
+					"name": "Widow's Kiss",
+					"entries": [
+						"A creature reduced to 0 hit points by Widow's Kiss is {@b Kissed}: {@condition unconscious} and dying, and at the start of each of its turns it automatically fails one death saving throw instead of rolling. Healing wakes it as normal, but it stays {@condition poisoned} and takes 7 ({@damage 2d6}) poison damage at the start of each of its turns until cured. Cures: {@spell lesser restoration}, {@spell protection from poison}, any effect that ends the {@condition poisoned} condition, or antitoxin with a {@dc 15} Wisdom ({@skill Medicine}) check as an action. {@spell Spare the dying} or a {@dc 10} Wisdom ({@skill Medicine}) check pauses the count for one round only."
+					]
+				},
+				{
+					"name": "Leaves Clean",
+					"entries": [
+						"The Knife snaps its Passage tablet as soon as it can when its mark dies, when it drops to 26 hit points or fewer, or at the end of round 5."
+					]
+				},
+				{
+					"name": "Nothing to Give",
+					"entries": [
+						"It knows its mark, its signal, and its exit point. Checks to make it talk are made with disadvantage."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The Knife makes two Kissed Stiletto attacks."
+					]
+				},
+				{
+					"name": "Kissed Stiletto",
+					"entries": [
+						"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d4 + 4}) piercing damage plus 7 ({@damage 2d6}) poison damage. On a critical hit against its mark, the target makes a {@dc 16} Constitution saving throw. Failure: it drops to 0 hit points and is Kissed. Success: an extra 21 ({@damage 6d6}) poison damage and {@condition poisoned} for 1 minute."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Step Tablet (2/Day)",
+					"entries": [
+						"The Knife snaps a rune tablet and teleports up to 30 feet to an unoccupied space it can see. Snapping a tablet needs a free hand holding it. It cannot be done while {@condition grappled}, {@condition restrained}, or {@condition incapacitated}, or once the tablet has been taken away."
+					]
+				},
+				{
+					"name": "Passage Tablet (1/Day)",
+					"entries": [
+						"The Knife snaps a rune tablet and casts {@spell dimension door} on itself, to an exit point fixed beforehand. Snapping a tablet needs a free hand holding it. It cannot be done while {@condition grappled}, {@condition restrained}, or {@condition incapacitated}, or once the tablet has been taken away."
+					]
+				},
+				{
+					"name": "Cunning Action",
+					"entries": [
+						"The Knife takes the {@action Dash}, {@action Disengage}, or {@action Hide} action."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Uncanny Dodge",
+					"entries": [
+						"The Knife halves the damage of one attack that hits it, if it can see the attacker."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"entries": [
+					"Unbowed killers who slipped in among the hastily assembled gala musicians. One mark each, one exit cut into clay.",
+					"Captured tablets carry a rune shop's batch stamp on the iron band ({@dc 14} Intelligence ({@skill Investigation})). Each Knife has the Unbowed fist tattooed inside the forearm."
+				]
+			}
+		},
+		{
+			"name": "Consort Marksman",
+			"source": "WildsOfOsse",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"any race"
+				]
+			},
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"leather under musician's livery"
+					]
+				}
+			],
+			"hp": {
+				"average": 33,
+				"formula": "6d8 + 6"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 10,
+			"dex": 17,
+			"con": 12,
+			"int": 11,
+			"wis": 14,
+			"cha": 10,
+			"passive": 14,
+			"cr": "2",
+			"group": [
+				"The Queen's Consort"
+			],
+			"skill": {
+				"perception": "+4",
+				"stealth": "+5"
+			},
+			"languages": [
+				"Common",
+				"Thieves' cant"
+			],
+			"trait": [
+				{
+					"name": "Gallery Rail",
+					"entries": [
+						"At the gallery rail the marksman has half cover against attacks from the ballroom floor. Climbing up is a {@dc 13} Strength ({@skill Athletics}) check."
+					]
+				},
+				{
+					"name": "Leaves Clean",
+					"entries": [
+						"The marksman snaps its Passage tablet at the end of round 6, or as soon as it can after dropping to 16 hit points or fewer."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The marksman makes two hand crossbow attacks."
+					]
+				},
+				{
+					"name": "Hand Crossbow",
+					"entries": [
+						"{@atk rw} {@hit 5} to hit, range 30/120 ft., one target. {@h}6 ({@damage 1d6 + 3}) piercing damage, and the target must succeed on a {@dc 12} Constitution saving throw or be {@condition poisoned} until the end of its next turn. A target that fails while already poisoned this way falls {@condition unconscious} until the end of its next turn, or until it takes damage or is shaken awake."
+					]
+				},
+				{
+					"name": "Cage Rune (1/Day)",
+					"entries": [
+						"On the final word of the royal toast, the marksman speaks the key to a rune laid under the dais. A {@spell forcecage} (cage form, 20-foot cube) holds everyone on the dais for 10 rounds. Teleporting out takes a {@dc 15} Charisma saving throw. {@spell Dispel magic} does not end it. The same word seals the ballroom doors until the end of round 6."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Passage Tablet (1/Day)",
+					"entries": [
+						"The marksman snaps a rune tablet and casts {@spell dimension door} on itself, to an exit point fixed beforehand. Snapping a tablet needs a free hand holding it. It cannot be done while {@condition grappled}, {@condition restrained}, or {@condition incapacitated}, or once the tablet has been taken away."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Overwatch",
+					"entries": [
+						"When a creature it can see within 120 feet grapples a Knife, stands over a Knife's fallen mark, or starts climbing toward the gallery, the marksman makes one hand crossbow attack against it."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"entries": [
+					"The support from above. Two of them hold the musicians' gallery: Marshals first, then anyone who interferes with a Knife."
+				]
+			}
+		},
+		{
+			"name": "Consort Hand",
+			"source": "WildsOfOsse",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"any race"
+				]
+			},
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"rune-threaded studded leather"
+					]
+				}
+			],
+			"hp": {
+				"average": 91,
+				"formula": "14d8 + 28"
+			},
+			"speed": {
+				"walk": 35,
+				"climb": 20
+			},
+			"str": 14,
+			"dex": 19,
+			"con": 14,
+			"int": 14,
+			"wis": 14,
+			"cha": 10,
+			"passive": 15,
+			"cr": "6",
+			"group": [
+				"The Queen's Consort"
+			],
+			"save": {
+				"dex": "+7",
+				"int": "+5",
+				"wis": "+5"
+			},
+			"skill": {
+				"acrobatics": "+7",
+				"athletics": "+5",
+				"perception": "+5",
+				"stealth": "+10"
+			},
+			"resist": [
+				"poison"
+			],
+			"languages": [
+				"Common",
+				"Thieves' cant"
+			],
+			"trait": [
+				{
+					"name": "Cassian's Wards",
+					"entries": [
+						"Five shield runes guard Cassian's bed. While any remain, the Hand cannot come within 10 feet of the bed or target Cassian. Each ward that breaks rings like a bell through the whole manor. A creature beside a rune can use its action to shore it up with a {@dc 14} Intelligence ({@skill Arcana}) check ({@dc 10} if it slots in a blank rune tablet), restoring one ward to a maximum of five."
+					]
+				},
+				{
+					"name": "Patient Killer",
+					"entries": [
+						"The Hand's mark is Lord Cassian Aerrowyn, and it scores a critical hit against him on a 19 or 20. It fights anyone who gets between them. It snaps its Passage tablet as soon as it can once Cassian is dead or it drops to 45 hit points or fewer."
+					]
+				},
+				{
+					"name": "Widow's Kiss",
+					"entries": [
+						"A creature reduced to 0 hit points by Widow's Kiss is {@b Kissed}: {@condition unconscious} and dying, and at the start of each of its turns it automatically fails one death saving throw instead of rolling. Healing wakes it as normal, but it stays {@condition poisoned} and takes 7 ({@damage 2d6}) poison damage at the start of each of its turns until cured. Cures: {@spell lesser restoration}, {@spell protection from poison}, any effect that ends the {@condition poisoned} condition, or antitoxin with a {@dc 15} Wisdom ({@skill Medicine}) check as an action. {@spell Spare the dying} or a {@dc 10} Wisdom ({@skill Medicine}) check pauses the count for one round only."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The Hand makes two Kissed Blade attacks."
+					]
+				},
+				{
+					"name": "Kissed Blade",
+					"entries": [
+						"{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d6 + 4}) piercing damage plus 7 ({@damage 2d6}) poison damage. On a critical hit against Cassian, he makes a {@dc 16} Constitution saving throw. Failure: he drops to 0 hit points and is Kissed. Success: an extra 21 ({@damage 6d6}) poison damage and {@condition poisoned} for 1 minute."
+					]
+				},
+				{
+					"name": "Unmaking Spike",
+					"entries": [
+						"The Hand drives a counter-rune spike into a ward. One ward breaks. This takes its whole action."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Step Tablet (2/Day)",
+					"entries": [
+						"The Hand snaps a rune tablet and teleports up to 30 feet to an unoccupied space it can see. Snapping a tablet needs a free hand holding it. It cannot be done while {@condition grappled}, {@condition restrained}, or {@condition incapacitated}, or once the tablet has been taken away."
+					]
+				},
+				{
+					"name": "Passage Tablet (1/Day)",
+					"entries": [
+						"The Hand snaps a rune tablet and casts {@spell dimension door} on itself, to an exit point fixed beforehand. Snapping a tablet needs a free hand holding it. It cannot be done while {@condition grappled}, {@condition restrained}, or {@condition incapacitated}, or once the tablet has been taken away."
+					]
+				},
+				{
+					"name": "Cunning Action",
+					"entries": [
+						"The Hand takes the {@action Dash}, {@action Disengage}, or {@action Hide} action."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Uncanny Dodge",
+					"entries": [
+						"The Hand halves the damage of one attack that hits it, if it can see the attacker."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"entries": [
+					"The killer the Queen paid for. A professional sourced through the Unbowed, with no tattoo, who came in over the roof while the toast was still being given.",
+					"One ward a round, then Cassian. It trusts the count."
 				]
 			}
 		},
@@ -1275,6 +1663,129 @@
 				"entries": [
 					"A competitor from across the sea, in the Royal Tournament on her own merits and tired of being treated as a novelty.",
 					"Clipped and competitive. Allergic to being fussed over. She fights clean, wins on points, and takes the ring seriously even when nobody else does."
+				]
+			}
+		},
+		{
+			"name": "Tournament Champion",
+			"source": "WildsOfOsse",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"rune-braced dress coat"
+					]
+				}
+			],
+			"hp": {
+				"average": 78,
+				"formula": "12d8 + 24"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 12,
+			"dex": 14,
+			"con": 14,
+			"int": 14,
+			"wis": 12,
+			"cha": 16,
+			"passive": 11,
+			"cr": "5",
+			"save": {
+				"con": "+5",
+				"cha": "+6"
+			},
+			"skill": {
+				"arcana": "+5",
+				"athletics": "+4",
+				"performance": "+6"
+			},
+			"languages": [
+				"Common",
+				"one other language"
+			],
+			"trait": [
+				{
+					"name": "House Style",
+					"entries": [
+						"Give the champion one signature from the actions and reactions marked with a house name, or invent one at the table."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The champion makes two Rune Bolt or Duelling Blade attacks."
+					]
+				},
+				{
+					"name": "Rune Bolt",
+					"entries": [
+						"{@atk rs} {@hit 6} to hit, range 120 ft., one target. {@h}12 ({@damage 2d8 + 3}) force damage."
+					]
+				},
+				{
+					"name": "Duelling Blade",
+					"entries": [
+						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d8 + 3}) piercing damage."
+					]
+				},
+				{
+					"name": "Moravel: Garrison Volley (Recharge 5-6)",
+					"entries": [
+						"Five darts of force, each hitting a creature of the champion's choice within 120 feet for 3 ({@damage 1d4 + 1}) force damage."
+					]
+				},
+				{
+					"name": "Vayne: Cleansing Flare (Recharge 5-6)",
+					"entries": [
+						"Green-gold light in a 20-foot radius. Chosen enemies make a {@dc 14} Constitution saving throw, taking 18 ({@damage 4d8}) radiant damage, or half on a success. Chosen allies stop being {@condition poisoned} (which ends Widow's Kiss) and regain 9 ({@dice 2d8}) hit points. Anyone who has seen Oss'kai lineage magic recognises the light."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Aldric: Mirror Mantle (1/Day)",
+					"entries": [
+						"Three illusory duplicates appear around the champion, as {@spell mirror image}."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Shield (2/Day)",
+					"entries": [
+						"When hit by an attack, the champion gains +5 AC until the start of its next turn, including against that attack."
+					]
+				},
+				{
+					"name": "Halvenne: Riposte",
+					"entries": [
+						"When a creature misses the champion with a melee attack, the champion makes one Duelling Blade attack against it."
+					]
+				}
+			],
+			"environment": [
+				"urban"
+			],
+			"fluff": {
+				"entries": [
+					"One block for every house's Royal Tournament champion at the Aerrowyn gala: young, gifted, and dressed for dinner. In gala dress, subtract 2 from AC.",
+					"For Cassian and Eclair, use their own blocks."
 				]
 			}
 		},
