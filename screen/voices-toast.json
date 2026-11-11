@@ -1,0 +1,134 @@
+{
+  "title": "The Toast",
+  "groups": [
+    {"name": "The Dais", "chars": [
+      {"name": "Corvane", "cue": "Gravelly, deliberate. Serious to roaring in three seconds.", "beats": [
+        {"beat": "Belaskro", "lines": ["BELASKRO. MY SON.", "Nephew. The stairs. NOW.", "You are blood. Act like it."]},
+        {"beat": "Each bell", "lines": ["Five.", "Four.", "Three.", "Two.", "One."]},
+        {"beat": "Champion falls", "lines": ["Someone stand over that child!", "On your feet, girl. Not in my house."]},
+        {"beat": "To the Queen", "lines": ["Your toast, Majesty.", "You're very calm.", "If he dies, Majesty, we will talk. At length."]},
+        {"beat": "Frustration", "lines": ["OPEN.", "I built this house to keep knives out."]},
+        {"beat": "After", "lines": ["I gave no such order.", "Now get out of my house."]}
+      ]},
+      {"name": "Queen Sabine", "cue": "British, graceful. More gracious the worse it gets.", "beats": [
+        {"beat": "The toast", "lines": ["Alive. I'll want to know who sent him."]},
+        {"beat": "To Corvane", "lines": ["It's a shield rune, Marquis. It was meant to keep us safe.", "Do stop striking it. You'll only tire.", "We are both of us parents tonight, Marquis."]},
+        {"beat": "Shaken", "lines": ["How many of them were there?", "(says nothing, glass still in hand)"]},
+        {"beat": "To a PC", "lines": ["Whoever you are, the Crown is in your debt. Hurry."]},
+        {"beat": "After", "lines": ["I gave that toast. I will not let anyone pretend it was mine.", "The Marshals will have everything I can give them."]}
+      ]},
+      {"name": "The page", "cue": "Young, shaking, exalted. Unbowed.", "beats": [
+        {"beat": "The toast", "lines": ["UNBOWED!", "Kneel on me all you like."]},
+        {"beat": "Watching", "lines": ["Look at them run. Look at them.", "No houses. No crowns."]},
+        {"beat": "Questioned", "lines": ["You'll get my name and nothing else."]}
+      ]}
+    ]},
+    {"name": "Champions", "chars": [
+      {"name": "Éclair", "cue": "Clipped, competitive. Allergic to being fussed over.", "beats": [
+        {"beat": "Combat", "lines": ["Point.", "You're telegraphing.", "Again. Slower, so I can enjoy it."]},
+        {"beat": "Hurt", "lines": ["It's a scratch. Don't fuss.", "I said don't fuss. Get the knife."]},
+        {"beat": "To Timbit", "lines": ["Princess. Of course it's you.", "If you tell my father I needed help, I'll deny it."]},
+        {"beat": "Saved", "lines": ["Thank you. That will be the only time I say it."]},
+        {"beat": "Dying", "lines": ["Tell them I was ahead on points."]}
+      ]},
+      {"name": "Garrick", "cue": "Laconic, dry, blunt. Moravel soldier.", "beats": [
+        {"beat": "Combat", "lines": ["Two winters on the wall. You learn to count exits.", "Left hand's the bad one. You picked wrong."]},
+        {"beat": "Hurt", "lines": ["I've seen worse. I've buried worse."]},
+        {"beat": "Cassian", "lines": ["Cassian's an idiot. He's also the best I've fought. Go get him."]},
+        {"beat": "To a PC", "lines": ["Don't watch me. Watch the gallery."]},
+        {"beat": "Saved", "lines": ["Owe you one. I pay."]},
+        {"beat": "Dying", "lines": ["The border. Tell them. Somebody listen."]}
+      ]},
+      {"name": "Noémie", "cue": "Québécoise. Loud, joyful, swears in church words.", "beats": [
+        {"beat": "Combat", "lines": ["Tabarnak! Pas à soir, mon chum!", "Tu veux danser? On va danser!"]},
+        {"beat": "Hurt", "lines": ["Câlisse, ça fait mal!", "Mon père, bénis-moi. J'vas en avoir besoin."]},
+        {"beat": "The flare", "lines": ["Vive la Varenthal!", "Ferme tes yeux!"]},
+        {"beat": "To Belaskro", "lines": ["Hé, le chasseur! Just like the frontier, non?"]},
+        {"beat": "Saved", "lines": ["Ostie. I owe you a shot. Ten shots."]},
+        {"beat": "Dying", "lines": ["J'voulais juste danser."]}
+      ]},
+      {"name": "Aurelian", "cue": "Courtly, a beat too eager. Turns his ring when nervous.", "beats": [
+        {"beat": "Combat", "lines": ["One is not, in fact, decorative!", "I trained for this. I did. I did."]},
+        {"beat": "Hurt", "lines": ["Oh. That is rather a lot of blood."]},
+        {"beat": "The Queen", "lines": ["My aunt is on that dais. Somebody help my aunt."]},
+        {"beat": "To a PC", "lines": ["Tell me what to do. Please.", "Is it disloyal to want to live through this?"]},
+        {"beat": "Saved", "lines": ["You came for me. Nobody comes for me."]},
+        {"beat": "Dying", "lines": ["Was I a real contender?"]}
+      ]},
+      {"name": "Rowan", "cue": "Smooth and vain. Always aware of who is watching.", "beats": [
+        {"beat": "Combat", "lines": ["Not the face.", "Is everyone seeing this? Good."]},
+        {"beat": "Hurt", "lines": ["That was a new coat."]},
+        {"beat": "His sister", "lines": ["Odile! Behind me. No, behind me.", "Odile, don't look."]},
+        {"beat": "To a PC", "lines": ["A blade, if you please. I'm wasted unarmed."]},
+        {"beat": "Saved", "lines": ["We shall say I had it handled. Agreed?"]},
+        {"beat": "Dying", "lines": ["Tell them I was magnificent."]}
+      ]},
+      {"name": "Cassian", "cue": "Arrogant, performative, nineteen. Upstairs, behind the wards.", "beats": [
+        {"beat": "Each bell", "lines": ["FATHER! Someone's on the roof!", "Is that all you've got?", "He's not angry. He's just counting.", "…Father?", "(silence)"]},
+        {"beat": "A PC arrives", "lines": ["About time. Hit him and I'll set him on fire.", "Cousin. You dress badly and you arrive late."]},
+        {"beat": "Combat", "lines": ["Is that all you've got?", "The crowd would have loved that one."]},
+        {"beat": "Hurt", "lines": ["I've had worse from Garrick."]},
+        {"beat": "Saved", "lines": ["Don't tell him I called for him."]}
+      ]}
+    ]},
+    {"name": "Marshals", "chars": [
+      {"name": "Wrent", "cue": "Rough, raspy, low. Runs at the fire, plans later.", "beats": [
+        {"beat": "Round 1", "lines": ["The ones by you, Gus! I've got this one!"]},
+        {"beat": "Combat", "lines": ["You want them, you come through me.", "Marshals! On me!"]},
+        {"beat": "To Gus", "lines": ["Don't look at me. Look at them. That's an order.", "Good work, Gus. Keep going."]},
+        {"beat": "Hurt", "lines": ["I'm fine. I've been stabbed by better."]},
+        {"beat": "Saved", "lines": ["Should've made a plan first. You'd have told me that."]},
+        {"beat": "Dying", "lines": ["I know in my heart what's right. I chose it.", "Gus. You were never equipment."]}
+      ]},
+      {"name": "Marshals arriving", "cue": "Round 6, at the garden doors.", "beats": [
+        {"beat": "Entering", "lines": ["Arcane Marshals! Everyone down!", "Gallery's clear!"]},
+        {"beat": "Wrent", "lines": ["Lieutenant's down! Healer!"]}
+      ]},
+      {"name": "In Gus's head", "cue": "Flat, mechanical. Marshal Intelligence.", "beats": [
+        {"beat": "Wrent dies", "lines": ["Handler signal lost. Annex C unsealed."]},
+        {"beat": "Grief", "lines": ["Unclassified sensation detected. Note the time. Continue."]}
+      ]}
+    ]},
+    {"name": "Killers", "chars": [
+      {"name": "A Knife", "cue": "Flat, professional. One mark, nothing personal.", "beats": [
+        {"beat": "To a PC", "lines": ["Let go. You're not the one I'm here for.", "Step aside. This isn't yours."]},
+        {"beat": "Grappled", "lines": ["Hand. Off. Now."]},
+        {"beat": "Captured", "lines": ["My mark. My signal. My exit. That's all there is."]}
+      ]},
+      {"name": "The Hand", "cue": "Patient, unhurried. Trusts the count.", "beats": [
+        {"beat": "At the wards", "lines": ["Four left, my lord. No hurry."]},
+        {"beat": "A PC arrives", "lines": ["You're not on the contract. Leave and I'll forget you.", "Ah. Finally, some work."]},
+        {"beat": "Hurt", "lines": ["Noted."]},
+        {"beat": "Leaving", "lines": ["Another night, then."]}
+      ]},
+      {"name": "A marksman", "cue": "Sharp, from the loggia rail.", "beats": [
+        {"beat": "Overwatch", "lines": ["Clear of him, or you're next!", "Off the mark!"]},
+        {"beat": "Leaving", "lines": ["Tablets. Go."]}
+      ]}
+    ]},
+    {"name": "Guests", "chars": [
+      {"name": "Honey Cruller", "cue": "Unhurried, immaculately polite. The knife lands in the second half.", "beats": [
+        {"beat": "Éclair in danger", "lines": ["My daughter is on that floor, and you are standing here.", "We are guests. Guests, it seems, are stabbed."]},
+        {"beat": "To Timbit", "lines": ["Niece. Bring her back, and Meow will remember it."]},
+        {"beat": "After: she lived", "lines": ["Meow remembers a courtesy. I shall remember this one personally."]},
+        {"beat": "After: she died", "lines": ["I will have a name. I am very patient."]}
+      ]},
+      {"name": "Tasmin Dreveth", "cue": "In her chair. Spared, and knows it.", "beats": [
+        {"beat": "Realising", "lines": ["Why not me? Why did they walk past me?"]},
+        {"beat": "Panic", "lines": ["I can't get up. Somebody, I can't get up."]},
+        {"beat": "To Timbit", "lines": ["Go! I'm the only safe one here!"]}
+      ]},
+      {"name": "Lady Odile", "cue": "Rowan's sister. Composed until tonight.", "beats": [
+        {"beat": "Rowan", "lines": ["Rowan! ROWAN!", "He's an idiot but he's my idiot. Please!"]}
+      ]},
+      {"name": "The crowd", "cue": "A hundred and fifty voices.", "beats": [
+        {"beat": "Panic", "lines": ["The doors! Get to the doors!", "My daughter's in there!"]},
+        {"beat": "Suspicion", "lines": ["Who hired the band?", "The Queen's toast. They waited for the Queen's toast."]}
+      ]},
+      {"name": "Captain Dunmore", "cue": "House guard captain. Pale. After the fight.", "beats": [
+        {"beat": "The order", "lines": ["Your seal, my lord. Guards to the gates, so the Dreveth party wouldn't feel watched.", "Under-Steward Grey handed it to me himself."]},
+        {"beat": "Pleading", "lines": ["It was in your hand, my lord. I'd swear to it."]}
+      ]}
+    ]}
+  ]
+}
