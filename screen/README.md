@@ -10,7 +10,9 @@ They need GitHub Pages turned on for this repository (Settings, Pages, deploy fr
 | Knives' turn | https://alcubierrewarp.github.io/Wilds-of-Osse/screen/knives.html |
 | Crowd die | https://alcubierrewarp.github.io/Wilds-of-Osse/screen/crowd.html |
 | Voices | https://alcubierrewarp.github.io/Wilds-of-Osse/screen/voices.html |
-| All five in one | https://alcubierrewarp.github.io/Wilds-of-Osse/screen/all.html |
+| Stat blocks | https://alcubierrewarp.github.io/Wilds-of-Osse/screen/statblocks.html |
+| All six in one | https://alcubierrewarp.github.io/Wilds-of-Osse/screen/all.html |
 
 The clock, champions, knives and crowd panels share one fight state in the browser and stay in sync.
 Voices reads `voices-toast.json` by default; add `?data=<address of another JSON file>` to reuse it for a different scene.
+Stat blocks reads `stats-toast.json` by default; add `?stats=<address of another JSON file>` to reuse it. These blocks reflect the Session 12 table rules (player-rolled defense, static damage), not the raw homebrew entries.

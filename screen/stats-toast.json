@@ -1,0 +1,202 @@
+{
+  "title": "The Toast",
+  "groups": [
+    {"name": "Killers", "chars": [
+      {"name": "Consort Knife", "cue": "×5 · CR 4 · Unbowed killer in musician's livery. One mark each.",
+       "nums": [["AC", "16"], ["HP", "52"], ["Leaves at", "26"], ["Def DC", "18"], ["Speed", "35"]],
+       "tabs": [
+        {"tab": "Attack", "items": [
+          "**Two Kissed Stilettos.**",
+          "**Against its mark:** one defense roll a round, d20 + the champion's Def vs **DC 18**. A fail moves them one step right.",
+          "**Against a PC:** two defense rolls vs **DC 18**. **13** each on a fail (6 piercing + 7 poison).",
+          "**A PC dropped to 0** is Kissed: auto-fails a death save each turn, and takes 7 poison a turn after waking until cured."]},
+        {"tab": "Behaviour", "items": [
+          "**Marked.** Ignores PCs unless they grapple it, block its path, or stand over its fallen mark.",
+          "**Strikes last** each round, initiative 1.",
+          "**Uncanny Dodge.** Halves one hit a round.",
+          "**Cunning Action.** Dash, Disengage or Hide as a bonus action.",
+          "**Step Tablet (2/day, bonus).** Teleports 30 ft. Needs a free hand.",
+          "**Swallowed (crowd 5).** Its next strike: defense roll at disadvantage."]},
+        {"tab": "Pin it", "items": [
+          "**Grapple:** Athletics or Acrobatics **DC 16**. A grappled Knife can't snap a tablet. Triggers marksman Overwatch.",
+          "**Snatch the tablet (action):** Sleight of Hand **DC 16**. Belaskro's whip can try from 10 ft.",
+          "**Shoulder to shoulder:** attacks against it have advantage while its mark is on their feet."]},
+        {"tab": "Leaves", "items": [
+          "Snaps its **Passage Tablet** (dimension door to a fixed exit) when its mark dies, at **26 HP**, or at the **end of round 5**.",
+          "Can't leave while grappled, restrained, or once the tablet is taken."]},
+        {"tab": "Captured", "items": [
+          "**Intimidation DC 16, with disadvantage.** It knows its mark, the signal and its exit point. Nothing more.",
+          "Unbowed fist tattoo inside the forearm.",
+          "Tablet iron band, **Investigation DC 14:** a rune shop's batch stamp."]},
+        {"tab": "Numbers", "items": [
+          "Str +0 · Dex +4 · Con +2 · Int +1 · Wis +1 · Cha +1",
+          "**Saves:** Dex +6, Int +3",
+          "**Skills:** Acrobatics +6, Sleight of Hand +6, Stealth +8, Performance +3",
+          "Passive Perception 11"]}
+       ]},
+      {"name": "Consort Marksman", "cue": "×2 · CR 2 · At the loggia rail above the dais.",
+       "nums": [["AC", "14"], ["HP", "33"], ["Leaves at", "16"], ["Def DC", "17"], ["Range", "80 ft"]],
+       "tabs": [
+        {"tab": "Attack", "items": [
+          "**Two light crossbow bolts** at the most exposed PC. Initiative 10.",
+          "Two defense rolls vs **DC 17**. **6** each on a fail.",
+          "Each hit: **DC 12 Con** save or poisoned until the end of their next turn. Fail again while poisoned: unconscious until the end of their next turn, or until damaged or shaken awake.",
+          "**In the crowd:** +2 to the defense roll (half cover)."]},
+        {"tab": "Overwatch", "items": [
+          "**Reaction:** one bolt at anyone who grapples a Knife, stands over a Knife's fallen mark, or climbs toward the loggia.",
+          "**Exposed** means any of those, on the grand stair, flying, or outside the crowd.",
+          "**Wall of Silk (crowd 4):** no shots this round."]},
+        {"tab": "Reach them", "items": [
+          "The loggia is an upper hallway above and behind the dais, open to the courtyard.",
+          "**At the rail:** half cover against attacks from the floor (treat as AC 16).",
+          "**Up:** a small stair at each end, or climb with Athletics **DC 13**."]},
+        {"tab": "Leaves", "items": [
+          "Snaps its **Passage Tablet** at **16 HP** or at the **end of round 6**.",
+          "Can't leave while grappled, restrained, or once the tablet is taken.",
+          "Unbowed fist tattoo, same as the Knives."]},
+        {"tab": "Numbers", "items": [
+          "Str +0 · Dex +3 · Con +1 · Int +0 · Wis +2 · Cha +0",
+          "**Skills:** Perception +4, Stealth +5",
+          "Passive Perception 14 · Speed 30"]}
+       ]},
+      {"name": "The Hand", "cue": "CR 6 · The professional. Upstairs, at Cassian's wards. No tattoo.",
+       "nums": [["AC", "17"], ["HP", "91"], ["Leaves at", "45"], ["Def DC", "19"], ["Speed", "35"]],
+       "tabs": [
+        {"tab": "The wards", "items": [
+          "**Six wards** ring Cassian's bed. It breaks **one at the end of every round**. The last goes at the end of round 6.",
+          "While any ward stands it cannot come within 10 ft of the bed or target Cassian.",
+          "**A PC enters the room:** it stops breaking wards and fights them. The clock stops.",
+          "**Shore up a ward (action):** Arcana **DC 14**, or **DC 10** with a blank rune tablet. Max 6."]},
+        {"tab": "Attack", "items": [
+          "**Two Kissed Blades.** Two defense rolls vs **DC 19**. **14** each on a fail (7 piercing + 7 poison).",
+          "**A PC dropped to 0** is Kissed, as with the Knives.",
+          "**Cassian fights beside the PC:** PC attacks against the Hand have advantage, and the Hand takes **14 fire** a round. No roll."]},
+        {"tab": "Tricks", "items": [
+          "**Uncanny Dodge.** Halves one hit a round.",
+          "**Cunning Action.** Dash, Disengage or Hide as a bonus action.",
+          "**Step Tablet (2/day, bonus).** Teleports 30 ft.",
+          "**Resists poison.** Climb 20."]},
+        {"tab": "Leaves", "items": [
+          "Snaps its **Passage Tablet** at **45 HP**, or once Cassian is dead.",
+          "If nobody comes: Cassian is Kissed at the end of round 6 and dead at the end of round 7."]},
+        {"tab": "Numbers", "items": [
+          "Str +2 · Dex +4 · Con +2 · Int +2 · Wis +2 · Cha +0",
+          "**Saves:** Dex +7, Int +5, Wis +5",
+          "**Skills:** Acrobatics +7, Athletics +5, Perception +5, Stealth +10",
+          "Passive Perception 15"]}
+       ]}
+    ]},
+    {"name": "Champions", "chars": [
+      {"name": "Éclair", "cue": "House Puss · catfolk duellist · the only champion with a blade.",
+       "nums": [["Def", "+5"], ["Con", "+3"], ["Shield", "none"], ["AC tonight", "15"]],
+       "tabs": [
+        {"tab": "Tonight", "items": [
+          "**Track:** Steady → Bleeding → Kissed (3 pips) → Dead.",
+          "**Riposte:** every successful defense, her Knife takes **9**.",
+          "No Shield spell. Her player rolls d20 + 5 vs DC 18.",
+          "**Natural 20:** she counters and the Knife is prone."]},
+        {"tab": "If she fights", "items": [
+          "HP 90 · Speed 40, climb 20 · difficult terrain costs her nothing.",
+          "**Dress rapier ×3:** +8, 9 piercing each.",
+          "**Exhibition Flourish (recharge 5–6):** one rapier attack with advantage, +14 damage, DC 16 Con or stunned.",
+          "Saves: Dex +8, Cha +6. Acrobatics +11."]}
+       ]},
+      {"name": "Garrick", "cue": "House Moravel · two winters on the northern wall.",
+       "nums": [["Def", "+3"], ["Con", "+5"], ["Shield", "2"], ["AC tonight", "13"]],
+       "tabs": [
+        {"tab": "Tonight", "items": [
+          "**Track:** Steady → Bleeding → Kissed (3 pips) → Dead.",
+          "**Garrison Volley (recharge 5–6):** his player rolls a d6 at the top of the round. On 5–6 one Knife takes **15**.",
+          "**Shield (2):** +5 after a failed defense roll.",
+          "Gala dress: unarmed, AC already reduced by 2."]},
+        {"tab": "If he fights", "items": ["HP 78 · Speed 30.", "**Rune Bolt ×2:** +6, range 120 ft, 12 force each.", "Saves: Con +5, Cha +6. Arcana +5."]}
+       ]},
+      {"name": "Noémie", "cue": "House Vayne · Oss'kai lineage light, passed off as sorcery.",
+       "nums": [["Def", "+3"], ["Con", "+5"], ["Shield", "2"], ["AC tonight", "13"]],
+       "tabs": [
+        {"tab": "Tonight", "items": [
+          "**Track:** Steady → Bleeding → Kissed (3 pips) → Dead.",
+          "**Cleansing Flare (recharge 5–6):** her player rolls a d6 at the top of the round. On 5–6, 20-ft radius: every champion in it is cured and wakes (Steady), and each Knife in it takes **18 radiant**.",
+          "The whole court sees green-gold light. Don't explain it.",
+          "**Shield (2):** +5 after a failed defense roll."]},
+        {"tab": "If she fights", "items": ["HP 78 · Speed 30.", "**Rune Bolt ×2:** +6, range 120 ft, 12 force each.", "Saves: Con +5, Cha +6. Arcana +5."]}
+       ]},
+      {"name": "Aurelian", "cue": "House Aldric · the Queen's nephew.",
+       "nums": [["Def", "+3"], ["Con", "+5"], ["Shield", "2"], ["AC tonight", "13"]],
+       "tabs": [
+        {"tab": "Tonight", "items": [
+          "**Track:** Steady → Bleeding → Kissed (3 pips) → Dead.",
+          "**Mirror Mantle:** ignore his first failed defense.",
+          "**Shield (2):** +5 after a failed defense roll.",
+          "Gala dress: unarmed, AC already reduced by 2."]},
+        {"tab": "If he fights", "items": ["HP 78 · Speed 30.", "**Rune Bolt ×2:** +6, range 120 ft, 12 force each.", "Saves: Con +5, Cha +6. Arcana +5."]}
+       ]},
+      {"name": "Rowan", "cue": "House Halvenne · Lady Odile's brother. Seated nearest the party.",
+       "nums": [["Def", "+3"], ["Con", "+5"], ["Shield", "2"], ["AC tonight", "13"]],
+       "tabs": [
+        {"tab": "Tonight", "items": [
+          "**Track:** Steady → Bleeding → Kissed (3 pips) → Dead.",
+          "**Riposte:** once a PC hands him a blade, every successful defense deals his Knife **9**.",
+          "**Shield (2):** +5 after a failed defense roll.",
+          "Gala dress: unarmed, AC already reduced by 2."]},
+        {"tab": "If he fights", "items": ["HP 78 · Speed 30.", "**Rune Bolt ×2:** +6, range 120 ft, 12 force each.", "**Duelling Blade** (if armed): +5, 7 piercing.", "Saves: Con +5, Cha +6."]}
+       ]},
+      {"name": "Cassian", "cue": "Injured, in bed, behind six wards. No audience, so no Crowd Favourite.",
+       "nums": [["AC", "15"], ["HP", "30"], ["Def", "+5"], ["Con", "+2"]],
+       "tabs": [
+        {"tab": "Tonight", "items": [
+          "Safe while any ward stands.",
+          "**Last ward gone (end of round 6):** Kissed. **End of round 7:** dead unless a PC is in the room.",
+          "Cures and waking work on him as on the champions."]},
+        {"tab": "Beside a PC", "items": [
+          "PC attacks against the Hand have **advantage**.",
+          "He deals the Hand **14 fire** each round. No roll.",
+          "**Is That All You've Got (reaction):** reduces one hit on him by 5."]}
+       ]}
+    ]},
+    {"name": "Allies", "chars": [
+      {"name": "Wrent", "cue": "Marshal Lieutenant in dress uniform. Gus's player rolls for him.",
+       "nums": [["Def", "+4"], ["AC tonight", "14"], ["Starts", "Bleeding"]],
+       "tabs": [
+        {"tab": "Tonight", "items": [
+          "Hit in the opening volley: **starts Bleeding**.",
+          "**Top of round 1:** dives over a Kissed champion, two crowd boxes from Gus.",
+          "The Knife must go through him: d20 + 4 vs **DC 18**. He uses the champion track.",
+          "Gus can wake him and stand over him. **Only Gabriele or Timbit can cure him.**",
+          "**If he dies:** hand Shane the Annex C handout."]}
+       ]},
+      {"name": "Marshals", "cue": "Constable-Adepts. Push in past the crowd in round 6.",
+       "nums": [["AC", "15"], ["HP", "32"]],
+       "tabs": [
+        {"tab": "Tonight", "items": [
+          "Those inside the hall were dropped by the marksmen before initiative.",
+          "**Round 6:** reinforcements reach the floor through the garden doors.",
+          "By then the Knives are gone. They secure the room and call for healers."]}
+       ]},
+      {"name": "Corvane", "cue": "Trapped in the dome with the Queen until round 10.",
+       "nums": [["AC", "18"], ["HP", "138"], ["Attack", "+8"]],
+       "tabs": [
+        {"tab": "Tonight", "items": [
+          "The shield-rune dome holds him for **10 rounds**. Nothing passes in or out.",
+          "**Round 10:** the dome falls and he runs for the stairs.",
+          "**Insight DC 14 on the Queen beside him:** shaken for real; she looks to the stairs first."]},
+        {"tab": "If he fights", "items": [
+          "**Nothing Left to Lose:** while Cassian is in danger and in sight, advantage on attacks and resistance to all damage.",
+          "**Crested Warhammer ×3:** +8, 13 bludgeoning, DC 16 Str or pushed 5 ft.",
+          "**A Word to the Wise (recharge 5–6):** DC 15 Wis or frightened for 1 minute.",
+          "Cannot be surprised. Saves: Str +8, Con +8, Wis +6.",
+          "AC 18 assumes his half plate and shield. Your call what he wears at his own gala."]}
+       ]}
+    ]},
+    {"name": "The Party", "chars": [
+      {"name": "Belaskro", "cue": "Ranger 4", "nums": [["AC", "15"], ["Def", "+5"], ["HP", "32"]],
+       "tabs": [{"tab": "Levers", "items": ["Cure Wounds (wakes, does not cure).", "**Three blank rune tablets:** shore up a ward at DC 10.", "**Whip:** snatch a Knife's tablet from 10 ft, Sleight of Hand +4 vs DC 16.", "Arcana +0 · Medicine +2 · Athletics +3 · Acrobatics +4"]}]},
+      {"name": "Gabriele", "cue": "Cleric 4 (Life)", "nums": [["AC", "15"], ["Def", "+5"], ["HP", "27"]],
+       "tabs": [{"tab": "Levers", "items": ["**Cures:** Lesser Restoration, Protection from Poison.", "**Wakes:** Healing Word (60 ft), Cure Wounds, a healing potion.", "**Preserve Life:** wakes every Kissed champion within 30 ft.", "Arcana +7 · Medicine +3"]}]},
+      {"name": "Gus", "cue": "Artificer 4 (Battle Smith)", "nums": [["AC", "18"], ["Def", "+8"], ["HP", "23"]],
+       "tabs": [{"tab": "Levers", "items": ["Cure Wounds (wakes, does not cure).", "**Steel defender** can stand over a champion as Protect.", "**Thieves' tools** for Cassian's door, DC 15.", "Arcana +5 for the wards · Medicine +1"]}]},
+      {"name": "Timbit", "cue": "Druid 4 (Wildfire)", "nums": [["AC", "11"], ["Def", "+1"], ["HP", "23"]],
+       "tabs": [{"tab": "Levers", "items": ["**Cures:** Lesser Restoration (bonus action), Protection from Poison.", "**Wakes:** Healing Word, Cure Wounds.", "**Spare the Dying:** holds the count for a round.", "Needs a 17 to avoid a Knife. Arcana +5 · Medicine +1"]}]}
+    ]}
+  ]
+}

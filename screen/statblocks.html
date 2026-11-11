@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Statblocks · The Toast</title>
+<style>
+:root{--bg:#14110f;--tile:#211b18;--line:#3b312a;--ink:#f3ebdc;--soft:#a99c8a;--gold:#e2be6a;--wine:#8f2735;
+--steady:#3f7d4b;--bleed:#c98a2b;--kissed:#8d4f9e;--dead:#0c0a09;--ward:#7fc4d8}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow:hidden}
+#app{height:100%}
+.tool{container-type:size;height:100%;width:100%;padding:2.5cqmin;display:flex;flex-direction:column;gap:2cqmin;overflow:hidden}
+.lab{font:700 clamp(9px,3.2cqmin,15px)/1 Georgia,serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+button{font:inherit;color:var(--ink);background:#33291f;border:1px solid var(--line);border-radius:1.6cqmin;cursor:pointer;padding:1.5cqmin 2.5cqmin;font-size:clamp(11px,4cqmin,20px);font-weight:700}
+button:active{transform:scale(.97)}
+button.pri{background:var(--wine);border-color:#c2485a}
+button.go{background:#2f5d3a;border-color:#4d8f5c}
+button.quiet{background:none;color:var(--soft);font-weight:500;font-size:clamp(10px,3cqmin,14px)}
+button.on{background:var(--gold);color:#1a130c;border-color:var(--gold)}
+.grow{flex:1;min-height:0}
+.row{display:flex;gap:2cqmin;align-items:center}
+.center{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+
+/* dashboard */
+.dash{display:grid;height:100%;gap:6px;padding:6px;grid-template-columns:1fr 1fr 1fr 1.1fr;grid-template-rows:1fr 1.15fr;grid-template-areas:"clock knives crowd stats" "board board voice stats"}
+.dash>div{background:#1a1613;border:1px solid var(--line);border-radius:8px;min-width:0;min-height:0}
+
+/* 1 clock */
+.rnum{font:700 clamp(30px,26cqmin,150px)/.9 Georgia,serif;color:var(--gold)}
+.rnum small{display:block;font:700 clamp(9px,3.4cqmin,16px)/1 Georgia,serif;letter-spacing:.2em;color:var(--soft);margin-bottom:1cqmin}
+.wards{display:flex;gap:1.6cqmin;justify-content:center}
+.wards i{width:clamp(14px,8.5cqmin,48px);aspect-ratio:1;border-radius:50%;border:max(2px,.7cqmin) solid var(--ward);cursor:pointer}
+.wards i.f{background:var(--ward);box-shadow:0 0 2cqmin #7fc4d866}
+.beat{font-size:clamp(12px,5cqmin,26px);line-height:1.25;font-weight:600}
+.beat.warn{color:#ff9d8f}
+.cas{font-size:clamp(10px,3.4cqmin,16px);color:var(--soft)}
+.cas b{color:var(--ink)}
+
+/* 2 board */
+.board{display:grid;grid-template-columns:repeat(3,1fr);gap:2cqmin}
+.board.six{grid-template-rows:1fr 1fr}
+.chip{position:relative;border-radius:2cqmin;padding:2cqmin;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;min-height:0;border:max(2px,.5cqmin) solid transparent;user-select:none}
+.chip.s0{background:var(--steady)} .chip.s1{background:var(--bleed);color:#1b1206} .chip.s2{background:var(--kissed)} .chip.s3{background:var(--dead);color:#6f665b;border-color:#3a322c}
+.chip.prot{border-color:#fff}
+.chip .n{font:700 clamp(13px,6.2cqmin,34px)/1 Georgia,serif}
+.chip .h{font-size:clamp(8px,2.8cqmin,14px);opacity:.85;margin-top:.6cqmin}
+.chip .st{font:800 clamp(10px,4cqmin,22px)/1 system-ui;letter-spacing:.08em;text-transform:uppercase}
+.pips{display:flex;gap:1.2cqmin}
+.pips i{width:clamp(10px,4.6cqmin,26px);aspect-ratio:1;border-radius:50%;border:max(2px,.5cqmin) solid #fff}
+.pips i.f{background:#fff}
+.chip .tools{position:absolute;top:1.2cqmin;right:1.2cqmin;display:flex;gap:1cqmin}
+.chip .tools button{padding:.6cqmin 1.4cqmin;font-size:clamp(10px,3.4cqmin,18px);background:#0006;border-color:#fff5;color:#fff}
+.chip .tools button.on{background:#fff;color:#111}
+.chip .g{font-size:clamp(8px,2.8cqmin,14px);text-decoration:underline dotted}
+
+/* 3 crowd */
+.die{font:700 clamp(40px,34cqmin,190px)/.85 Georgia,serif;color:var(--gold)}
+.cname{font:700 clamp(14px,7cqmin,38px)/1.05 Georgia,serif}
+.cname.good{color:#9fd08a}.cname.bad{color:#ff9d8f}
+.ctext{font-size:clamp(11px,4.4cqmin,22px);line-height:1.25}
+.nums{display:grid;grid-template-columns:repeat(8,1fr);gap:1cqmin}
+.nums button{padding:1.2cqmin 0}
+
+/* 6 knives */
+.kwho{font:700 clamp(18px,11cqmin,60px)/1 Georgia,serif}
+.kask{font-size:clamp(12px,5cqmin,26px);line-height:1.25}
+.kask b{color:var(--gold)}
+.kbtns{display:grid;gap:2cqmin}
+.kbtns.c3{grid-template-columns:1fr 1fr 1fr}.kbtns.c2{grid-template-columns:1fr 1fr}
+.kbtns button{padding:3cqmin 1cqmin;font-size:clamp(12px,4.8cqmin,24px)}
+.note{font-size:clamp(10px,3.6cqmin,17px);color:var(--gold)}
+.dots{display:flex;gap:1.2cqmin;justify-content:center}
+.dots i{width:clamp(6px,2.2cqmin,12px);aspect-ratio:1;border-radius:50%;background:#4a3f36}
+.dots i.c{background:var(--gold)}.dots i.d{background:#7a6c5d}
+
+/* 7 voice */
+.who{font:700 clamp(11px,4.2cqmin,22px)/1.1 Georgia,serif;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.how{font-size:clamp(10px,3.4cqmin,16px);color:var(--soft);font-style:italic}
+.line{font:italic 600 clamp(15px,8cqmin,44px)/1.15 Georgia,serif}
+
+.vgrid{display:grid;gap:2cqmin;grid-template-columns:repeat(auto-fit,minmax(min(100%,max(28cqw,110px)),1fr));grid-auto-rows:1fr}
+.vtile{background:var(--tile);border:1px solid var(--line);border-radius:2cqmin;padding:2.5cqmin;cursor:pointer;display:flex;flex-direction:column;justify-content:center;gap:1cqmin;min-height:0;overflow:hidden}
+.vtile:hover{border-color:var(--gold)}
+.vn{font:700 clamp(13px,6cqmin,30px)/1.05 Georgia,serif;color:var(--gold)}
+.vc{font-size:clamp(9px,3cqmin,14px);color:var(--soft);line-height:1.25}
+.vname{font:700 clamp(15px,7.5cqmin,38px)/1 Georgia,serif;color:var(--gold)}
+.chips{display:flex;flex-wrap:wrap;gap:1.2cqmin}
+.chips button{padding:1cqmin 2cqmin;font-size:clamp(10px,3.4cqmin,16px);font-weight:600;border-radius:99px}
+
+.nstrip{display:flex;gap:1.5cqmin;flex-wrap:wrap}
+.nstrip div{background:var(--tile);border:1px solid var(--line);border-radius:1.6cqmin;padding:1.2cqmin 2.4cqmin;font:700 clamp(14px,6.5cqmin,32px)/1 Georgia,serif;color:var(--ink);text-align:center;flex:1;min-width:max-content}
+.nstrip small{display:block;font:700 clamp(8px,2.4cqmin,12px)/1 system-ui;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.8cqmin}
+.sblist{list-style:none;overflow-y:auto;display:flex;flex-direction:column;gap:1.6cqmin;font-size:clamp(12px,4.1cqmin,20px);line-height:1.3}
+.sblist li{padding-left:2.4cqmin;border-left:max(2px,.5cqmin) solid var(--line)}
+.sblist b{color:var(--gold)}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+"use strict";
+const KEY="toast-s12-v2";
+const CH=[
+ {id:"eclair",name:"Éclair",house:"Puss",def:5,shield:0,note:"Riposte: her Knife takes 9."},
+ {id:"garrick",name:"Garrick",house:"Moravel",def:3,shield:2},
+ {id:"noemie",name:"Noémie",house:"Vayne",def:3,shield:2},
+ {id:"aurelian",name:"Aurelian",house:"Aldric",def:3,shield:2,mirror:true},
+ {id:"rowan",name:"Rowan",house:"Halvenne",def:3,shield:2},
+];
+const STEP=["Steady","Bleeding","Kissed","Dead"];
+const BEAT={0:"Opening strikes. Page cracks the shield rune. Wrent is hit.",1:"Wrent dives over a fallen champion. Corvane roars for Belaskro.",2:"Corvane hammers the dome. It holds.",
+ 5:"End of this round: the Knives leave.",6:"Marshals push in. End of round: last ward breaks, marksmen leave.",7:"End of this round: Cassian dies unless a PC is with him.",10:"The dome falls. Corvane runs for the stairs."};
+const CROWD={1:["Surge","DC 12 Str save or pushed 10 ft toward the garden doors and prone.","bad"],2:["Trample","Each prone creature takes 7. Nobody prone? Treat as Surge.","bad"],
+ 3:["Clutching Noble","A noble grabs a PC. Persuasion DC 12 (bonus action) frees them.","bad"],4:["Wall of Silk","The marksmen have no shots this round.","good"],
+ 5:["Swallowed","A Knife vanishes. Its next strike: defense roll at disadvantage.","bad"],6:["A Lane Opens","Anyone crossing this round gets +1 box.","good"],
+ 7:["Brave Fool","Next attack on a Knife of the players' choice has advantage.","good"],8:["Panic up the Stair","One extra ward breaks.","bad"]};
+const CASLINE={5:"FATHER! Someone's on the roof!",4:"Is that all you've got?",3:"He's not angry. He's just counting.",2:"…Father?"};
+const NUMW=["","One.","Two.","Three.","Four.","Five.","Six."];
+
+function fresh(){return {round:0,wards:6,engaged:false,cas:"up",
+ ch:CH.map(c=>({id:c.id,step:0,pips:3,prot:false,shield:c.shield,mirror:!!c.mirror,knife:true})),
+ wrent:{step:1,pips:3,prot:false,guard:""},crowd:0,ki:0,klast:"",vi:0};}
+let mem=null,hist=[],bc=null;
+function load(){try{const r=localStorage.getItem(KEY);if(r)return JSON.parse(r);}catch(e){}return mem||fresh();}
+function save(s){mem=s;try{localStorage.setItem(KEY,JSON.stringify(s));}catch(e){}try{bc&&bc.postMessage(1);}catch(e){}}
+try{bc=new BroadcastChannel(KEY);bc.onmessage=()=>render();}catch(e){}
+window.addEventListener("storage",e=>{if(e.key===KEY)render();});
+let S=load();
+function mut(fn){hist.push(JSON.stringify(S));if(hist.length>60)hist.shift();try{localStorage.setItem(KEY+"-h",JSON.stringify(hist.slice(-20)));}catch(e){}S=load();fn(S);save(S);render();}
+function undo(){let h=hist;try{const r=localStorage.getItem(KEY+"-h");if(r)h=JSON.parse(r);}catch(e){}if(!h.length)return;S=JSON.parse(h.pop());hist=h;try{localStorage.setItem(KEY+"-h",JSON.stringify(h));}catch(e){}save(S);render();}
+const def=id=>CH.find(c=>c.id===id), st=(s,id)=>s.ch.find(c=>c.id===id);
+const guarded=(s,c)=>c.prot||(s.wrent.guard===c.id&&s.wrent.step<2);
+
+/* ----- rules ----- */
+function right(o){if(o.step<3){o.step++;if(o.step===2)o.pips=3;}}
+function endRound(s){const r=s.round;
+ if(r>=1){
+  if(!s.engaged&&s.wards>0)s.wards--;
+  s.ch.forEach(c=>{if(c.step===2&&guarded(s,c)){c.pips--;if(c.pips<=0)c.step=3;}});
+  if(s.wrent.step===2&&s.wrent.prot){s.wrent.pips--;if(s.wrent.pips<=0){s.wrent.step=3;s.wrent.guard="";}}
+  if(r>=5)s.ch.forEach(c=>c.knife=false);
+  if(r>=7&&s.cas==="kissed"&&!s.engaged)s.cas="dead";
+ }
+ if(s.wards===0&&s.cas==="up")s.cas="kissed";
+ s.ch.forEach(c=>{if(c.step===3)c.knife=false;});
+ s.round++;s.crowd=0;s.ki=0;s.klast="";}
+function queue(s){return s.round===0?s.ch.map(c=>c.id):s.ch.filter(c=>c.knife&&c.step<3).map(c=>c.id);}
+function strike(s,id,res){const c=st(s,id),d=def(id);let msg="";
+ const viaW=s.round>0&&s.wrent.guard===id&&s.wrent.step<3, o=viaW?s.wrent:c, nm=viaW?"Wrent":d.name;
+ if(s.round===0){c.step=res==="pass"?1:2;c.pips=3;msg=d.name+": "+STEP[c.step]+".";}
+ else if(res==="gone"){c.knife=false;msg=d.name+"'s Knife is out of the fight.";}
+ else if(res==="pc"){msg="Knife went for the PC guarding "+nm+".";}
+ else if(res==="dead"){o.step=3;if(viaW){s.wrent.guard="";msg="Wrent is dead. Handler signal lost.";}else{c.knife=false;msg=d.name+" is dead. Say the name.";}}
+ else if(res==="def"){msg=nm+" defends."+(!viaW&&d.note?" "+d.note:"");}
+ else if(res==="nat"){msg=nm+" counters. The Knife is prone."+(!viaW&&d.note?" "+d.note:"");}
+ else if(res==="shield"){c.shield--;msg=d.name+" casts Shield: +5 to that roll. Now choose the result.";s.klast=msg;return;}
+ else if(res==="fail"){if(!viaW&&c.mirror){c.mirror=false;msg="Mirror Mantle absorbs it. Aurelian is unharmed.";}else{right(o);msg=nm+" → "+STEP[o.step]+".";}}
+ s.klast=msg;if(queue(s).indexOf(id)>=0||s.round===0)s.ki++;}
+
+/* ----- views ----- */
+const V={};
+V.clock=()=>{const r=S.round;let beat=BEAT[r]||"",warn=false;
+ const dying=S.ch.filter(c=>c.step===2&&!guarded(S,c)&&c.knife).map(c=>def(c.id).name);
+ if(S.wrent.step===2&&!S.wrent.prot)dying.push("Wrent");
+ if(r>0&&dying.length){beat=dying.join(", ")+(dying.length>1?" are":" is")+" down and alone.";warn=true;}
+ let w="";for(let i=1;i<=6;i++)w+=`<i class="${i<=S.wards?"f":""}" data-a="ward" data-v="${i}"></i>`;
+ const cas=S.cas==="dead"?"<b>Cassian is dead.</b>":S.cas==="kissed"?"<b>Cassian is Kissed.</b>":S.engaged?"<b>A PC is with Cassian. Clock stopped.</b>":`Cassian holds · dome ${r>10?"down":r===10?"falls now":(10-r)+" left"}`;
+ return `<div class="tool"><div class="row"><span class="lab">Round clock</span><span class="grow"></span><button class="quiet" data-a="undo">Undo</button></div>
+ <div class="grow center" style="gap:2.5cqmin"><div class="rnum"><small>ROUND</small>${r}</div><div class="wards">${w}</div><div class="cas">${cas}</div><div class="beat ${warn?"warn":""}">${beat}</div></div>
+ <div class="row"><button class="${S.engaged?"on":""}" data-a="eng" style="flex:1">PC with Cassian</button><button class="pri" data-a="end" style="flex:1.4">End round →</button></div>
+ <div class="row"><span class="grow"></span><button class="quiet" data-a="reset">Reset fight (double tap)</button></div></div>`;};
+
+function chip(id,o,name,house,extra){const p=o.step===2?`<div class="pips">${[1,2,3].map(i=>`<i class="${i<=o.pips?"f":""}" data-a="pip" data-s="${id}" data-v="${i}"></i>`).join("")}</div>`:"";
+ return `<div class="chip s${o.step} ${o.prot?"prot":""}" data-a="step" data-s="${id}"><div class="tools"><button data-a="back" data-s="${id}">◀</button><button class="${o.prot?"on":""}" data-a="prot" data-s="${id}" title="A PC is protecting">🛡</button></div>
+ <div><div class="n">${name}</div><div class="h">${house}</div>${extra||""}</div><div class="row" style="justify-content:space-between"><span class="st">${STEP[o.step]}</span>${p}</div></div>`;}
+V.board=()=>{const g=S.wrent.guard;
+ return `<div class="tool"><div class="row"><span class="lab">Champions</span><span class="grow"></span><span class="lab" style="color:var(--soft);letter-spacing:.04em;text-transform:none;font-family:system-ui;font-weight:500">tap = worse · ◀ = better · 🛡 = PC protecting</span></div>
+ <div class="board six grow">${S.ch.map(c=>{const d=def(c.id);return chip(c.id,c,d.name,d.house+(g===c.id&&S.wrent.step<3?" · Wrent guarding":""));}).join("")}
+ ${chip("wrent",S.wrent,"Wrent","Gus's handler",`<div class="g" data-a="guard">guarding: ${g?def(g).name:"nobody"} ↻</div>`)}</div></div>`;};
+
+V.crowd=()=>{const c=CROWD[S.crowd];
+ return `<div class="tool"><div class="row"><span class="lab">The crowd · init 10</span></div>
+ <div class="grow center" style="gap:2cqmin">${c?`<div class="die">${S.crowd}</div><div class="cname ${c[2]}">${c[0]}</div><div class="ctext">${c[1]}</div>`:`<div class="die" style="opacity:.25">d8</div><div class="ctext" style="color:var(--soft)">Roll openly, then tap the number.</div>`}</div>
+ <div class="nums">${[1,2,3,4,5,6,7,8].map(n=>`<button class="${S.crowd===n?"on":""}" data-a="crowd" data-v="${n}">${n}</button>`).join("")}</div>
+ <button class="pri" data-a="croll">Roll d8</button></div>`;};
+
+V.knives=()=>{const q=queue(S),r=S.round,i=S.ki;
+ const head=`<div class="row"><span class="lab">${r===0?"Opening strikes":"Knives' turn"}</span><span class="grow"></span><div class="dots">${q.map((x,k)=>`<i class="${k===i?"c":k<i?"d":""}"></i>`).join("")}</div></div>`;
+ const last=S.klast?`<div class="note">${S.klast}</div>`:"";
+ if(!q.length)return `<div class="tool">${head}<div class="grow center"><div class="kask">No Knives left on the floor.</div></div></div>`;
+ if(i>=q.length)return `<div class="tool">${head}<div class="grow center" style="gap:3cqmin">${last}<div class="kask">${r===0?"All five struck. End the round to begin Round 1.":"Knives' turn done. End the round on the clock."}</div></div><button class="quiet" data-a="kagain">Run it again</button></div>`;
+ const id=q[i],c=st(S,id),d=def(id);let who=d.name,ask,btns;
+ if(r===0){ask=`${d.name}'s player rolls a <b>DC 16 Con</b> save (Con ${id==="eclair"?"+3":"+5"}).`;btns=`<div class="kbtns c2"><button class="go" data-a="k" data-v="pass">Passed · Bleeding</button><button class="pri" data-a="k" data-v="fail0">Failed · Kissed</button></div>`;}
+ else{const viaW=S.wrent.guard===id&&S.wrent.step<3,o=viaW?S.wrent:c,bonus=viaW?4:d.def,pl=viaW?"Gus's player":"Their player";
+  who=viaW?"Wrent":d.name;const sub=viaW?` <span style="font-size:.5em;color:var(--soft)">over ${d.name}</span>`:"";who+=sub;
+  if(o.prot){ask=`A PC is in the way. That PC rolls <b>d20 + (AC − 10)</b> vs <b>DC 18</b>, twice. <b>13</b> each on a fail.`;btns=`<div class="kbtns c2"><button data-a="k" data-v="pc">Done · next</button><button data-a="k" data-v="gone">Knife is gone</button></div>`;}
+  else if(o.step===2){ask=`Down and alone. The Knife finishes ${viaW?"him":"them"} unless someone stepped in.`;btns=`<div class="kbtns c2"><button class="pri" data-a="k" data-v="dead">Dead</button><button data-a="k" data-v="gone">Knife is gone</button></div>`;}
+  else{ask=`${pl} rolls <b>d20 + ${bonus}</b> vs <b>DC 18</b>.`;btns=`<div class="kbtns c3"><button class="go" data-a="k" data-v="def">Defended</button><button class="pri" data-a="k" data-v="fail">Failed</button><button data-a="k" data-v="nat">Nat 20</button></div>
+   <div class="row">${!viaW&&c.shield>0?`<button class="quiet" data-a="k" data-v="shield">Shield +5 (${c.shield} left)</button>`:""}<span class="grow"></span><button class="quiet" data-a="k" data-v="gone">Knife is gone</button></div>`;}}
+ return `<div class="tool">${head}<div class="grow center" style="gap:2.5cqmin">${last}<div class="kwho">${who}</div><div class="kask">${ask}</div></div>${btns}</div>`;};
+
+
+let VO={"title":"The Toast","groups":[{"name":"The Dais","chars":[{"name":"Corvane","cue":"Gravelly, deliberate. Serious to roaring in three seconds.","beats":[{"beat":"Belaskro","lines":["BELASKRO. MY SON.","Nephew. The stairs. NOW.","You are blood. Act like it."]},{"beat":"Each bell","lines":["Five.","Four.","Three.","Two.","One."]},{"beat":"Champion falls","lines":["Someone stand over that child!","On your feet, girl. Not in my house."]},{"beat":"To the Queen","lines":["Your toast, Majesty.","You're very calm.","If he dies, Majesty, we will talk. At length."]},{"beat":"Frustration","lines":["OPEN.","I built this house to keep knives out."]},{"beat":"After","lines":["I gave no such order.","Now get out of my house."]}]},{"name":"Queen Sabine","cue":"British, graceful. More gracious the worse it gets.","beats":[{"beat":"The toast","lines":["Alive. I'll want to know who sent him."]},{"beat":"To Corvane","lines":["It's a shield rune, Marquis. It was meant to keep us safe.","Do stop striking it. You'll only tire.","We are both of us parents tonight, Marquis."]},{"beat":"Shaken","lines":["How many of them were there?","(says nothing, glass still in hand)"]},{"beat":"To a PC","lines":["Whoever you are, the Crown is in your debt. Hurry."]},{"beat":"After","lines":["I gave that toast. I will not let anyone pretend it was mine.","The Marshals will have everything I can give them."]}]},{"name":"The page","cue":"Young, shaking, exalted. Unbowed.","beats":[{"beat":"The toast","lines":["UNBOWED!","Kneel on me all you like."]},{"beat":"Watching","lines":["Look at them run. Look at them.","No houses. No crowns."]},{"beat":"Questioned","lines":["You'll get my name and nothing else."]}]}]},{"name":"Champions","chars":[{"name":"Éclair","cue":"Clipped, competitive. Allergic to being fussed over.","beats":[{"beat":"Combat","lines":["Point.","You're telegraphing.","Again. Slower, so I can enjoy it."]},{"beat":"Hurt","lines":["It's a scratch. Don't fuss.","I said don't fuss. Get the knife."]},{"beat":"To Timbit","lines":["Princess. Of course it's you.","If you tell my father I needed help, I'll deny it."]},{"beat":"Saved","lines":["Thank you. That will be the only time I say it."]},{"beat":"Dying","lines":["Tell them I was ahead on points."]}]},{"name":"Garrick","cue":"Laconic, dry, blunt. Moravel soldier.","beats":[{"beat":"Combat","lines":["Two winters on the wall. You learn to count exits.","Left hand's the bad one. You picked wrong."]},{"beat":"Hurt","lines":["I've seen worse. I've buried worse."]},{"beat":"Cassian","lines":["Cassian's an idiot. He's also the best I've fought. Go get him."]},{"beat":"To a PC","lines":["Don't watch me. Watch the gallery."]},{"beat":"Saved","lines":["Owe you one. I pay."]},{"beat":"Dying","lines":["The border. Tell them. Somebody listen."]}]},{"name":"Noémie","cue":"Québécoise. Loud, joyful, swears in church words.","beats":[{"beat":"Combat","lines":["Tabarnak! Pas à soir, mon chum!","Tu veux danser? On va danser!"]},{"beat":"Hurt","lines":["Câlisse, ça fait mal!","Mon père, bénis-moi. J'vas en avoir besoin."]},{"beat":"The flare","lines":["Vive la Varenthal!","Ferme tes yeux!"]},{"beat":"To Belaskro","lines":["Hé, le chasseur! Just like the frontier, non?"]},{"beat":"Saved","lines":["Ostie. I owe you a shot. Ten shots."]},{"beat":"Dying","lines":["J'voulais juste danser."]}]},{"name":"Aurelian","cue":"Courtly, a beat too eager. Turns his ring when nervous.","beats":[{"beat":"Combat","lines":["One is not, in fact, decorative!","I trained for this. I did. I did."]},{"beat":"Hurt","lines":["Oh. That is rather a lot of blood."]},{"beat":"The Queen","lines":["My aunt is on that dais. Somebody help my aunt."]},{"beat":"To a PC","lines":["Tell me what to do. Please.","Is it disloyal to want to live through this?"]},{"beat":"Saved","lines":["You came for me. Nobody comes for me."]},{"beat":"Dying","lines":["Was I a real contender?"]}]},{"name":"Rowan","cue":"Smooth and vain. Always aware of who is watching.","beats":[{"beat":"Combat","lines":["Not the face.","Is everyone seeing this? Good."]},{"beat":"Hurt","lines":["That was a new coat."]},{"beat":"His sister","lines":["Odile! Behind me. No, behind me.","Odile, don't look."]},{"beat":"To a PC","lines":["A blade, if you please. I'm wasted unarmed."]},{"beat":"Saved","lines":["We shall say I had it handled. Agreed?"]},{"beat":"Dying","lines":["Tell them I was magnificent."]}]},{"name":"Cassian","cue":"Arrogant, performative, nineteen. Upstairs, behind the wards.","beats":[{"beat":"Each bell","lines":["FATHER! Someone's on the roof!","Is that all you've got?","He's not angry. He's just counting.","…Father?","(silence)"]},{"beat":"A PC arrives","lines":["About time. Hit him and I'll set him on fire.","Cousin. You dress badly and you arrive late."]},{"beat":"Combat","lines":["Is that all you've got?","The crowd would have loved that one."]},{"beat":"Hurt","lines":["I've had worse from Garrick."]},{"beat":"Saved","lines":["Don't tell him I called for him."]}]}]},{"name":"Marshals","chars":[{"name":"Wrent","cue":"Rough, raspy, low. Runs at the fire, plans later.","beats":[{"beat":"Round 1","lines":["The ones by you, Gus! I've got this one!"]},{"beat":"Combat","lines":["You want them, you come through me.","Marshals! On me!"]},{"beat":"To Gus","lines":["Don't look at me. Look at them. That's an order.","Good work, Gus. Keep going."]},{"beat":"Hurt","lines":["I'm fine. I've been stabbed by better."]},{"beat":"Saved","lines":["Should've made a plan first. You'd have told me that."]},{"beat":"Dying","lines":["I know in my heart what's right. I chose it.","Gus. You were never equipment."]}]},{"name":"Marshals arriving","cue":"Round 6, at the garden doors.","beats":[{"beat":"Entering","lines":["Arcane Marshals! Everyone down!","Gallery's clear!"]},{"beat":"Wrent","lines":["Lieutenant's down! Healer!"]}]},{"name":"In Gus's head","cue":"Flat, mechanical. Marshal Intelligence.","beats":[{"beat":"Wrent dies","lines":["Handler signal lost. Annex C unsealed."]},{"beat":"Grief","lines":["Unclassified sensation detected. Note the time. Continue."]}]}]},{"name":"Killers","chars":[{"name":"A Knife","cue":"Flat, professional. One mark, nothing personal.","beats":[{"beat":"To a PC","lines":["Let go. You're not the one I'm here for.","Step aside. This isn't yours."]},{"beat":"Grappled","lines":["Hand. Off. Now."]},{"beat":"Captured","lines":["My mark. My signal. My exit. That's all there is."]}]},{"name":"The Hand","cue":"Patient, unhurried. Trusts the count.","beats":[{"beat":"At the wards","lines":["Four left, my lord. No hurry."]},{"beat":"A PC arrives","lines":["You're not on the contract. Leave and I'll forget you.","Ah. Finally, some work."]},{"beat":"Hurt","lines":["Noted."]},{"beat":"Leaving","lines":["Another night, then."]}]},{"name":"A marksman","cue":"Sharp, from the loggia rail.","beats":[{"beat":"Overwatch","lines":["Clear of him, or you're next!","Off the mark!"]},{"beat":"Leaving","lines":["Tablets. Go."]}]}]},{"name":"Guests","chars":[{"name":"Honey Cruller","cue":"Unhurried, immaculately polite. The knife lands in the second half.","beats":[{"beat":"Éclair in danger","lines":["My daughter is on that floor, and you are standing here.","We are guests. Guests, it seems, are stabbed."]},{"beat":"To Timbit","lines":["Niece. Bring her back, and Meow will remember it."]},{"beat":"After: she lived","lines":["Meow remembers a courtesy. I shall remember this one personally."]},{"beat":"After: she died","lines":["I will have a name. I am very patient."]}]},{"name":"Tasmin Dreveth","cue":"In her chair. Spared, and knows it.","beats":[{"beat":"Realising","lines":["Why not me? Why did they walk past me?"]},{"beat":"Panic","lines":["I can't get up. Somebody, I can't get up."]},{"beat":"To Timbit","lines":["Go! I'm the only safe one here!"]}]},{"name":"Lady Odile","cue":"Rowan's sister. Composed until tonight.","beats":[{"beat":"Rowan","lines":["Rowan! ROWAN!","He's an idiot but he's my idiot. Please!"]}]},{"name":"The crowd","cue":"A hundred and fifty voices.","beats":[{"beat":"Panic","lines":["The doors! Get to the doors!","My daughter's in there!"]},{"beat":"Suspicion","lines":["Who hired the band?","The Queen's toast. They waited for the Queen's toast."]}]},{"name":"Captain Dunmore","cue":"House guard captain. Pale. After the fight.","beats":[{"beat":"The order","lines":["Your seal, my lord. Guards to the gates, so the Dreveth party wouldn't feel watched.","Under-Steward Grey handed it to me himself."]},{"beat":"Pleading","lines":["It was in your hand, my lord. I'd swear to it."]}]}]}]};
+let nav={g:null,c:null,b:0,l:0};
+(function(){const u=new URLSearchParams(location.search).get("data");if(!u)return;fetch(u).then(r=>r.json()).then(j=>{if(j&&j.groups){VO=j;nav={g:null,c:null,b:0,l:0};render();}}).catch(()=>{});})();
+V.voice=()=>{const G=VO.groups;if(G.length===1&&nav.g===null)nav.g=0;
+ const crumb=(nav.g!==null?`<button class="quiet" data-a="vhome">⌂ ${VO.title||"Scene"}</button>`:"")+(nav.c!==null?`<button class="quiet" data-a="vback">◀ ${G[nav.g].name}</button>`:"");
+ const head=`<div class="row"><span class="lab">Voices</span><span class="grow"></span>${crumb}</div>`;
+ if(nav.g===null)return `<div class="tool">${head}<div class="vgrid grow" style="--n:${G.length}">${G.map((g,i)=>`<div class="vtile" data-a="vg" data-v="${i}"><div class="vn">${g.name}</div><div class="vc">${g.chars.map(c=>c.name).join(" · ")}</div></div>`).join("")}</div></div>`;
+ const g=G[nav.g];
+ if(nav.c===null)return `<div class="tool">${head}<div class="vgrid grow" style="--n:${g.chars.length}">${g.chars.map((c,i)=>`<div class="vtile" data-a="vc" data-v="${i}"><div class="vn">${c.name}</div><div class="vc">${c.cue||""}</div></div>`).join("")}</div></div>`;
+ const c=g.chars[nav.c],bt=c.beats[nav.b]||c.beats[0],n=bt.lines.length,l=bt.lines[nav.l%n];
+ return `<div class="tool">${head}<div><div class="vname">${c.name}</div><div class="how">${c.cue||""}</div></div>
+ <div class="chips">${c.beats.map((x,i)=>`<button class="${i===nav.b?"on":""}" data-a="vb" data-v="${i}">${x.beat}</button>`).join("")}</div>
+ <div class="grow center" style="cursor:pointer;gap:2cqmin" data-a="vl"><div class="line">${l.startsWith("(")?l:"“"+l+"”"}</div>${n>1?`<div class="dots">${bt.lines.map((x,i)=>`<i class="${i===nav.l%n?"c":""}"></i>`).join("")}</div><div class="how">tap for another</div>`:""}</div></div>`;};
+
+
+let SB={"title":"The Toast","groups":[{"name":"Killers","chars":[{"name":"Consort Knife","cue":"×5 · CR 4 · Unbowed killer in musician's livery. One mark each.","nums":[["AC","16"],["HP","52"],["Leaves at","26"],["Def DC","18"],["Speed","35"]],"tabs":[{"tab":"Attack","items":["**Two Kissed Stilettos.**","**Against its mark:** one defense roll a round, d20 + the champion's Def vs **DC 18**. A fail moves them one step right.","**Against a PC:** two defense rolls vs **DC 18**. **13** each on a fail (6 piercing + 7 poison).","**A PC dropped to 0** is Kissed: auto-fails a death save each turn, and takes 7 poison a turn after waking until cured."]},{"tab":"Behaviour","items":["**Marked.** Ignores PCs unless they grapple it, block its path, or stand over its fallen mark.","**Strikes last** each round, initiative 1.","**Uncanny Dodge.** Halves one hit a round.","**Cunning Action.** Dash, Disengage or Hide as a bonus action.","**Step Tablet (2/day, bonus).** Teleports 30 ft. Needs a free hand.","**Swallowed (crowd 5).** Its next strike: defense roll at disadvantage."]},{"tab":"Pin it","items":["**Grapple:** Athletics or Acrobatics **DC 16**. A grappled Knife can't snap a tablet. Triggers marksman Overwatch.","**Snatch the tablet (action):** Sleight of Hand **DC 16**. Belaskro's whip can try from 10 ft.","**Shoulder to shoulder:** attacks against it have advantage while its mark is on their feet."]},{"tab":"Leaves","items":["Snaps its **Passage Tablet** (dimension door to a fixed exit) when its mark dies, at **26 HP**, or at the **end of round 5**.","Can't leave while grappled, restrained, or once the tablet is taken."]},{"tab":"Captured","items":["**Intimidation DC 16, with disadvantage.** It knows its mark, the signal and its exit point. Nothing more.","Unbowed fist tattoo inside the forearm.","Tablet iron band, **Investigation DC 14:** a rune shop's batch stamp."]},{"tab":"Numbers","items":["Str +0 · Dex +4 · Con +2 · Int +1 · Wis +1 · Cha +1","**Saves:** Dex +6, Int +3","**Skills:** Acrobatics +6, Sleight of Hand +6, Stealth +8, Performance +3","Passive Perception 11"]}]},{"name":"Consort Marksman","cue":"×2 · CR 2 · At the loggia rail above the dais.","nums":[["AC","14"],["HP","33"],["Leaves at","16"],["Def DC","17"],["Range","80 ft"]],"tabs":[{"tab":"Attack","items":["**Two light crossbow bolts** at the most exposed PC. Initiative 10.","Two defense rolls vs **DC 17**. **6** each on a fail.","Each hit: **DC 12 Con** save or poisoned until the end of their next turn. Fail again while poisoned: unconscious until the end of their next turn, or until damaged or shaken awake.","**In the crowd:** +2 to the defense roll (half cover)."]},{"tab":"Overwatch","items":["**Reaction:** one bolt at anyone who grapples a Knife, stands over a Knife's fallen mark, or climbs toward the loggia.","**Exposed** means any of those, on the grand stair, flying, or outside the crowd.","**Wall of Silk (crowd 4):** no shots this round."]},{"tab":"Reach them","items":["The loggia is an upper hallway above and behind the dais, open to the courtyard.","**At the rail:** half cover against attacks from the floor (treat as AC 16).","**Up:** a small stair at each end, or climb with Athletics **DC 13**."]},{"tab":"Leaves","items":["Snaps its **Passage Tablet** at **16 HP** or at the **end of round 6**.","Can't leave while grappled, restrained, or once the tablet is taken.","Unbowed fist tattoo, same as the Knives."]},{"tab":"Numbers","items":["Str +0 · Dex +3 · Con +1 · Int +0 · Wis +2 · Cha +0","**Skills:** Perception +4, Stealth +5","Passive Perception 14 · Speed 30"]}]},{"name":"The Hand","cue":"CR 6 · The professional. Upstairs, at Cassian's wards. No tattoo.","nums":[["AC","17"],["HP","91"],["Leaves at","45"],["Def DC","19"],["Speed","35"]],"tabs":[{"tab":"The wards","items":["**Six wards** ring Cassian's bed. It breaks **one at the end of every round**. The last goes at the end of round 6.","While any ward stands it cannot come within 10 ft of the bed or target Cassian.","**A PC enters the room:** it stops breaking wards and fights them. The clock stops.","**Shore up a ward (action):** Arcana **DC 14**, or **DC 10** with a blank rune tablet. Max 6."]},{"tab":"Attack","items":["**Two Kissed Blades.** Two defense rolls vs **DC 19**. **14** each on a fail (7 piercing + 7 poison).","**A PC dropped to 0** is Kissed, as with the Knives.","**Cassian fights beside the PC:** PC attacks against the Hand have advantage, and the Hand takes **14 fire** a round. No roll."]},{"tab":"Tricks","items":["**Uncanny Dodge.** Halves one hit a round.","**Cunning Action.** Dash, Disengage or Hide as a bonus action.","**Step Tablet (2/day, bonus).** Teleports 30 ft.","**Resists poison.** Climb 20."]},{"tab":"Leaves","items":["Snaps its **Passage Tablet** at **45 HP**, or once Cassian is dead.","If nobody comes: Cassian is Kissed at the end of round 6 and dead at the end of round 7."]},{"tab":"Numbers","items":["Str +2 · Dex +4 · Con +2 · Int +2 · Wis +2 · Cha +0","**Saves:** Dex +7, Int +5, Wis +5","**Skills:** Acrobatics +7, Athletics +5, Perception +5, Stealth +10","Passive Perception 15"]}]}]},{"name":"Champions","chars":[{"name":"Éclair","cue":"House Puss · catfolk duellist · the only champion with a blade.","nums":[["Def","+5"],["Con","+3"],["Shield","none"],["AC tonight","15"]],"tabs":[{"tab":"Tonight","items":["**Track:** Steady → Bleeding → Kissed (3 pips) → Dead.","**Riposte:** every successful defense, her Knife takes **9**.","No Shield spell. Her player rolls d20 + 5 vs DC 18.","**Natural 20:** she counters and the Knife is prone."]},{"tab":"If she fights","items":["HP 90 · Speed 40, climb 20 · difficult terrain costs her nothing.","**Dress rapier ×3:** +8, 9 piercing each.","**Exhibition Flourish (recharge 5–6):** one rapier attack with advantage, +14 damage, DC 16 Con or stunned.","Saves: Dex +8, Cha +6. Acrobatics +11."]}]},{"name":"Garrick","cue":"House Moravel · two winters on the northern wall.","nums":[["Def","+3"],["Con","+5"],["Shield","2"],["AC tonight","13"]],"tabs":[{"tab":"Tonight","items":["**Track:** Steady → Bleeding → Kissed (3 pips) → Dead.","**Garrison Volley (recharge 5–6):** his player rolls a d6 at the top of the round. On 5–6 one Knife takes **15**.","**Shield (2):** +5 after a failed defense roll.","Gala dress: unarmed, AC already reduced by 2."]},{"tab":"If he fights","items":["HP 78 · Speed 30.","**Rune Bolt ×2:** +6, range 120 ft, 12 force each.","Saves: Con +5, Cha +6. Arcana +5."]}]},{"name":"Noémie","cue":"House Vayne · Oss'kai lineage light, passed off as sorcery.","nums":[["Def","+3"],["Con","+5"],["Shield","2"],["AC tonight","13"]],"tabs":[{"tab":"Tonight","items":["**Track:** Steady → Bleeding → Kissed (3 pips) → Dead.","**Cleansing Flare (recharge 5–6):** her player rolls a d6 at the top of the round. On 5–6, 20-ft radius: every champion in it is cured and wakes (Steady), and each Knife in it takes **18 radiant**.","The whole court sees green-gold light. Don't explain it.","**Shield (2):** +5 after a failed defense roll."]},{"tab":"If she fights","items":["HP 78 · Speed 30.","**Rune Bolt ×2:** +6, range 120 ft, 12 force each.","Saves: Con +5, Cha +6. Arcana +5."]}]},{"name":"Aurelian","cue":"House Aldric · the Queen's nephew.","nums":[["Def","+3"],["Con","+5"],["Shield","2"],["AC tonight","13"]],"tabs":[{"tab":"Tonight","items":["**Track:** Steady → Bleeding → Kissed (3 pips) → Dead.","**Mirror Mantle:** ignore his first failed defense.","**Shield (2):** +5 after a failed defense roll.","Gala dress: unarmed, AC already reduced by 2."]},{"tab":"If he fights","items":["HP 78 · Speed 30.","**Rune Bolt ×2:** +6, range 120 ft, 12 force each.","Saves: Con +5, Cha +6. Arcana +5."]}]},{"name":"Rowan","cue":"House Halvenne · Lady Odile's brother. Seated nearest the party.","nums":[["Def","+3"],["Con","+5"],["Shield","2"],["AC tonight","13"]],"tabs":[{"tab":"Tonight","items":["**Track:** Steady → Bleeding → Kissed (3 pips) → Dead.","**Riposte:** once a PC hands him a blade, every successful defense deals his Knife **9**.","**Shield (2):** +5 after a failed defense roll.","Gala dress: unarmed, AC already reduced by 2."]},{"tab":"If he fights","items":["HP 78 · Speed 30.","**Rune Bolt ×2:** +6, range 120 ft, 12 force each.","**Duelling Blade** (if armed): +5, 7 piercing.","Saves: Con +5, Cha +6."]}]},{"name":"Cassian","cue":"Injured, in bed, behind six wards. No audience, so no Crowd Favourite.","nums":[["AC","15"],["HP","30"],["Def","+5"],["Con","+2"]],"tabs":[{"tab":"Tonight","items":["Safe while any ward stands.","**Last ward gone (end of round 6):** Kissed. **End of round 7:** dead unless a PC is in the room.","Cures and waking work on him as on the champions."]},{"tab":"Beside a PC","items":["PC attacks against the Hand have **advantage**.","He deals the Hand **14 fire** each round. No roll.","**Is That All You've Got (reaction):** reduces one hit on him by 5."]}]}]},{"name":"Allies","chars":[{"name":"Wrent","cue":"Marshal Lieutenant in dress uniform. Gus's player rolls for him.","nums":[["Def","+4"],["AC tonight","14"],["Starts","Bleeding"]],"tabs":[{"tab":"Tonight","items":["Hit in the opening volley: **starts Bleeding**.","**Top of round 1:** dives over a Kissed champion, two crowd boxes from Gus.","The Knife must go through him: d20 + 4 vs **DC 18**. He uses the champion track.","Gus can wake him and stand over him. **Only Gabriele or Timbit can cure him.**","**If he dies:** hand Shane the Annex C handout."]}]},{"name":"Marshals","cue":"Constable-Adepts. Push in past the crowd in round 6.","nums":[["AC","15"],["HP","32"]],"tabs":[{"tab":"Tonight","items":["Those inside the hall were dropped by the marksmen before initiative.","**Round 6:** reinforcements reach the floor through the garden doors.","By then the Knives are gone. They secure the room and call for healers."]}]},{"name":"Corvane","cue":"Trapped in the dome with the Queen until round 10.","nums":[["AC","18"],["HP","138"],["Attack","+8"]],"tabs":[{"tab":"Tonight","items":["The shield-rune dome holds him for **10 rounds**. Nothing passes in or out.","**Round 10:** the dome falls and he runs for the stairs.","**Insight DC 14 on the Queen beside him:** shaken for real; she looks to the stairs first."]},{"tab":"If he fights","items":["**Nothing Left to Lose:** while Cassian is in danger and in sight, advantage on attacks and resistance to all damage.","**Crested Warhammer ×3:** +8, 13 bludgeoning, DC 16 Str or pushed 5 ft.","**A Word to the Wise (recharge 5–6):** DC 15 Wis or frightened for 1 minute.","Cannot be surprised. Saves: Str +8, Con +8, Wis +6.","AC 18 assumes his half plate and shield. Your call what he wears at his own gala."]}]}]},{"name":"The Party","chars":[{"name":"Belaskro","cue":"Ranger 4","nums":[["AC","15"],["Def","+5"],["HP","32"]],"tabs":[{"tab":"Levers","items":["Cure Wounds (wakes, does not cure).","**Three blank rune tablets:** shore up a ward at DC 10.","**Whip:** snatch a Knife's tablet from 10 ft, Sleight of Hand +4 vs DC 16.","Arcana +0 · Medicine +2 · Athletics +3 · Acrobatics +4"]}]},{"name":"Gabriele","cue":"Cleric 4 (Life)","nums":[["AC","15"],["Def","+5"],["HP","27"]],"tabs":[{"tab":"Levers","items":["**Cures:** Lesser Restoration, Protection from Poison.","**Wakes:** Healing Word (60 ft), Cure Wounds, a healing potion.","**Preserve Life:** wakes every Kissed champion within 30 ft.","Arcana +7 · Medicine +3"]}]},{"name":"Gus","cue":"Artificer 4 (Battle Smith)","nums":[["AC","18"],["Def","+8"],["HP","23"]],"tabs":[{"tab":"Levers","items":["Cure Wounds (wakes, does not cure).","**Steel defender** can stand over a champion as Protect.","**Thieves' tools** for Cassian's door, DC 15.","Arcana +5 for the wards · Medicine +1"]}]},{"name":"Timbit","cue":"Druid 4 (Wildfire)","nums":[["AC","11"],["Def","+1"],["HP","23"]],"tabs":[{"tab":"Levers","items":["**Cures:** Lesser Restoration (bonus action), Protection from Poison.","**Wakes:** Healing Word, Cure Wounds.","**Spare the Dying:** holds the count for a round.","Needs a 17 to avoid a Knife. Arcana +5 · Medicine +1"]}]}]}]};
+let snav={g:null,c:null,b:0};
+(function(){const u=new URLSearchParams(location.search).get("stats");if(!u)return;fetch(u).then(r=>r.json()).then(j=>{if(j&&j.groups){SB=j;snav={g:null,c:null,b:0};render();}}).catch(()=>{});})();
+const md=t=>t.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\*\*(.+?)\*\*/g,"<b>$1</b>");
+V.stats=()=>{const G=SB.groups;
+ const crumb=(snav.g!==null?`<button class="quiet" data-a="sh">⌂ All</button>`:"")+(snav.c!==null?`<button class="quiet" data-a="sbk">◀ ${G[snav.g].name}</button>`:"");
+ const head=`<div class="row"><span class="lab">Stat blocks</span><span class="grow"></span>${crumb}</div>`;
+ if(snav.g===null)return `<div class="tool">${head}<div class="vgrid grow">${G.map((g,i)=>`<div class="vtile" data-a="sg" data-v="${i}"><div class="vn">${g.name}</div><div class="vc">${g.chars.map(c=>c.name).join(" · ")}</div></div>`).join("")}</div></div>`;
+ const g=G[snav.g];
+ if(snav.c===null)return `<div class="tool">${head}<div class="vgrid grow">${g.chars.map((c,i)=>`<div class="vtile" data-a="sc" data-v="${i}"><div class="vn">${c.name}</div><div class="vc">${c.nums.map(n=>n[0]+" "+n[1]).join(" · ")}</div></div>`).join("")}</div></div>`;
+ const c=g.chars[snav.c],t=c.tabs[snav.b]||c.tabs[0];
+ return `<div class="tool">${head}<div><div class="vname">${c.name}</div><div class="how">${c.cue||""}</div></div>
+ <div class="nstrip">${c.nums.map(n=>`<div><small>${n[0]}</small>${n[1]}</div>`).join("")}</div>
+ ${c.tabs.length>1?`<div class="chips">${c.tabs.map((x,i)=>`<button class="${i===snav.b?"on":""}" data-a="sb" data-v="${i}">${x.tab}</button>`).join("")}</div>`:""}
+ <ul class="sblist grow">${t.items.map(x=>`<li>${md(x)}</li>`).join("")}</ul></div>`;};
+
+const DEFAULT_VIEW="stats";
+const view=(new URLSearchParams(location.search).get("v"))||(location.hash||"").slice(1)||DEFAULT_VIEW;
+function render(){S=load();const a=document.getElementById("app");
+ a.innerHTML=V[view]?V[view]():`<div class="dash">${["clock","knives","crowd","board","voice","stats"].map(k=>`<div style="grid-area:${k}">${V[k]()}</div>`).join("")}</div>`;}
+let arm=0;
+document.addEventListener("click",ev=>{const t=ev.target.closest("[data-a]");if(!t)return;const a=t.dataset.a,s=t.dataset.s,v=t.dataset.v;
+ const o=x=>s==="wrent"?x.wrent:st(x,s);ev.stopPropagation();
+ switch(a){
+  case "undo":undo();break;
+  case "reset":if(Date.now()-arm<1500){mut(x=>{const f=fresh();Object.keys(x).forEach(k=>delete x[k]);Object.assign(x,f);});}arm=Date.now();break;
+  case "end":mut(endRound);break;
+  case "eng":mut(x=>{x.engaged=!x.engaged;});break;
+  case "ward":mut(x=>{x.wards=x.wards===+v?+v-1:+v;if(x.wards===0&&x.cas==="up")x.cas="kissed";if(x.wards>0&&x.cas==="kissed")x.cas="up";});break;
+  case "step":mut(x=>{const c=o(x);right(c);if(c.step===3){if(s==="wrent")x.wrent.guard="";else c.knife=false;}});break;
+  case "back":mut(x=>{const c=o(x);if(c.step>0){if(c.step===3&&s!=="wrent"&&x.round<=5)c.knife=true;c.step--;if(c.step===2)c.pips=3;}});break;
+  case "prot":mut(x=>{const c=o(x);c.prot=!c.prot;});break;
+  case "pip":mut(x=>{const c=o(x);c.pips=c.pips===+v?+v-1:+v;});break;
+  case "guard":mut(x=>{const ids=[""].concat(x.ch.filter(c=>c.step<3).map(c=>c.id));x.wrent.guard=ids[(ids.indexOf(x.wrent.guard)+1)%ids.length];});break;
+  case "crowd":mut(x=>crowd(x,+v));break;
+  case "croll":mut(x=>crowd(x,1+Math.floor(Math.random()*8)));break;
+  case "k":mut(x=>{const q=queue(x),id=q[x.ki];if(!id)return;strike(x,id,v==="fail0"?"fail0":v);});break;
+  case "kagain":mut(x=>{x.ki=0;x.klast="";});break;
+  case "vg":nav={g:+v,c:null,b:0,l:0};render();break;
+  case "vc":nav.c=+v;nav.b=0;nav.l=0;render();break;
+  case "vb":nav.b=+v;nav.l=0;render();break;
+  case "vl":nav.l++;render();break;
+  case "vback":nav.c=null;render();break;
+  case "vhome":nav={g:null,c:null,b:0,l:0};render();break;
+  case "sg":snav={g:+v,c:null,b:0};render();break;
+  case "sc":snav.c=+v;snav.b=0;render();break;
+  case "sb":snav.b=+v;render();break;
+  case "sbk":snav.c=null;render();break;
+  case "sh":snav={g:null,c:null,b:0};render();break;
+ }});
+function crowd(x,n){const was=x.crowd;if(was===8&&n!==8&&x.wards<6){x.wards++;if(x.cas==="kissed"&&x.round<7)x.cas="up";}x.crowd=n;if(n===8&&was!==8&&x.wards>0){x.wards--;if(x.wards===0&&x.cas==="up")x.cas="kissed";}}
+window.__T={get S(){return S;}};
+render();
+</script>
+</body>
+</html>
