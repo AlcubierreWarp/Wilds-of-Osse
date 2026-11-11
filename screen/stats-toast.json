@@ -1034,14 +1034,50 @@
    "name": "The Party",
    "chars": [
     {
-     "name": "Belaskro",
+     "name": "Belaskro Tich",
      "count": "",
-     "sub": "Human Ranger 4 · Justin",
+     "sub": "Human Ranger 4 · Folk Hero · played by Justin",
      "ac": "15",
-     "hp": "32",
+     "hp": "32 (Hit Dice 4d10)",
      "speed": "30 ft.",
-     "abil": null,
-     "props": [],
+     "abil": [
+      12,
+      18,
+      12,
+      10,
+      14,
+      12
+     ],
+     "props": [
+      [
+       "Initiative",
+       "+4"
+      ],
+      [
+       "Proficiency Bonus",
+       "+2"
+      ],
+      [
+       "Saving Throws",
+       "Str +3*, Dex +6*, Con +1, Int +0, Wis +2, Cha +1 (* proficient)"
+      ],
+      [
+       "Senses",
+       "passive Perception 14, Insight 12, Investigation 12"
+      ],
+      [
+       "Proficiencies",
+       "Armor: Light Armor, Medium Armor, Shields; Weapons: Martial Weapons, Simple Weapons; Tools: Monster Harvesting Tools, Vehicles (Land)"
+      ],
+      [
+       "Languages",
+       "Common, Common Sign Language, Dwarvish, Orc"
+      ],
+      [
+       "Spellcasting",
+       "Wis · save DC 12 · attack +4"
+      ]
+     ],
      "tonight": [
       [
        "Defense +5",
@@ -1049,7 +1085,7 @@
       ],
       [
        "Wake",
-       "Cure Wounds. He cannot cure the poison."
+       "Cure Wounds is on his list. He cannot cure the poison."
       ],
       [
        "Rune tablets",
@@ -1057,24 +1093,313 @@
       ],
       [
        "Whip",
-       "Snatch a Knife's tablet from 10 feet: Sleight of Hand +4 against DC 16."
+       "Reach 10 ft. Snatch a Knife's tablet: Sleight of Hand +4 against DC 16."
       ],
       [
-       "Skills",
-       "Athletics +3, Acrobatics +4, Medicine +2."
+       "Getting there",
+       "Athletics +3, Acrobatics +4 for the crowd (DC 12) and Cassian's door (DC 17)."
       ]
      ],
-     "sections": []
+     "sections": [
+      {
+       "h": "Skills",
+       "skills": [
+        [
+         "Acrobatics",
+         "+4",
+         ""
+        ],
+        [
+         "Animal Handling",
+         "+4",
+         "P"
+        ],
+        [
+         "Arcana",
+         "+0",
+         ""
+        ],
+        [
+         "Athletics",
+         "+3",
+         "P"
+        ],
+        [
+         "Deception",
+         "+1",
+         ""
+        ],
+        [
+         "History",
+         "+0",
+         ""
+        ],
+        [
+         "Insight",
+         "+2",
+         ""
+        ],
+        [
+         "Intimidation",
+         "+1",
+         ""
+        ],
+        [
+         "Investigation",
+         "+2",
+         "P"
+        ],
+        [
+         "Medicine",
+         "+2",
+         ""
+        ],
+        [
+         "Nature",
+         "+0",
+         ""
+        ],
+        [
+         "Perception",
+         "+4",
+         "P"
+        ],
+        [
+         "Performance",
+         "+1",
+         ""
+        ],
+        [
+         "Persuasion",
+         "+3",
+         "P"
+        ],
+        [
+         "Religion",
+         "+0",
+         ""
+        ],
+        [
+         "Sleight of Hand",
+         "+4",
+         ""
+        ],
+        [
+         "Stealth",
+         "+4",
+         ""
+        ],
+        [
+         "Survival",
+         "+6",
+         "E"
+        ]
+       ]
+      },
+      {
+       "h": "Attacks",
+       "table": {
+        "head": [
+         "Attack",
+         "Hit",
+         "Damage",
+         "Notes"
+        ],
+        "rows": [
+         [
+          "Crossbow, Hand",
+          "+8",
+          "1d6+4",
+          "Piercing Martial, Ammunition, Range, Light, Loading, Vex, Range (30/120)"
+         ],
+         [
+          "Whip",
+          "+6",
+          "1d4+4",
+          "Slashing Martial, Finesse, Reach, Slow"
+         ],
+         [
+          "Unarmed Strike",
+          "+3",
+          "2",
+          "Bludgeoning"
+         ]
+        ]
+       }
+      },
+      {
+       "h": "Spells · 1st level · 3 slots",
+       "table": {
+        "head": [
+         "Spell",
+         "Time",
+         "Range",
+         "Duration"
+        ],
+        "rows": [
+         [
+          "Speak with Animals (ritual)",
+          "Action",
+          "Self",
+          "10 minutes"
+         ],
+         [
+          "Cure Wounds",
+          "Action",
+          "Touch",
+          "Instantaneous"
+         ],
+         [
+          "Fog Cloud",
+          "Action",
+          "120 ft./20 ft. Sphere",
+          "Conc. 1 hour"
+         ],
+         [
+          "Longstrider",
+          "Action",
+          "Touch",
+          "1 hour"
+         ],
+         [
+          "Detect Magic (ritual)",
+          "Action",
+          "Self/30 ft. Sphere",
+          "Conc. 10 minutes"
+         ],
+         [
+          "★ Hunter's Mark",
+          "Bonus",
+          "90 ft.",
+          "Conc. 1 hour"
+         ]
+        ]
+       }
+      },
+      {
+       "h": "",
+       "items": [
+        [
+         "Spell list",
+         "★ marks always-prepared spells. The sheet lists every spell available to the class and does not show which of the others are prepared today."
+        ]
+       ]
+      },
+      {
+       "h": "Ranger Features",
+       "items": [
+        [
+         "Favored Enemy",
+         "You always have Hunter’s Mark prepared and can cast it without expending a spell slot 2 times per Long Rest. [Hunter’s Mark: 2 / Long Rest • 1 Bonus Action]"
+        ],
+        [
+         "Deft Explorer",
+         "You gain Expertise with one of your skill proficiencies. You know two languages of your choice."
+        ],
+        [
+         "Fighting Style",
+         "[Fighting Style feat]"
+        ],
+        [
+         "Hunter’s Lore",
+         "When a creature is marked by your Hunter’s Mark, you know whether the creature has any Immunities, Resistances, Vulnerabilities, and if the creature has any, you know what they are. [1 Bonus Action]"
+        ],
+        [
+         "Hunter’s Prey",
+         "You gain one option of your choice. Whenever you finish a Short or Long Rest, you can replace the option with the other one. [Colossus Slayer] Once per turn, when you hit a creature that’s missing any of its HP with a weapon, the weapon deals an extra 1d8 damage. [1 Action]"
+        ]
+       ]
+      },
+      {
+       "h": "Human Species Traits",
+       "items": [
+        [
+         "Resourceful",
+         "You gain Heroic Inspiration whenever you finish a Long Rest."
+        ],
+        [
+         "Skillful",
+         "You gain proficiency in one skill of your choice."
+        ],
+        [
+         "Versatile",
+         "You gain an Origin feat of your choice."
+        ]
+       ]
+      },
+      {
+       "h": "Feats",
+       "items": [
+        [
+         "Savage Attacker",
+         "Once per turn when you hit a target with a weapon, you can roll the weapon’s damage dice twice and use either roll against the target."
+        ],
+        [
+         "Archery",
+         "You gain a +2 bonus to attack rolls with Ranged weapons."
+        ],
+        [
+         "Weapon Mastery",
+         "[Hand Crossbow (Vex)] Vex. If you hit a creature with a Hand Crossbow and deal damage to it, you have Advantage on your next attack roll against that creature before the end of your next turn. [Whip (Slow)] Slow. If you hit a creature with a Whip and deal damage to the creature, you can reduce its Speed by 10 ft. until the start of your next turn. If the creature is hit more than once with this property, the Speed reduction doesn’t exceed 10 ft. [Vex (Hand Crossbow): 1 Action] [Slow (Whip):]"
+        ]
+       ]
+      },
+      {
+       "h": "Equipment",
+       "items": [
+        [
+         "Carried",
+         "Leather, Crossbow, Hand, Whip, Crossbow Bolts ×20, Clothes, Common, Pot, Iron, Shovel, Monster Harvesting Tools ×0, Sun and Moon Signet Ring, Blank Rune Tablets ×3, Sabotaged Shield Runes ×2, Unbowed Instruction Letter"
+        ]
+       ]
+      }
+     ]
     },
     {
-     "name": "Gabriele",
+     "name": "Gabriele d'Avidicci",
      "count": "",
-     "sub": "Human Cleric 4 (Life) · Peter",
+     "sub": "Human Cleric 4 · Soldier · played by Peter",
      "ac": "15",
-     "hp": "27",
+     "hp": "27 (Hit Dice 4d8)",
      "speed": "30 ft.",
-     "abil": null,
-     "props": [],
+     "abil": [
+      11,
+      8,
+      13,
+      14,
+      16,
+      14
+     ],
+     "props": [
+      [
+       "Initiative",
+       "−1"
+      ],
+      [
+       "Proficiency Bonus",
+       "+2"
+      ],
+      [
+       "Saving Throws",
+       "Str +0, Dex -1, Con +1, Int +2, Wis +5*, Cha +4* (* proficient)"
+      ],
+      [
+       "Senses",
+       "passive Perception 13, Insight 13, Investigation 12"
+      ],
+      [
+       "Proficiencies",
+       "Armor: Light Armor, Medium Armor, Shields; Weapons: Simple Weapons, Sword; Tools: Playing Card Set"
+      ],
+      [
+       "Languages",
+       "Common, Common Sign Language, Draconic"
+      ],
+      [
+       "Spellcasting",
+       "Wis · save DC 13 · attack +5"
+      ]
+     ],
      "tonight": [
       [
        "Defense +5",
@@ -1082,92 +1407,1601 @@
       ],
       [
        "Cure",
-       "Lesser Restoration, Protection from Poison."
+       "Lesser Restoration (bonus action, always prepared). Protection from Poison only if he prepared it today."
       ],
       [
        "Wake",
-       "Healing Word (60 ft, bonus action), Cure Wounds, a healing potion."
+       "Cure Wounds (always prepared), Healing Word at 60 ft if prepared, one Potion of Healing."
       ],
       [
        "Preserve Life",
-       "Channel Divinity: wakes every Kissed champion within 30 feet."
+       "Channel Divinity, 2 uses: wakes every Kissed champion within 30 feet."
       ],
       [
-       "Skills",
-       "Arcana +7, Medicine +3, Athletics +2."
+       "Wards",
+       "Arcana +7 to shore one up (DC 14)."
       ]
      ],
-     "sections": []
+     "sections": [
+      {
+       "h": "Skills",
+       "skills": [
+        [
+         "Acrobatics",
+         "−1",
+         ""
+        ],
+        [
+         "Animal Handling",
+         "+3",
+         ""
+        ],
+        [
+         "Arcana",
+         "+7",
+         "P"
+        ],
+        [
+         "Athletics",
+         "+2",
+         "P"
+        ],
+        [
+         "Deception",
+         "+2",
+         ""
+        ],
+        [
+         "History",
+         "+4",
+         "P"
+        ],
+        [
+         "Insight",
+         "+3",
+         ""
+        ],
+        [
+         "Intimidation",
+         "+4",
+         "P"
+        ],
+        [
+         "Investigation",
+         "+2",
+         ""
+        ],
+        [
+         "Medicine",
+         "+3",
+         ""
+        ],
+        [
+         "Nature",
+         "+2",
+         ""
+        ],
+        [
+         "Perception",
+         "+3",
+         ""
+        ],
+        [
+         "Performance",
+         "+2",
+         ""
+        ],
+        [
+         "Persuasion",
+         "+4",
+         "P"
+        ],
+        [
+         "Religion",
+         "+5",
+         ""
+        ],
+        [
+         "Sleight of Hand",
+         "−1",
+         ""
+        ],
+        [
+         "Stealth",
+         "−1",
+         ""
+        ],
+        [
+         "Survival",
+         "+3",
+         ""
+        ]
+       ]
+      },
+      {
+       "h": "Attacks",
+       "table": {
+        "head": [
+         "Attack",
+         "Hit",
+         "Damage",
+         "Notes"
+        ],
+        "rows": [
+         [
+          "Mace",
+          "+2",
+          "1d6",
+          "Bludgeoning Simple, Sap"
+         ],
+         [
+          "Rapier",
+          "+0",
+          "1d8",
+          "Piercing Martial, Finesse, Vex"
+         ],
+         [
+          "Unarmed Strike",
+          "+2",
+          "1",
+          "Bludgeoning"
+         ]
+        ]
+       }
+      },
+      {
+       "h": "Spells · Cantrips",
+       "table": {
+        "head": [
+         "Spell",
+         "Time",
+         "Range",
+         "Duration"
+        ],
+        "rows": [
+         [
+          "Thaumaturgy",
+          "Action",
+          "30 ft.",
+          "1 minute"
+         ],
+         [
+          "Toll the Dead",
+          "Action",
+          "60 ft.",
+          "Instantaneous"
+         ],
+         [
+          "Guidance",
+          "Action",
+          "Touch",
+          "Conc. 1 minute"
+         ]
+        ]
+       }
+      },
+      {
+       "h": "Spells · 1st level · 4 slots",
+       "table": {
+        "head": [
+         "Spell",
+         "Time",
+         "Range",
+         "Duration"
+        ],
+        "rows": [
+         [
+          "Guiding Bolt",
+          "Action",
+          "120 ft.",
+          "1 round"
+         ],
+         [
+          "★ Cure Wounds",
+          "Action",
+          "Touch",
+          "Instantaneous"
+         ],
+         [
+          "★ Bless",
+          "Action",
+          "30 ft.",
+          "Conc. 1 minute"
+         ],
+         [
+          "Bane",
+          "Action",
+          "30 ft.",
+          "Conc. 1 minute"
+         ],
+         [
+          "Protection from Evil and Good",
+          "Action",
+          "Touch",
+          "Conc. 10 minutes"
+         ],
+         [
+          "Purify Food and Drink (ritual)",
+          "Action + 10m",
+          "10 ft./5 ft. Sphere",
+          "Instantaneous"
+         ],
+         [
+          "Command",
+          "Action",
+          "60 ft.",
+          "Instantaneous"
+         ],
+         [
+          "Sanctuary",
+          "Bonus",
+          "30 ft.",
+          "1 minute"
+         ],
+         [
+          "Shield of Faith",
+          "Bonus",
+          "60 ft.",
+          "Conc. 10 minutes"
+         ],
+         [
+          "Create or Destroy Water",
+          "Action",
+          "30 ft./30 ft. Cube",
+          "Instantaneous"
+         ],
+         [
+          "Detect Evil and Good",
+          "Action",
+          "Self/30 ft. Sphere",
+          "Conc. 10 minutes"
+         ],
+         [
+          "Detect Poison and Disease (ritual)",
+          "Action + 10m",
+          "Self/30 ft. Sphere",
+          "Conc. 10 minutes"
+         ],
+         [
+          "Detect Magic (ritual)",
+          "Action + 10m",
+          "Self/30 ft. Sphere",
+          "Conc. 10 minutes"
+         ],
+         [
+          "Healing Word",
+          "Bonus",
+          "60 ft.",
+          "Instantaneous"
+         ],
+         [
+          "Inflict Wounds",
+          "Action",
+          "Touch",
+          "Instantaneous"
+         ]
+        ]
+       }
+      },
+      {
+       "h": "Spells · 2nd level · 3 slots",
+       "table": {
+        "head": [
+         "Spell",
+         "Time",
+         "Range",
+         "Duration"
+        ],
+        "rows": [
+         [
+          "Spiritual Weapon",
+          "Bonus",
+          "60 ft.",
+          "Conc. 1 minute"
+         ],
+         [
+          "★ Aid",
+          "Action",
+          "30 ft.",
+          "8 hours"
+         ],
+         [
+          "★ Lesser Restoration",
+          "Bonus",
+          "Touch",
+          "Instantaneous"
+         ],
+         [
+          "Augury (ritual)",
+          "1 min (ritual)",
+          "Self",
+          "Instantaneous"
+         ],
+         [
+          "Find Traps",
+          "Action",
+          "120 ft.",
+          "Instantaneous"
+         ],
+         [
+          "Prayer of Healing",
+          "10m",
+          "30 ft.",
+          "Instantaneous"
+         ],
+         [
+          "Protection from Poison",
+          "Action",
+          "Touch",
+          "1 hour"
+         ],
+         [
+          "Blindness/Deafness",
+          "Action",
+          "120 ft.",
+          "1 minute"
+         ],
+         [
+          "Gentle Repose (ritual)",
+          "Action + 10m",
+          "Touch",
+          "10 days"
+         ],
+         [
+          "Calm Emotions",
+          "Action",
+          "60 ft./20 ft. Sphere",
+          "Conc. 1 minute"
+         ],
+         [
+          "Locate Object",
+          "Action",
+          "Self",
+          "Conc. 10 minutes"
+         ],
+         [
+          "Silence (ritual)",
+          "Action + 10m",
+          "120 ft./20 ft. Sphere",
+          "Conc. 10 minutes"
+         ],
+         [
+          "Continual Flame",
+          "Action",
+          "Touch",
+          "Until dispelled"
+         ],
+         [
+          "Hold Person",
+          "Action",
+          "60 ft.",
+          "Conc. 1 minute"
+         ],
+         [
+          "Enhance Ability",
+          "Action",
+          "Touch",
+          "Conc. 1 hour"
+         ],
+         [
+          "Warding Bond",
+          "Action",
+          "Touch",
+          "1 hour"
+         ],
+         [
+          "Zone of Truth",
+          "Action",
+          "60 ft./15 ft. Sphere",
+          "10 minutes"
+         ]
+        ]
+       }
+      },
+      {
+       "h": "",
+       "items": [
+        [
+         "Spell list",
+         "★ marks always-prepared spells. The sheet lists every spell available to the class and does not show which of the others are prepared today."
+        ]
+       ]
+      },
+      {
+       "h": "Cleric Features",
+       "items": [
+        [
+         "Divine Order",
+         "[Thaumaturge] You know one extra cantrip from the Cleric spell list. You also have a +3 bonus to your Arcana and Religion checks."
+        ],
+        [
+         "Channel Divinity",
+         "You can channel energy directly from the Outer Planes to fuel magical effects. When you use this class’s Channel Divinity, you can choose which effect to create. You can use this class’s Channel Divinity 2 times per Long Rest, but can regain one expended use after finishing a Short Rest. If your Channel Divinity requires a saving throw, the DC equals your Cleric spell save DC (DC 13). [2 / Long Rest • 1 Action] [Channel Divinity: Divine Spark: 1 Action] [Channel Divinity: Turn Undead: 1 Action]"
+        ],
+        [
+         "Disciple of Life",
+         "When a spell you cast with a spell slot restores HP to a creature, that creature regains an additional 2 + the spell slot’s level."
+        ],
+        [
+         "Life Domain Spells",
+         "When you reach a Cleric level specified in the Life Domain Spells table, you always have the listed spells prepared."
+        ],
+        [
+         "Preserve Life",
+         "As a Magic Action, you can expend a use of your Channel Divinity to restore 20 HP to Bloodied creatures within 30 ft. of yourself (which can include you), and divide the HP among them. This feature can only restore a creature up to half its maximum HP. [Channel Divinity: Preserve Life: 1 Action]"
+        ]
+       ]
+      },
+      {
+       "h": "Human Species Traits",
+       "items": [
+        [
+         "Resourceful",
+         "You gain Heroic Inspiration whenever you finish a Long Rest."
+        ],
+        [
+         "Skillful",
+         "You gain proficiency in one skill of your choice."
+        ],
+        [
+         "Versatile",
+         "You gain an Origin feat of your choice."
+        ]
+       ]
+      },
+      {
+       "h": "Feats",
+       "items": [
+        [
+         "Magic Initiate (Cleric)",
+         "Two Cantrips. You learn two cantrips of your choice from the Cleric spell list. Int., Wis., or Cha. is your spellcasting ability for this feat's spells. Level 1 Spell. Choose a level 1 spell from the Cleric spell list. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have. Spell Change. Whenever you gain a new level, you can replace one of the spells you chose for this feat with a different spell of the same level from the chosen spell list. Repeatable. You can take this feat more than once, but you must choose a different spell list each time. [Wisdom]"
+        ],
+        [
+         "Savage Attacker",
+         "Once per turn when you hit a target with a weapon, you can roll the weapon’s damage dice twice and use either roll against the target."
+        ],
+        [
+         "Soldier Ability Score Improvements",
+         "[Increase three scores (+1 / +1 / +1) •]"
+        ]
+       ]
+      },
+      {
+       "h": "Equipment",
+       "items": [
+        [
+         "Carried",
+         "Shield, Chain Shirt, Father Baricello's Rosary, Mace, Rapier, Backpack, Father Barichello's Bible, Potion of Healing, Rations ×7, Robe, Blanket, Tinderbox, Lamp, Holy Water"
+        ]
+       ]
+      }
+     ]
     },
     {
-     "name": "Gus",
+     "name": "Gus (AM-FIU-27)",
      "count": "",
-     "sub": "Warforged Artificer 4 (Battle Smith) · Shane",
+     "sub": "Warforged Artificer 4 · Faction Agent · played by Shane",
      "ac": "18",
-     "hp": "23",
+     "hp": "23 (Hit Dice 4d8)",
      "speed": "30 ft.",
-     "abil": null,
-     "props": [],
+     "abil": [
+      10,
+      14,
+      10,
+      16,
+      12,
+      13
+     ],
+     "props": [
+      [
+       "Initiative",
+       "+2"
+      ],
+      [
+       "Proficiency Bonus",
+       "+2"
+      ],
+      [
+       "Saving Throws",
+       "Str +0, Dex +2, Con +2*, Int +5*, Wis +1, Cha +1 (* proficient)"
+      ],
+      [
+       "Senses",
+       "passive Perception 13, Insight 13, Investigation 15"
+      ],
+      [
+       "Damage Resistances",
+       "poison; advantage on saves against being poisoned"
+      ],
+      [
+       "Proficiencies",
+       "Armor: Light Armor, Medium Armor, Shields; Weapons: Firearms, Martial Weapons, Simple Weapons; Tools: Alchemist's Supplies, Forgery Kit, Smith's Tools, Thieves' Tools, Tinker's Tools"
+      ],
+      [
+       "Languages",
+       "Common, Dwarvish, Elvish, Sylvan"
+      ],
+      [
+       "Spellcasting",
+       "Int · save DC 13 · attack +5"
+      ]
+     ],
      "tonight": [
       [
        "Defense +8",
        "Rolls d20 + 8 against DC 18 (Knife), 17 (marksman) or 19 (the Hand)."
       ],
       [
+       "Shield",
+       "Always prepared: as a reaction, +5 to a failed defense roll."
+      ],
+      [
+       "Poison resistance",
+       "A Knife's hit deals him 9 instead of 13, and the Hand's 10 instead of 14. Advantage on the marksman's DC 12 Con save. If Kissed, 3 poison a turn."
+      ],
+      [
        "Wake",
-       "Cure Wounds. He cannot cure the poison."
+       "Cure Wounds if prepared. He cannot cure the poison."
       ],
       [
        "Steel defender",
        "Can stand over a champion as Protect."
       ],
       [
-       "Cassian's door",
-       "Thieves' tools, DC 15."
-      ],
-      [
-       "Skills",
-       "Arcana +5 for the wards, Medicine +1."
+       "Upstairs",
+       "Arcana +5 for the wards. Thieves' tools for Cassian's door (DC 15)."
       ]
      ],
-     "sections": []
+     "sections": [
+      {
+       "h": "Skills",
+       "skills": [
+        [
+         "Acrobatics",
+         "+2",
+         ""
+        ],
+        [
+         "Animal Handling",
+         "+1",
+         ""
+        ],
+        [
+         "Arcana",
+         "+5",
+         "P"
+        ],
+        [
+         "Athletics",
+         "+0",
+         ""
+        ],
+        [
+         "Deception",
+         "+1",
+         ""
+        ],
+        [
+         "History",
+         "+3",
+         ""
+        ],
+        [
+         "Insight",
+         "+3",
+         "P"
+        ],
+        [
+         "Intimidation",
+         "+1",
+         ""
+        ],
+        [
+         "Investigation",
+         "+5",
+         "P"
+        ],
+        [
+         "Medicine",
+         "+1",
+         ""
+        ],
+        [
+         "Nature",
+         "+3",
+         ""
+        ],
+        [
+         "Perception",
+         "+3",
+         "P"
+        ],
+        [
+         "Performance",
+         "+1",
+         ""
+        ],
+        [
+         "Persuasion",
+         "+1",
+         ""
+        ],
+        [
+         "Religion",
+         "+3",
+         ""
+        ],
+        [
+         "Sleight of Hand",
+         "+2",
+         ""
+        ],
+        [
+         "Stealth",
+         "+2",
+         ""
+        ],
+        [
+         "Survival",
+         "+1",
+         ""
+        ]
+       ]
+      },
+      {
+       "h": "Attacks",
+       "table": {
+        "head": [
+         "Attack",
+         "Hit",
+         "Damage",
+         "Notes"
+        ],
+        "rows": [
+         [
+          "Crossbow, Light",
+          "+4",
+          "1d8+2",
+          "Piercing Simple, Ammunition, Loading, Range, Two-Handed, Slow, Range (80/320)"
+         ],
+         [
+          "Dagger",
+          "+4",
+          "1d4+2",
+          "Piercing Simple, Finesse, Light, Thrown, Nick, Range (20/60)"
+         ],
+         [
+          "Spear",
+          "+2",
+          "1d6",
+          "Piercing Simple, Thrown, Versatile, Sap, Range (20/60)"
+         ],
+         [
+          "Shocking Grasp",
+          "+5",
+          "1d8",
+          "Lightning V/S"
+         ],
+         [
+          "Unarmed Strike",
+          "+2",
+          "1",
+          "Bludgeoning"
+         ]
+        ]
+       }
+      },
+      {
+       "h": "Spells · Cantrips",
+       "table": {
+        "head": [
+         "Spell",
+         "Time",
+         "Range",
+         "Duration"
+        ],
+        "rows": [
+         [
+          "Acid Splash",
+          "Action",
+          "60 ft.",
+          "Instantaneous"
+         ],
+         [
+          "Shocking Grasp",
+          "Action",
+          "Touch",
+          "Instantaneous"
+         ]
+        ]
+       }
+      },
+      {
+       "h": "Spells · 1st level · 3 slots",
+       "table": {
+        "head": [
+         "Spell",
+         "Time",
+         "Range",
+         "Duration"
+        ],
+        "rows": [
+         [
+          "Tasha's Caustic Brew",
+          "Action",
+          "Self/30 ft. Line",
+          "Conc. 1 minute"
+         ],
+         [
+          "Sanctuary",
+          "Bonus",
+          "30 ft.",
+          "1 minute"
+         ],
+         [
+          "Detect Magic (ritual)",
+          "Action",
+          "Self/30 ft. Sphere",
+          "Conc. 10 minutes"
+         ],
+         [
+          "Snare",
+          "1m",
+          "Touch",
+          "8 hours"
+         ],
+         [
+          "Grease",
+          "Action",
+          "60 ft./10 ft. Square",
+          "1 minute"
+         ],
+         [
+          "★ Shield",
+          "Reaction",
+          "Self",
+          "1 round"
+         ],
+         [
+          "★ Heroism",
+          "Action",
+          "Touch",
+          "Conc. 1 minute"
+         ],
+         [
+          "Alarm (ritual)",
+          "1 min (ritual)",
+          "30 ft.",
+          "8 hours"
+         ],
+         [
+          "Cure Wounds",
+          "Action",
+          "Touch",
+          "Instantaneous"
+         ],
+         [
+          "Disguise Self",
+          "Action",
+          "Self",
+          "1 hour"
+         ],
+         [
+          "Expeditious Retreat",
+          "Bonus",
+          "Self",
+          "Conc. 10 minutes"
+         ],
+         [
+          "Faerie Fire",
+          "Action",
+          "60 ft./20 ft. Cube",
+          "Conc. 1 minute"
+         ],
+         [
+          "False Life",
+          "Action",
+          "Self",
+          "1 hour"
+         ],
+         [
+          "Feather Fall",
+          "Reaction",
+          "60 ft.",
+          "1 minute"
+         ],
+         [
+          "Identify (ritual)",
+          "1 min (ritual)",
+          "Touch",
+          "Instantaneous"
+         ],
+         [
+          "Jump",
+          "Action",
+          "Touch",
+          "1 minute"
+         ],
+         [
+          "Longstrider",
+          "Action",
+          "Touch",
+          "1 hour"
+         ],
+         [
+          "Purify Food and Drink (ritual)",
+          "Action + 10m",
+          "10 ft./5 ft. Sphere",
+          "Instantaneous"
+         ],
+         [
+          "Absorb Elements",
+          "Reaction",
+          "Self",
+          "1 round"
+         ],
+         [
+          "Catapult",
+          "Action",
+          "60 ft.",
+          "Instantaneous"
+         ]
+        ]
+       }
+      },
+      {
+       "h": "",
+       "items": [
+        [
+         "Spell list",
+         "★ marks always-prepared spells. The sheet lists every spell available to the class and does not show which of the others are prepared today."
+        ]
+       ]
+      },
+      {
+       "h": "Artificer Features",
+       "items": [
+        [
+         "Magical Tinkering",
+         "Imbue a Tiny nonmagical object with a magical property of your choice: 5ft. radius light, up to 6 second long recorded message, emits odor or nonverbal sound, static visual effect including up to 25 words of text. You can affect a maximum of 3 objects at a time. [3 / Other • 1 Action]"
+        ],
+        [
+         "Spellcasting",
+         "You can cast prepared artificer spells using INT as your spellcasting modifier (Spell DC 13, Spell Attack +5) and prepared artificer spells as rituals if they have the ritual tag. You must have a spellcasting focus — specifically thieves’ tools or some kind of artisan’s tool — in hand when you cast any spell with this feature."
+        ],
+        [
+         "Infuse Item",
+         "Whenever you finish a long rest, you can touch up to 2 nonmagical objects, imbuing each of them with one of your artificer infusions, turning it into a magic item. You can attune yourself to the item the instant you infuse it, or you can forgo attunement so that someone else can attune to the item. Your infusion remains in an item indefinitely, but when you die, the infusion vanishes after 3 days. The infusion also vanishes if you give up your knowledge of the infusion or you exceed your maximum number of infusions. [2 / Other • 1 Action]"
+        ],
+        [
+         "Artificer Infusions",
+         "You have invented numerous magical infusions that rapidly create magic items. Each infusion tells you the type of item that can receive it and if the resulting magic item requires attunement. Some infusions specify a minimum artificer level, and unless an infusion’s description says otherwise, you can’t learn it more than once."
+        ],
+        [
+         "Artificer Specialist",
+         "The type of specialist are: [Battle Smith]"
+        ],
+        [
+         "The Right Tool for the Job",
+         "With thieves’ tools or artisan’s tools in hand, you can magically create one set of artisan’s tools in an unoccupied space within 5 feet of you. This creation requires 1 hour of uninterrupted work, which can coincide with a short or long rest. Though the product of magic, the tools are nonmagical, and they vanish when you use this feature again. [1 Hour]"
+        ],
+        [
+         "Tool Proficiency",
+         "You gain proficiency with smith’s tools. If you already have this proficiency, you gain proficiency with one other type of artisan’s tools of your choice."
+        ],
+        [
+         "Battle Smith Spells",
+         "You always have certain spells prepared after you reach particular levels in this class, as shown in the Battle Smith Spells table."
+        ],
+        [
+         "Battle Ready",
+         "You gain proficiency with martial weapons and when you attack with a magic weapon, you can use your Intelligence modifier, instead of Strength or Dexterity modifier, for the attack and damage rolls."
+        ],
+        [
+         "Steel Defender",
+         "You have created a Steel Defender, that obeys your commands. In combat, the steel defender shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action. If you expend your bonus action, you can command it to take an action from its stat block, or some other action. [25 / Other • 1 Action]"
+        ]
+       ]
+      },
+      {
+       "h": "Warforged Species Traits",
+       "items": [
+        [
+         "Constructed Resilience",
+         "You have advantage on saving throws against being poisoned, and you have resistance to poison damage. You don’t need to eat, drink, or breathe. You are immune to disease. You don’t need to sleep, and magic can’t put you to sleep."
+        ],
+        [
+         "Sentry’s Rest",
+         "When you take a long rest, you must spend at least six hours in an inactive, motionless state, rather than sleeping. In this state, you appear inert, but it doesn’t render you unconscious, and you can see and hear as normal."
+        ],
+        [
+         "Integrated Protection",
+         "You gain a +1 bonus to Armor Class. To don or doff armor other than a shield takes 1 hour, and you must be proficient with the armor. While you live, your incorporated armor can’t be removed from your body against your will. ADDITIONAL FEATURES & TRAITS ADDITIONAL EQUIPMENT"
+        ]
+       ]
+      },
+      {
+       "h": "Feats",
+       "items": [
+        [
+         "War Caster",
+         "You have advantage on CON saving throws that you make to maintain your concentration on a spell when you take damage. You can perform the somatic components of spells even when you have weapons or a shield in one or both hands. You can use your reaction to make an opportunity attack to cast a spell that has a casting time of 1 action and targets only that creature. [1 Reaction]"
+        ]
+       ]
+      },
+      {
+       "h": "Equipment",
+       "items": [
+        [
+         "Carried",
+         "Scale Mail, Dagger, Spear, Crossbow, Light, Crossbow Bolts ×20, Backpack, Clothes, Common, Thieves' Tools, Crowbar, Hammer, Piton ×10, Rations (1 day) ×10, Rope, Hempen (50 feet), Tinderbox, Torch ×10, Waterskin"
+        ]
+       ]
+      }
+     ]
     },
     {
      "name": "Princess Timbit",
      "count": "",
-     "sub": "Catfolk Druid 4 (Wildfire) · Ally",
+     "sub": "Custom Lineage (catfolk) Druid 4 · Noble · played by Ally",
      "ac": "11",
-     "hp": "23",
+     "hp": "23 (Hit Dice 4d8)",
      "speed": "30 ft.",
-     "abil": null,
-     "props": [],
+     "abil": [
+      8,
+      13,
+      10,
+      14,
+      12,
+      17
+     ],
+     "props": [
+      [
+       "Initiative",
+       "+1"
+      ],
+      [
+       "Proficiency Bonus",
+       "+2"
+      ],
+      [
+       "Saving Throws",
+       "Str -1, Dex +1, Con +0, Int +4*, Wis +3*, Cha +3 (* proficient)"
+      ],
+      [
+       "Senses",
+       "Darkvision 60 ft., passive Perception 13, Insight 11, Investigation 12"
+      ],
+      [
+       "Proficiencies",
+       "Armor: Light Armor, Shields; Weapons: Simple Weapons; Tools: Herbalism Kit, Playing Card Set"
+      ],
+      [
+       "Languages",
+       "Common, Druidic, Undercommon"
+      ],
+      [
+       "Spellcasting",
+       "Wis · save DC 11 · attack +3"
+      ]
+     ],
      "tonight": [
       [
        "Defense +1",
-       "Rolls d20 + 1 against DC 18 (Knife), 17 (marksman) or 19 (the Hand)."
+       "Rolls d20 + 1 against DC 18 (Knife), 17 (marksman) or 19 (the Hand). She needs a 17 against a Knife."
       ],
       [
        "Cure",
-       "Lesser Restoration (bonus action), Protection from Poison."
+       "Lesser Restoration and Protection from Poison are on her list but are not always prepared. Check with Ally before the fight."
       ],
       [
        "Wake",
-       "Healing Word, Cure Wounds."
+       "Cure Wounds (always prepared). Healing Word if prepared."
       ],
       [
        "Hold the count",
-       "Spare the Dying (15 ft): a Kissed champion loses no pip this round."
+       "Spare the Dying, 15 ft: a Kissed champion loses no pip this round."
       ],
       [
-       "Exposed",
-       "She needs a 17 to avoid a Knife."
-      ],
-      [
-       "Skills",
-       "Arcana +5, Medicine +1."
+       "Wildfire spirit",
+       "Fiery Teleportation moves willing creatures within 5 feet up to 15 feet."
       ]
      ],
-     "sections": []
+     "sections": [
+      {
+       "h": "Skills",
+       "skills": [
+        [
+         "Acrobatics",
+         "+1",
+         ""
+        ],
+        [
+         "Animal Handling",
+         "+1",
+         ""
+        ],
+        [
+         "Arcana",
+         "+5",
+         "P"
+        ],
+        [
+         "Athletics",
+         "−1",
+         ""
+        ],
+        [
+         "Deception",
+         "+3",
+         ""
+        ],
+        [
+         "History",
+         "+4",
+         "P"
+        ],
+        [
+         "Insight",
+         "+1",
+         ""
+        ],
+        [
+         "Intimidation",
+         "+3",
+         ""
+        ],
+        [
+         "Investigation",
+         "+2",
+         ""
+        ],
+        [
+         "Medicine",
+         "+1",
+         ""
+        ],
+        [
+         "Nature",
+         "+3",
+         ""
+        ],
+        [
+         "Perception",
+         "+3",
+         "P"
+        ],
+        [
+         "Performance",
+         "+3",
+         ""
+        ],
+        [
+         "Persuasion",
+         "+5",
+         "P"
+        ],
+        [
+         "Religion",
+         "+2",
+         ""
+        ],
+        [
+         "Sleight of Hand",
+         "+1",
+         ""
+        ],
+        [
+         "Stealth",
+         "+1",
+         ""
+        ],
+        [
+         "Survival",
+         "+1",
+         ""
+        ]
+       ]
+      },
+      {
+       "h": "Attacks",
+       "table": {
+        "head": [
+         "Attack",
+         "Hit",
+         "Damage",
+         "Notes"
+        ],
+        "rows": [
+         [
+          "Shillelagh",
+          "+3",
+          "1d8+1",
+          "Bludgeoning D: 1m, V/S/M"
+         ],
+         [
+          "Starry Wisp",
+          "+3",
+          "1d8",
+          "Radiant V/S"
+         ],
+         [
+          "Eldritch Blast",
+          "+5",
+          "1d10",
+          "Force V/S"
+         ],
+         [
+          "Poison Spray",
+          "+3",
+          "1d12",
+          "Poison V/S"
+         ],
+         [
+          "Unarmed Strike",
+          "+1",
+          "0",
+          "Bludgeoning"
+         ]
+        ]
+       }
+      },
+      {
+       "h": "Spells · Cantrips",
+       "table": {
+        "head": [
+         "Spell",
+         "Time",
+         "Range",
+         "Duration"
+        ],
+        "rows": [
+         [
+          "Shillelagh",
+          "Bonus",
+          "Self",
+          "1 minute"
+         ],
+         [
+          "Spare the Dying",
+          "Action",
+          "15 ft.",
+          "Instantaneous"
+         ],
+         [
+          "Starry Wisp",
+          "Action",
+          "120 ft.",
+          "Instantaneous"
+         ],
+         [
+          "Resistance",
+          "Action",
+          "Touch",
+          "Conc. 1 minute"
+         ],
+         [
+          "Control Flames",
+          "Action",
+          "60 ft./5 ft. Cube",
+          "Instantaneous"
+         ]
+        ]
+       }
+      },
+      {
+       "h": "Spells · 1st level · 4 slots",
+       "table": {
+        "head": [
+         "Spell",
+         "Time",
+         "Range",
+         "Duration"
+        ],
+        "rows": [
+         [
+          "Faerie Fire",
+          "Action",
+          "60 ft./20 ft. Cube",
+          "Conc. 1 minute"
+         ],
+         [
+          "Protection from Evil and Good",
+          "Action",
+          "Touch",
+          "Conc. 10 minutes"
+         ],
+         [
+          "Beast Bond",
+          "Action",
+          "Touch",
+          "Conc. 10 minutes"
+         ],
+         [
+          "★ Cure Wounds",
+          "Action",
+          "Touch",
+          "Instantaneous"
+         ],
+         [
+          "★ Burning Hands",
+          "Action",
+          "Self/15 ft. Cone",
+          "Instantaneous"
+         ],
+         [
+          "Absorb Elements",
+          "Reaction",
+          "Self",
+          "1 round"
+         ],
+         [
+          "Earth Tremor",
+          "Action",
+          "10 ft.",
+          "Instantaneous"
+         ],
+         [
+          "Ice Knife",
+          "Action",
+          "120 ft./5 ft. Sphere",
+          "Instantaneous"
+         ],
+         [
+          "Animal Friendship",
+          "Action",
+          "30 ft.",
+          "24 hours"
+         ],
+         [
+          "Fog Cloud",
+          "Action",
+          "120 ft./20 ft. Sphere",
+          "Conc. 1 hour"
+         ],
+         [
+          "Purify Food and Drink (ritual)",
+          "Action + 10m",
+          "10 ft./5 ft. Sphere",
+          "Instantaneous"
+         ],
+         [
+          "Goodberry",
+          "Action",
+          "Self",
+          "24 hours"
+         ],
+         [
+          "Charm Person",
+          "Action",
+          "30 ft.",
+          "1 hour"
+         ],
+         [
+          "Jump",
+          "Bonus",
+          "Touch",
+          "1 minute"
+         ],
+         [
+          "Longstrider",
+          "Action",
+          "Touch",
+          "1 hour"
+         ],
+         [
+          "★ Speak with Animals (ritual)",
+          "Action",
+          "Self",
+          "10 minutes"
+         ],
+         [
+          "Create or Destroy Water",
+          "Action",
+          "30 ft./30 ft. Cube",
+          "Instantaneous"
+         ],
+         [
+          "Detect Poison and Disease (ritual)",
+          "Action + 10m",
+          "Self/30 ft. Sphere",
+          "Conc. 10 minutes"
+         ],
+         [
+          "Detect Magic (ritual)",
+          "Action + 10m",
+          "Self/30 ft. Sphere",
+          "Conc. 10 minutes"
+         ],
+         [
+          "Healing Word",
+          "Bonus",
+          "60 ft.",
+          "Instantaneous"
+         ],
+         [
+          "Thunderwave",
+          "Action",
+          "Self/15 ft. Cube",
+          "Instantaneous"
+         ],
+         [
+          "Entangle",
+          "Action",
+          "90 ft./20 ft. Square",
+          "Conc. 1 minute"
+         ]
+        ]
+       }
+      },
+      {
+       "h": "Spells · 2nd level · 3 slots",
+       "table": {
+        "head": [
+         "Spell",
+         "Time",
+         "Range",
+         "Duration"
+        ],
+        "rows": [
+         [
+          "Find Traps",
+          "Action",
+          "120 ft.",
+          "Instantaneous"
+         ],
+         [
+          "Summon Beast",
+          "Action",
+          "90 ft.",
+          "Conc. 1 hour"
+         ],
+         [
+          "Augury (ritual)",
+          "1m",
+          "Self",
+          "Instantaneous"
+         ],
+         [
+          "Enlarge/Reduce",
+          "Action",
+          "30 ft.",
+          "Conc. 1 minute"
+         ],
+         [
+          "★ Flaming Sphere",
+          "Action",
+          "60 ft./5 ft. Sphere",
+          "Conc. 1 minute"
+         ],
+         [
+          "★ Scorching Ray",
+          "Action",
+          "240 ft.",
+          "Instantaneous"
+         ],
+         [
+          "Dust Devil",
+          "Action",
+          "60 ft./5 ft. Cube",
+          "Conc. 1 minute"
+         ],
+         [
+          "Earthbind",
+          "Action",
+          "300 ft.",
+          "Conc. 1 minute"
+         ],
+         [
+          "Skywrite (ritual)",
+          "Action + 10m",
+          "Sight",
+          "Conc. 1 hour"
+         ],
+         [
+          "Warding Wind",
+          "Action",
+          "Self/10 ft. Sphere",
+          "Conc. 10 minutes"
+         ],
+         [
+          "Aid",
+          "Action",
+          "30 ft.",
+          "8 hours"
+         ],
+         [
+          "Pass without Trace",
+          "Action",
+          "Self/30 ft. Emanation",
+          "Conc. 1 hour"
+         ],
+         [
+          "Animal Messenger (ritual)",
+          "Action + 10m",
+          "30 ft.",
+          "24 hours"
+         ],
+         [
+          "Flame Blade",
+          "Bonus",
+          "Self",
+          "Conc. 10 minutes"
+         ],
+         [
+          "Barkskin",
+          "Bonus",
+          "Touch",
+          "1 hour"
+         ],
+         [
+          "Beast Sense (ritual)",
+          "Action + 10m",
+          "Touch",
+          "Conc. 1 hour"
+         ],
+         [
+          "Protection from Poison",
+          "Action",
+          "Touch",
+          "1 hour"
+         ],
+         [
+          "Locate Animals or Plants (ritual)",
+          "Action + 10m",
+          "Self",
+          "Instantaneous"
+         ],
+         [
+          "Locate Object",
+          "Action",
+          "Self",
+          "Conc. 10 minutes"
+         ],
+         [
+          "Lesser Restoration",
+          "Bonus",
+          "Touch",
+          "Instantaneous"
+         ],
+         [
+          "Continual Flame",
+          "Action",
+          "Touch",
+          "Until dispelled"
+         ],
+         [
+          "Spike Growth",
+          "Action",
+          "150 ft./20 ft. Sphere",
+          "Conc. 10 minutes"
+         ],
+         [
+          "Darkvision",
+          "Action",
+          "Touch",
+          "8 hours"
+         ],
+         [
+          "Moonbeam",
+          "Action",
+          "120 ft./5 ft. Cylinder",
+          "Conc. 1 minute"
+         ],
+         [
+          "Gust of Wind",
+          "Action",
+          "Self",
+          "Conc. 1 minute"
+         ],
+         [
+          "Heat Metal",
+          "Action",
+          "60 ft.",
+          "Conc. 1 minute"
+         ],
+         [
+          "Hold Person",
+          "Action",
+          "60 ft.",
+          "Conc. 1 minute"
+         ],
+         [
+          "Enhance Ability",
+          "Action",
+          "Touch",
+          "Conc. 1 hour"
+         ]
+        ]
+       }
+      },
+      {
+       "h": "",
+       "items": [
+        [
+         "Spell list",
+         "★ marks always-prepared spells. The sheet lists every spell available to the class and does not show which of the others are prepared today."
+        ]
+       ]
+      },
+      {
+       "h": "Wildfire Spirit",
+       "items": [
+        [
+         "Summon",
+         "Action, one use of Wild Shape. AC 13, speed 30 ft., fly 30 ft. (hover). Acts after her turn; bonus action to command it."
+        ],
+        [
+         "Flame Seed",
+         "Ranged +3, 60 ft. Hit: 1d6 + 2 fire."
+        ],
+        [
+         "Fiery Teleportation",
+         "The spirit and each willing creature within 5 feet teleport up to 15 feet. Creatures within 5 feet of the space it left: DC 11 Dexterity save or 1d6 + 2 fire."
+        ]
+       ]
+      },
+      {
+       "h": "Druid Features",
+       "items": [
+        [
+         "Druidic",
+         "You know Druidic and always have Speak with Animals prepared. You can use Druidic to leave hidden message. You and others who know Druidic automatically spot such a message. Others spot the message’s presence with a successful DC 15 Intelligence (Investigation) check but can’t decipher it without magic. [Leave Druidic Message: Special]"
+        ],
+        [
+         "Primal Order",
+         "You have dedicated yourself to one of the sacred roles. [Magician] You know one extra cantrip from the Druid spell list. You also gain a +1 bonus to Intelligence (Arcana or Nature) checks."
+        ],
+        [
+         "Wild Shape",
+         "As a Bonus Action, you shape-shift into a Beast form that you have learned for this feature. You stay in that form for 2 hours or until you use Wild Shape again, have the Incapacitated condition, or die. You can also leave the form early as a Bonus Action. You can use Wild Shape 2 times per Long Rest, and regain one expended use after finishing a Short Rest. You are able to learn a number of Beast forms as outlined below, and whenever you finish a Long Rest, you can replace one of your known forms with another eligible form. • Level 2: You know 4 four Beast Forms with a max CR of 1/4 that lack a Fly Speed. • Level 4: You know 6 four Beast Forms with a max CR of 1/2 that lack a Fly Speed. • Level 8 You know 8 four Beast Forms with a max CR of 1 and can adopt a form that has a Fly Speed. [2 / Long Rest • 1 Bonus Action]"
+        ],
+        [
+         "Wild Companion",
+         "As a Magic action, you can expend a spell slot or a use of Wild Shape to cast Find Familiar without Material components. When you cast the spell in this way, the familiar is Fey and disappears when you finish a Long Rest."
+        ],
+        [
+         "Circle Spells",
+         "You have formed a bond with a wildfire spirit, a primal being of creation and destruction. Your link with this spirit grants you access to some spells when you reach certain levels in this class, as shown on the Circle of Wildfire Spells table."
+        ],
+        [
+         "Summon Wildfire Spirit",
+         "As an action, you can expend one use of your Wild Shape feature to summon your wildfire spirit, rather than assuming a beast form. Each creature within 10 ft. of the spirit (other than you) when it appears must succeed on a Dex saving throw (DC 11) or take 2d6 fire damage. The spirit manifests for 1 hour, until it is reduced to 0 hit points, until you summon the spirit again, or until you die. [1 Action] [Summon Wildfire Spirit: Command: 25 / Other • 1] Bonus Action"
+        ]
+       ]
+      },
+      {
+       "h": "Custom Lineage Species Traits",
+       "items": [
+        [
+         "Variable Trait",
+         "[Darkvision] Darkvision with a range of 60 ft."
+        ]
+       ]
+      },
+      {
+       "h": "Feats",
+       "items": [
+        [
+         "Magic Initiate (Druid)",
+         "Two Cantrips. You learn two cantrips of your choice from the Druid spell list. Int., Wis., or Cha. is your spellcasting ability for this feat's spells. Level 1 Spell. Choose a level 1 spell from the Druid spell list. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have. Spell Change. Whenever you gain a new level, you can replace one of the spells you chose for this feat ADDITIONAL FEATURES & TRAITS ADDITIONAL EQUIPMENT with a different spell of the same level from the chosen spell list. Repeatable. You can take this feat more than once, but you must choose a different spell list each time. [Charisma]"
+        ],
+        [
+         "Spell Sniper",
+         "When you cast a spell that requires you to make an attack roll, the spell’s range is doubled. Your ranged spell attacks ignore half cover and three-quarters cover. You learn one cantrip that requires an attack roll from a chosen spell list. Your spellcasting ability for this cantrip depends on the spell list you chose from. [Charisma - Bard, Sorcerer, Warlock] Your spellcasting ability for this cantrip is Charisma."
+        ]
+       ]
+      },
+      {
+       "h": "Equipment",
+       "items": [
+        [
+         "Carried",
+         "Signet Ring"
+        ]
+       ]
+      }
+     ]
     }
    ]
   }
