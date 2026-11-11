@@ -10,8 +10,9 @@ They need GitHub Pages turned on for this repository (Settings, Pages, deploy fr
 | Knives' turn | https://alcubierrewarp.github.io/Wilds-of-Osse/screen/knives.html |
 | Crowd die | https://alcubierrewarp.github.io/Wilds-of-Osse/screen/crowd.html |
 | Voices | https://alcubierrewarp.github.io/Wilds-of-Osse/screen/voices.html |
+| Initiative | https://alcubierrewarp.github.io/Wilds-of-Osse/screen/initiative.html |
 | Stat blocks | https://alcubierrewarp.github.io/Wilds-of-Osse/screen/statblocks.html |
-| All six in one | https://alcubierrewarp.github.io/Wilds-of-Osse/screen/all.html |
+| All seven in one | https://alcubierrewarp.github.io/Wilds-of-Osse/screen/all.html |
 
 The clock, champions, knives and crowd panels share one fight state in the browser and stay in sync.
 Voices reads `voices-toast.json` by default; add `?data=<address of another JSON file>` to reuse it for a different scene.

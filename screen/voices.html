@@ -23,7 +23,7 @@ button.on{background:var(--gold);color:#1a130c;border-color:var(--gold)}
 .center{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
 
 /* dashboard */
-.dash{display:grid;height:100%;gap:6px;padding:6px;grid-template-columns:1fr 1fr 1fr 1.1fr;grid-template-rows:1fr 1.15fr;grid-template-areas:"clock knives crowd stats" "board board voice stats"}
+.dash{display:grid;height:100%;gap:6px;padding:6px;grid-template-columns:1fr 1fr 1fr 1fr 1.1fr;grid-template-rows:1fr 1.15fr;grid-template-areas:"init clock knives crowd stats" "init board board voice stats"}
 .dash>div{background:#1a1613;border:1px solid var(--line);border-radius:8px;min-width:0;min-height:0}
 
 /* 1 clock */
@@ -119,6 +119,21 @@ button.on{background:var(--gold);color:#1a130c;border-color:var(--gold)}
 .tb th{text-align:left;font-size:.78em;letter-spacing:.06em;text-transform:uppercase;color:#7a200d;border-bottom:1px solid #c9b48a;padding:1px 4px 1px 0}
 .tb td{padding:2px 4px 2px 0;border-bottom:1px dotted #d9c69c;vertical-align:top}
 .tb td b{color:#1b1410}
+
+.ilist{overflow-y:auto;display:flex;flex-direction:column;gap:1.2cqmin}
+.irow{display:flex;gap:2.2cqmin;align-items:center;background:var(--tile);border:1px solid var(--line);border-radius:1.8cqmin;padding:1.4cqmin 2cqmin;cursor:pointer;border-left:max(3px,1cqmin) solid var(--line)}
+.irow.pc{border-left-color:#6f9cc4}.irow.fx{border-left-color:var(--wine)}.irow.cu{border-left-color:#8fa866}.irow.mk{background:none;border-style:dashed}
+.irow.cur{background:#3a2a12;border-color:var(--gold);border-left-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}
+.irow.past{opacity:.42}
+.inum{font:700 clamp(15px,7.5cqmin,34px)/1 Georgia,serif;color:var(--gold);min-width:9cqmin;text-align:center}
+.iname{font:700 clamp(12px,4.8cqmin,23px)/1.1 Georgia,serif}
+.isub{font-size:clamp(9px,3cqmin,14px);color:var(--soft);line-height:1.5}
+.isub b{color:var(--ink)}
+.ibody{flex:1;min-width:0}
+.iin{width:11cqmin;min-width:38px;font:inherit;font-size:clamp(11px,4cqmin,18px);background:#33291f;color:var(--ink);border:1px solid var(--line);border-radius:1.2cqmin;padding:1cqmin;text-align:center}
+.hpc{display:inline-block;border:1px solid var(--line);border-radius:99px;padding:0 1.6cqmin;margin:0 .6cqmin .4cqmin 0;color:var(--ink);background:#2f5d3a55;white-space:nowrap}
+.hpc b{color:#b7e3a6}.hpc.hurt{background:#c98a2b44}.hpc.hurt b{color:#ffd27a}.hpc.out{background:#0006;text-decoration:line-through;opacity:.6}.hpc.sel{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+.idmg{background:#2a211b;border:1px solid var(--line);border-radius:1.6cqmin;padding:1.4cqmin}
 </style>
 </head>
 <body>
@@ -143,11 +158,17 @@ const CROWD={1:["Surge","DC 12 Str save or pushed 10 ft toward the garden doors 
 const CASLINE={5:"FATHER! Someone's on the roof!",4:"Is that all you've got?",3:"He's not angry. He's just counting.",2:"…Father?"};
 const NUMW=["","One.","Two.","Three.","Four.","Five.","Six."];
 
+function initDefault(){return [{id:"bel",n:"Belaskro",t:"pc",i:0},{id:"gab",n:"Gabriele",t:"pc",i:0},{id:"gus",n:"Gus",t:"pc",i:0},{id:"tim",n:"Timbit",t:"pc",i:0},
+ {id:"crowd",n:"The crowd",t:"fx",i:10},{id:"marks",n:"Marksmen",t:"fx",i:10},{id:"knives",n:"The Knives",t:"fx",i:1},{id:"hand",n:"The Hand",t:"fx",i:15}];}
+function hpDefault(){return {eclair:52,garrick:52,noemie:52,aurelian:52,rowan:52,m1:33,m2:33,hand:91};}
+const HPMAX={eclair:52,garrick:52,noemie:52,aurelian:52,rowan:52,m1:33,m2:33,hand:91},HPOUT={eclair:26,garrick:26,noemie:26,aurelian:26,rowan:26,m1:16,m2:16,hand:45};
+const PCSUB={bel:"Def +5 · AC 15 · HP 32",gab:"Def +5 · AC 15 · HP 27 · cures",gus:"Def +8 · AC 18 · HP 23 · Shield",tim:"Def +1 · AC 11 · HP 23"};
+function fix(s){if(!s.init)s.init=initDefault();if(!s.hp)s.hp=hpDefault();if(s.ti==null)s.ti=0;return s;}
 function fresh(){return {round:0,wards:6,engaged:false,cas:"up",
  ch:CH.map(c=>({id:c.id,step:0,pips:3,prot:false,shield:c.shield,mirror:!!c.mirror,knife:true})),
- wrent:{step:1,pips:3,prot:false,guard:""},crowd:0,ki:0,klast:"",vi:0};}
+ wrent:{step:1,pips:3,prot:false,guard:""},crowd:0,ki:0,klast:"",ti:0,init:initDefault(),hp:hpDefault()};}
 let mem=null,hist=[],bc=null;
-function load(){try{const r=localStorage.getItem(KEY);if(r)return JSON.parse(r);}catch(e){}return mem||fresh();}
+function load(){try{const r=localStorage.getItem(KEY);if(r)return fix(JSON.parse(r));}catch(e){}return fix(mem||fresh());}
 function save(s){mem=s;try{localStorage.setItem(KEY,JSON.stringify(s));}catch(e){}try{bc&&bc.postMessage(1);}catch(e){}}
 try{bc=new BroadcastChannel(KEY);bc.onmessage=()=>render();}catch(e){}
 window.addEventListener("storage",e=>{if(e.key===KEY)render();});
@@ -169,7 +190,7 @@ function endRound(s){const r=s.round;
  }
  if(s.wards===0&&s.cas==="up")s.cas="kissed";
  s.ch.forEach(c=>{if(c.step===3)c.knife=false;});
- s.round++;s.crowd=0;s.ki=0;s.klast="";}
+ s.round++;s.crowd=0;s.ki=0;s.klast="";s.ti=0;}
 function queue(s){return s.round===0?s.ch.map(c=>c.id):s.ch.filter(c=>c.knife&&c.step<3).map(c=>c.id);}
 function strike(s,id,res){const c=st(s,id),d=def(id);let msg="";
  const viaW=s.round>0&&s.wrent.guard===id&&s.wrent.step<3, o=viaW?s.wrent:c, nm=viaW?"Wrent":d.name;
@@ -262,10 +283,31 @@ V.stats=()=>{const G=SB.groups;
   +(x.skills?`<div class="skl">${x.skills.map(k=>`<div class="${k[2]?"pr":""}"><span>${k[2]==="E"?"◆":k[2]==="P"?"●":"○"} ${k[0]}</span><b>${k[1]}</b></div>`).join("")}</div><p class="key">● proficient · ◆ expertise</p>`:"")
   +(x.table?`<table class="tb"><tr>${x.table.head.map(h=>`<th>${h}</th>`).join("")}</tr>${x.table.rows.map(r=>`<tr>${r.map((v,i)=>`<td>${i===0?"<b>"+md(v)+"</b>":md(v)}</td>`).join("")}</tr>`).join("")}</table>`:"")).join("")}</div></div>`;};
 
+
+let isel=null,iedit=false;
+function order(s){const rows=[{id:"bell",n:"The bell",t:"mk",i:99}].concat(s.init.filter(e=>e.id!=="hand"||s.engaged).slice().sort((a,b)=>b.i-a.i||(a.t==="pc"?-1:1)-(b.t==="pc"?-1:1)));rows.push({id:"end",n:"End of round",t:"mk",i:-1});return rows;}
+function hpchip(k,lab){const v=S.hp[k],out=v<=HPOUT[k];return `<span class="hpc ${out?"out":v<HPMAX[k]?"hurt":""} ${isel===k?"sel":""}" data-a="isel" data-s="${k}">${lab} <b>${v}</b></span>`;}
+V.init=()=>{const O=order(S),r=S.round,ti=Math.min(S.ti,O.length-1);
+ const sub=e=>{switch(e.id){
+  case "bell":return r===0?"Round 0: opening strikes, dome, Wrent hit.":"A ward cracked. Cassian is weaker. Garrick and Noémie roll recharge.";
+  case "crowd":return S.crowd?CROWD[S.crowd][0]+": "+CROWD[S.crowd][1]:"Roll the d8 openly.";
+  case "marks":return (S.crowd===4?"NO SHOTS (Wall of Silk). ":r>6?"Gone. ":"Shoot the most exposed PC. DC 17, 6 each. ")+hpchip("m1","1")+hpchip("m2","2");
+  case "knives":{const q=S.ch.filter(c=>c.knife&&c.step<3);return q.length?"Strike their marks. DC 18. "+q.map(c=>hpchip(c.id,def(c.id).name)).join(""):"None left on the floor.";}
+  case "hand":return "DC 19, 14 each. "+hpchip("hand","HP");
+  case "end":return "Ward breaks. Protected Kissed lose a pip.";
+  default:return e.t==="pc"?PCSUB[e.id]||"":e.note||"";}};
+ const rows=O.map((e,k)=>`<div class="irow ${k===ti?"cur":k<ti?"past":""} ${e.t}" data-a="igo" data-v="${k}"><div class="inum">${e.t==="mk"?(e.id==="bell"?"🔔":"⏳"):iedit&&e.id!=="bell"?`<input class="iin" data-c="ii" data-s="${e.id}" value="${e.i}" inputmode="numeric">`:e.i}</div>
+  <div class="ibody"><div class="iname">${e.n}${e.t==="cu"&&iedit?` <button class="quiet" data-a="idel" data-s="${e.id}">remove</button>`:""}</div><div class="isub">${sub(e)}</div></div></div>`).join("");
+ const sel=isel?`<div class="row idmg"><span class="isub" style="flex:1"><b>${isel==="hand"?"The Hand":isel[0]==="m"?"Marksman "+isel[1]:def(isel).name+"'s Knife"}</b> ${S.hp[isel]}/${HPMAX[isel]} · leaves at ${HPOUT[isel]}</span><input class="iin" id="idmg" inputmode="numeric" placeholder="dmg"><button data-a="ihit">Hit</button><button class="quiet" data-a="iheal">Undo hit</button></div>`:"";
+ const add=iedit?`<div class="row idmg"><input class="iin" id="iaddn" placeholder="Name" style="flex:1;width:auto;text-align:left"><input class="iin" id="iaddi" inputmode="numeric" placeholder="init"><button data-a="iadd">Add</button></div>`:"";
+ return `<div class="tool"><div class="row"><span class="lab">Initiative · round ${r}</span><span class="grow"></span><button class="quiet ${iedit?"on":""}" data-a="iedit">${iedit?"Done":"Edit"}</button></div>
+ <div class="ilist grow">${rows}</div>${sel}${add}
+ <div class="row"><button data-a="iprev" style="flex:1">◀</button><button class="pri" data-a="inext" style="flex:4">${ti>=O.length-1?"End round →":"Next turn ▶"}</button></div></div>`;};
+
 const DEFAULT_VIEW="voice";
 const view=(new URLSearchParams(location.search).get("v"))||(location.hash||"").slice(1)||DEFAULT_VIEW;
 function render(){S=load();const a=document.getElementById("app");
- a.innerHTML=V[view]?V[view]():`<div class="dash">${["clock","knives","crowd","board","voice","stats"].map(k=>`<div style="grid-area:${k}">${V[k]()}</div>`).join("")}</div>`;}
+ a.innerHTML=V[view]?V[view]():`<div class="dash">${["init","clock","knives","crowd","board","voice","stats"].map(k=>`<div style="grid-area:${k}">${V[k]()}</div>`).join("")}</div>`;}
 let arm=0;
 document.addEventListener("click",ev=>{const t=ev.target.closest("[data-a]");if(!t)return;const a=t.dataset.a,s=t.dataset.s,v=t.dataset.v;
  const o=x=>s==="wrent"?x.wrent:st(x,s);ev.stopPropagation();
@@ -295,8 +337,18 @@ document.addEventListener("click",ev=>{const t=ev.target.closest("[data-a]");if(
   case "sb":snav.b=+v;render();break;
   case "sbk":snav.c=null;render();break;
   case "sh":snav={g:null,c:null,b:0};render();break;
+  case "iedit":iedit=!iedit;render();break;
+  case "isel":isel=isel===s?null:s;render();break;
+  case "igo":if(!iedit)mut(x=>{x.ti=+v;});break;
+  case "iprev":mut(x=>{if(x.ti>0)x.ti--;});break;
+  case "inext":mut(x=>{const n=order(x).length;if(x.ti>=n-1)endRound(x);else x.ti++;});break;
+  case "ihit":case "iheal":{const e=document.getElementById("idmg"),n=parseInt(e&&e.value,10);if(isel&&n>0)mut(x=>{x.hp[isel]=Math.max(0,Math.min(HPMAX[isel],x.hp[isel]+(a==="ihit"?-n:n)));const c=x.ch.find(c=>c.id===isel);if(c)c.knife=x.hp[isel]>HPOUT[isel]&&c.step<3;});}break;
+  case "idel":mut(x=>{x.init=x.init.filter(e=>e.id!==s);});break;
+  case "iadd":{const n=document.getElementById("iaddn").value.trim(),i=parseInt(document.getElementById("iaddi").value,10);if(n)mut(x=>{x.init.push({id:"c"+Date.now(),n:n,t:"cu",i:isNaN(i)?0:i});});}break;
  }});
 function crowd(x,n){const was=x.crowd;if(was===8&&n!==8&&x.wards<6){x.wards++;if(x.cas==="kissed"&&x.round<7)x.cas="up";}x.crowd=n;if(n===8&&was!==8&&x.wards>0){x.wards--;if(x.wards===0&&x.cas==="up")x.cas="kissed";}}
+document.addEventListener("change",ev=>{const t=ev.target.closest("[data-c=ii]");if(!t)return;const n=parseInt(t.value,10);if(isNaN(n))return;mut(x=>{const e=x.init.find(e=>e.id===t.dataset.s);if(e)e.i=n;});});
+document.addEventListener("keydown",ev=>{if(ev.key==="Enter"&&ev.target.id==="idmg"){const b=document.querySelector("[data-a=ihit]");if(b)b.click();}});
 window.__T={get S(){return S;}};
 render();
 </script>
