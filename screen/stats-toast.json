@@ -978,8 +978,20 @@
        "The shield-rune dome traps him with the Queen, two guards, the herald and the page for 10 rounds. Nothing passes in or out."
       ],
       [
+       "Break the dome",
+       "Action at the dais edge: press a blank rune tablet into the crack, Arcana DC 14. Gus spots it automatically; anyone else, Arcana DC 12. Fail: nothing lost, try again next turn. Success: the dome goes out like a candle and he is free."
+      ],
+      [
+       "Unleashed",
+       "He acts right after the PC who broke the dome, every round. The crowd parts for its host: he ignores the crowd and the Crossing clock. Static damage, no DM rolls."
+      ],
+      [
+       "His turn",
+       "One Knife within reach takes 39 (three warhammer blows) and leaves the fight."
+      ],
+      [
        "Round 10",
-       "The dome falls and he runs for the stairs."
+       "If the dome still stands, it falls and he runs for the stairs."
       ]
      ],
      "sections": [
@@ -1023,6 +1035,27 @@
         [
          "Nothing Touches the Boy",
          "When an ally within 10 feet would take damage, he takes it instead."
+        ]
+       ]
+      },
+      {
+       "h": "Legendary Actions (3 per round, after another creature's turn)",
+       "items": [
+        [
+         "Hammer",
+         "A Knife takes 13 and is shoved off its mark. The mark's next defense roll has advantage."
+        ],
+        [
+         "Shield Bash",
+         "A Knife is knocked prone. Attacks on it have advantage until its turn."
+        ],
+        [
+         "Over the Child (Costs 2)",
+         "He moves to a champion and stands over them. That champion is safe from Knives until his next turn."
+        ],
+        [
+         "SEND THEM (Costs 3)",
+         "Every PC who can hear him may use their reaction to move half speed and make one weapon attack. Every champion still on their feet rolls their next defense with advantage."
         ]
        ]
       }
