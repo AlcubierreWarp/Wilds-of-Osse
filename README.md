@@ -39,7 +39,6 @@ tools/
   split.py                  one-time split, already run
 .github/workflows/
   build-homebrew.yml        rebuilds on any change under src/
-  split-brew.yml            the one-time split, can be deleted
 ```
 
 **To change content**, edit the relevant file in `src/`. On push to `main`, the build workflow merges the fragments, validates the result, and commits the rebuilt `wilds-of-osse.json` only if it actually differs. The raw URL above never changes.
@@ -50,7 +49,6 @@ tools/
 
 Running the build workflow with no `src/` directory is treated as a skip rather than a failure, so an empty state cannot overwrite the combined file.
 
-The split has already been run and will refuse to run again. `split-brew.yml` is safe to delete.
 
 ---
 
