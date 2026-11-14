@@ -21,4 +21,4 @@ Change model: Direct. Commit to main.
 
 ## Hard rules
 - Never rename or move `wilds-of-osse.json`, and never rename the repository or the `main` branch: players' saved raw link depends on all three.
-- This repository is public. No spoilers the players should not see, no personal details, no secrets.
+- This repository is public. No personal details, no secrets.
