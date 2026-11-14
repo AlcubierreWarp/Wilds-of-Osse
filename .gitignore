@@ -1,0 +1,14 @@
+# Claude Code: personal, per-machine files
+.claude/settings.local.json
+.claude/worktrees/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# OS and editor noise
+.DS_Store
+
+# Python
+__pycache__/
