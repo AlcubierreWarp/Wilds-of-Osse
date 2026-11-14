@@ -11,7 +11,7 @@ The loadable file is [`wilds-of-osse.json`](wilds-of-osse.json) at the root. It 
 Open the Bestiary, click **Manage Homebrew**, choose **Load from URL**, and paste:
 
 ```
-https://raw.githubusercontent.com/AlcubierreWarp/Wilds-of-Osse/main/wilds-of-osse.json
+https://raw.githubusercontent.com/AlcubierreWarp/wilds-of-osse-homebrew/main/wilds-of-osse.json
 ```
 
 It has to be the `raw.githubusercontent.com` link. The repository page URL with `/blob/` in it will not work. To load from a download instead, grab the file and use **Upload File** in the same dialog.
