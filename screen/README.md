@@ -5,14 +5,14 @@ They need GitHub Pages turned on for this repository (Settings, Pages, deploy fr
 
 | Tool | Address |
 |---|---|
-| Round clock | https://alcubierrewarp.github.io/Wilds-of-Osse/screen/clock.html |
-| Champions | https://alcubierrewarp.github.io/Wilds-of-Osse/screen/champions.html |
-| Knives' turn | https://alcubierrewarp.github.io/Wilds-of-Osse/screen/knives.html |
-| Crowd die | https://alcubierrewarp.github.io/Wilds-of-Osse/screen/crowd.html |
-| Voices | https://alcubierrewarp.github.io/Wilds-of-Osse/screen/voices.html |
-| Initiative | https://alcubierrewarp.github.io/Wilds-of-Osse/screen/initiative.html |
-| Stat blocks | https://alcubierrewarp.github.io/Wilds-of-Osse/screen/statblocks.html |
-| All seven in one | https://alcubierrewarp.github.io/Wilds-of-Osse/screen/all.html |
+| Round clock | https://alcubierrewarp.github.io/wilds-of-osse-homebrew/screen/clock.html |
+| Champions | https://alcubierrewarp.github.io/wilds-of-osse-homebrew/screen/champions.html |
+| Knives' turn | https://alcubierrewarp.github.io/wilds-of-osse-homebrew/screen/knives.html |
+| Crowd die | https://alcubierrewarp.github.io/wilds-of-osse-homebrew/screen/crowd.html |
+| Voices | https://alcubierrewarp.github.io/wilds-of-osse-homebrew/screen/voices.html |
+| Initiative | https://alcubierrewarp.github.io/wilds-of-osse-homebrew/screen/initiative.html |
+| Stat blocks | https://alcubierrewarp.github.io/wilds-of-osse-homebrew/screen/statblocks.html |
+| All seven in one | https://alcubierrewarp.github.io/wilds-of-osse-homebrew/screen/all.html |
 
 The clock, champions, knives and crowd panels share one fight state in the browser and stay in sync.
 Voices reads `voices-toast.json` by default; add `?data=<address of another JSON file>` to reuse it for a different scene.
